@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>What drives the reduced prediction accuracy of polygenic scores in non-European individuals?</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Bárbara Domingues Bitarello" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# What drives the reduced prediction accuracy of polygenic scores in non-European individuals?
+### Bárbara Domingues Bitarello
+### Perelman School of Medicine, University of Pennsylvania
+
+---
+
+
+
+
+
+class: center, top
+## Most complex traits are polygenic
+
+![](polygenic_.png)
+
+[Crouch &amp; Bodmer (2020 PNAS]
+
+---
+
+class: center, middle
+##Many variants with small effect size
+
+![](polygenic_2.png)
+
+[Crouch &amp; Bodmer (2020 PNAS]
+
+---
+class: inverse, center, middle
+# Combined, they explain a lot!
+
+---
+class: left, middle
+* height: 25% ($\sim3,000$ SNPs)
+
+
+* schizophrenia: 7% ($\sim 100$ SNPs)
+
+* breast cancer: AUC=0.65 ($\sim100$ SNPs)
+
+* ADHD: 5.5% ($\sim100$ SNPs)
+
+* Cardiovascular disease(CAD): AUC=81 ($\sim6,000$ SNPs)
+
+
+---
+class: left, top
+
+### Combined, they explain a lot!
+.pull-left[.full-width[
+![](gwas_schema_pasaniuc_price.png)]]
+
+.pull-right[.full-width[
+[Pasaniuc &amp; Price (2017), Nat Rev Genet]]]
+---
+class: left, top
+
+### Combined, they explain a lot!
+
+.large[ 
+`$$PRS=\sum_{i=1}^{m} \hat\beta_{i} G_{j,i}$$` 
+]
+
+`\(\hat\beta\)` : effect size (from GWAS)
+
+`\(G\)` : Effect allele dosage
+
+`\(j\)`: Individuals
+
+`\(i\)`: SNPs
+
+
+Assumptions: independence, additive model
+---
+class: top, center
+# PRSs are appealing
+
+.pull-left[.full-width[
+
+**easy**
+
+**fast**
+]]
+
+--
+.pull-right[.full-width[
+
+**amazing examples**
+
+**minimal requirements**
+]]
+--
+![](cad.png)
+.pull-left[.full-width[Khera *et. al* (2019) *Nat Genet.*]]
+
+---
+class: center, middle, inverse
+
+##Problems or limitations?
+
+---
+class: center, middle, inverse
+
+#Many!
+
+---
+class: top, left
+## Limitations
+
+* age, sex, SES of cohort  [Mostafavi et al. (2020) eLife]
+
+--
+
+* panacea/hype
+--
+
+
+* interpretation?
+
+--
+
+PRS -&gt; Phenotype **means** genetic cause
+--
+
+## Wrong!
+---
+class: center, middle
+
+## Mendelian randomization still needed
+![](Screen Shot 2020-09-16 at 10.27.24 PM.png)
+
+
+
+
+
+Martin et al. (2019) *Nat. Genet*
+
+---
+class: middle, center, inverse
+
+#And what about ancestry?
+
+---
+class: center, top
+# Lack of diversity is an issue
+![](Screen Shot 2020-09-16 at 4.28.04 PM.png)
+
+---
+class: center, middle
+# Lack of diversity is an issue
+![](Screen Shot 2020-09-16 at 2.44.43 PM.png)
+---
+class: center, middle, inverse
+# How does PRS accuracy transfer across ancestries?
+
+---
+class: center, top
+# PRS accuracy decreases with genetic distance from Europeans
+
+.pull-left[.full-width[
+![](Screen Shot 2020-09-16 at 10.26.28 PM.png)]]
+.pull-right[.full-width[Martin et al. (2019) Nat Genetc]]
+---
+class: top, left
+
+
+# PRS accuracy decreases with genetic distance from Europeans
+
+![](fig1.png)
+Wang &amp; Wisscher (2020) Nat. Comm
+
+---
+class: top, left
+
+
+# This had been known way before human geneticists became interested
+
+
+![](scutari2003.png)
+---
+class: middle, center, inverse
+
+
+##Why?
+--
+
+##What can we do about it?
+---
+class: top, left
+
+
+# How does ancestry impact prediction accuracy?
+.pull-left[.full-width[
+
+* causal variants 
+
+
+
+* true effect sizes
+
+
+
+* local selection
+
+
+
+* gene-gene interactions
+
+
+
+* gene-environment interactions
+]]
+.pull-right[.full-width[
+
+
+
+* **marginal effect sizes**
+
+
+
+* **LD **
+
+
+* **site frequency spectrum **
+
+]]
+--
+
+###These factors are not mutually exclusive!
+
+
+---
+class: inverse, middle, center
+
+# Let's look at height
+
+---
+class:  top, left
+##Ancestry as a continuous variable
+
+.large[highly polygenic]
+
+.large[many cohorts phenotyped]
+
+.large[large GWAS (UKBB] `\(\sim\)` 360,000 **Europeans**)
+
+--
+###European + African ancestry
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Data &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Ancestry &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; N &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Number_SNPs &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; UKBB_eur &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; European &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9998 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 685475 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; HRS_EUR &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; European &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10159 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1511742 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; UKBB_afr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; African + European &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8700 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 685475 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; WHI_afr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; African American &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6863 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 741983 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; JHS_afr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; African American &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1773 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 702685 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; HRS_afr &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; African American &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2251 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1511742 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+.small[Bitarello &amp; Mathieson (2020), *G3*]
+---
+class: top, center
+##PRS accuracy decreases with genetic distance from Europeans
+
+![](Fig1a.png)
+
+
+.small[Bitarello &amp; Mathieson (2020), *G3*]
+---
+class: top, left
+
+##GWAS from UKBB (AFR) individuals
+
+
+
+.pull-left[.full-width[
+![](Fig3c.png)
+
+]]
+
+
+.pull-right[.full-width[
+
+`\(y=sex+age+age^2+10PCs\)`
+
+`\(N_{AFR}\sim8,800\)`
+
+`\(N_{EUR}\sim350,000\)`
+
+`$$\chi_{diff}^2=\left[\frac{\beta_{eur}-\beta_{afr}}{\sqrt{SE_{eur}^2+SE_{afr}^2}}\right]^2$$`
+]]
+
+.small[Bitarello &amp; Mathieson (2020), *G3*]
+
+---
+class: top, center
+##Using only EUR chunks of each genome
+![](Fig1b.png)
+
+
+
+.small[Bitarello &amp; Mathieson (2020), *G3*]
+
+---
+class: top, center
+## Allelic Frequencies?
+
+.pull-left[.full-width[
+![](Fig4c.png)
+]]
+.pull-right[.full-width[
+**Additive genetic variance**
+`$$G_{PRS}=\frac{\sum2f_{i_afr}(1-f_{i, afr})\beta_{i,eur}^2}{\sum2f_{i,eur}(1-f_{i,eur})\beta_{i,eur}^2}$$`
+
+]]
+
+
+
+.small[Bitarello &amp; Mathieson (2020), *G3*]
+---
+class: top, center
+## Differences in LD?
+
+![](LD_SCHEMA.png)
+
+
+---
+class: top, center
+##Differences in LD?
+![](Fig4c.png)
+
+**Imputation doesn't help!**
+
+---
+class: top, center
+##Differences in LD?
+![](Screen Shot 2020-09-16 at 4.28.28 PM.png)
+
+---
+class: top, center
+##Differences in LD?
+![](Screen Shot 2020-09-16 at 4.28.34 PM.png)
+
+---
+class: center
+##Differences in LD?
+![](Fig3b.png)
+
+---
+class:top, left
+##Differences in true effect size?
+--
+
+
+###Unlikely!
+--
+
+* most GWAS variants can be validated in other ancestries
+
+* genetic correlations are high when available
+
+--
+
+But...what really matters is the .large[**marginal**] effect sizes
+---
+class: center
+##Differences in **marginal** effect sizes?
+
+![](Fig5b.png)
+`\(N_{AFR}\sim8,800\)`
+`\(N_{EUR}\sim350,000\)`
+
+`$$\chi_{diff}^2=\left[\frac{\beta_{eur}-\beta_{afr}}{\sqrt{SE_{eur}^2+SE_{afr}^2}}\right]^2$$`
+
+
+small[Bitarello &amp; Mathieson (2020), *G3*]
+
+---
+class: center
+##Assuming there **are** Differences in **marginal** effect sizes:
+
+
+
+---
+class: center
+##Assuming there **are** Differences in **marginal** effect sizes:
+
+`$$PRS_1^{C}=\alpha PRS_{AFR}+(1-\alpha) PRS_{EUR}$$`
+[Marquez-Luna et al. (2018) Genet Epidem]
+
+`$$PRS_2^{C}=\alpha(1-p_{eur,j}) PRS_{afr,j}+(1-\alpha+\alpha p_{eur,j}) PRS_{EUR}$$`
+
+`$$PRS_3^{C}= \alpha\left[\sum_{i\in AFR}\beta_{i, afr} G_{i}\right]+(1-\alpha)\left[\sum_{i\in AFR}\beta_{i, eur} G_{i}\right]+\left[\sum_{i\in EUR}\beta_{i, eur} G_{i}\right]$$`
+
+---
+class: center, inverse
+
+![](Fig2.png)
+---
+##Take Home Message
+
+--
+
+* LD and SFS impact PRS accuracy across ancestries
+
+--
+
+* not enough to explain loss of accuracy
+
+--
+
+* marginal effect sizes differences occur
+
+--
+
+* better testing with larger NEA sample sizes
+
+--
+
+**Ongoing**
+
+* optimizing ancestry-sensitive approach
+
+* explore gene-gene 
+
+* include more co-variates?
+
+---
+# Acknowledgements
+
+.pull-left[.full-width[
+
+**Iain Mathieson**
+
+Dan Ju
+
+Samantha Cox
+
+Arslan Zaidi
+
+![](tpf_logo_rgb-Facebook.jpg)
+
+![](NIGMS_logo.jpg)
+
+]]
+
+.pull-right[.full-width[
+
+Neale Lab
+
+UK Biobank
+
+Women's Health Initiative
+
+Jackson Heart Study
+
+Health and Retirement Study
+
+![](PerelmanSchoolofMedicineLogoVertical.png)
+![](kaufman-logo-tag.png)
+]]
+
+
+
+
+
+---
+
+class: center, middle
+
+# Thank you!
+
+# Questions?
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
