@@ -55,22 +55,14 @@ style_duo_accent(primary_color = "#7294D4",
           text_font_google   = google_font("Montserrat", "300", "300i"),
           code_font_google   = google_font("Fira Mono")
 )
- 
 ```
-
-class: center, top
-## Most complex traits are polygenic
-
-![](polygenic_.png)
-
-[Crouch & Bodmer (2020 PNAS]
-
 ---
 
 class: center, middle
 ##Many variants with small effect size
 
 ![](polygenic_2.png)
+
 
 [Crouch & Bodmer (2020 PNAS]
 
@@ -80,35 +72,32 @@ class: inverse, center, middle
 
 ---
 class: left, middle
-* height: 25% ($\sim3,000$ SNPs)
+# Combined, they explain a lot!
 
-
-* schizophrenia: 7% ($\sim 100$ SNPs)
-
-* breast cancer: AUC=0.65 ($\sim100$ SNPs)
-
-* ADHD: 5.5% ($\sim100$ SNPs)
-
-* Cardiovascular disease(CAD): AUC=81 ($\sim6,000$ SNPs)
-
-
+```{r, echo=F}
+library(data.table)
+dt2<-data.table(Phenotype=c('height', 'schizophrenia', 'ADHD', 'breast cancer', 'cardiovascular disease (CAD)'), Statistic=c(rep('R-squared',3), rep('AUC',2)), Value=c(25,7,5.5,60,81), Variants=c(3000,100,100,1000,6000))
+knitr::kable(dt2)
+```
 ---
 class: left, top
 
 ### Combined, they explain a lot!
 .pull-left[.full-width[
-![](gwas_schema_pasaniuc_price.png)]]
+![](gwas_schema_pasaniuc_price.png)
+
+.small[Pasaniuc & Price (2017), *Nat Rev Genet*]
+
+
+]]
 
 .pull-right[.full-width[
-[Pasaniuc & Price (2017), Nat Rev Genet]]]
----
-class: left, top
 
-### Combined, they explain a lot!
 
-.large[ 
+
+
 $$PRS=\sum_{i=1}^{m} \hat\beta_{i} G_{j,i}$$ 
-]
+
 
 $\hat\beta$ : effect size (from GWAS)
 
@@ -117,77 +106,42 @@ $G$ : Effect allele dosage
 $j$: Individuals
 
 $i$: SNPs
+]]
 
+**independence**
 
-Assumptions: independence, additive model
+**additive model**
+
 ---
 class: top, center
 # PRSs are appealing
 
 .pull-left[.full-width[
-
 **easy**
-
-**fast**
+--
+**promising**
+--
 ]]
 
 --
 .pull-right[.full-width[
-
-**amazing examples**
-
+**fast**
+--
 **minimal requirements**
+--
 ]]
 --
+---
+class: top,  center
+##Promising
 ![](cad.png)
-.pull-left[.full-width[Khera *et. al* (2019) *Nat Genet.*]]
 
----
-class: center, middle, inverse
-
-##Problems or limitations?
-
----
-class: center, middle, inverse
-
-#Many!
-
----
-class: top, left
-## Limitations
-
-* age, sex, SES of cohort  [Mostafavi et al. (2020) eLife]
-
---
-
-* panacea/hype
---
-
-
-* interpretation?
-
---
-
-PRS -> Phenotype **means** genetic cause
---
-
-## Wrong!
----
-class: center, middle
-
-## Mendelian randomization still needed
-![](Screen Shot 2020-09-16 at 10.27.24 PM.png)
-
-
-
-
-
-Martin et al. (2019) *Nat. Genet*
+Khera *et. al* (2019) *Nat Genet.*
 
 ---
 class: middle, center, inverse
 
-#And what about ancestry?
+#What about ancestry?
 
 ---
 class: center, top
@@ -204,16 +158,16 @@ class: center, middle, inverse
 
 ---
 class: center, top
-# PRS accuracy decreases with genetic distance from Europeans
+## PRS accuracy decreases with genetic distance from Europeans
 
-.pull-left[.full-width[
-![](Screen Shot 2020-09-16 at 10.26.28 PM.png)]]
-.pull-right[.full-width[Martin et al. (2019) Nat Genetc]]
+
+![](Screen Shot 2020-09-16 at 10.26.28 PM.png)
+
+Martin et al. (2019) *Nat Genet*
 ---
-class: top, left
+class: top,center
 
-
-# PRS accuracy decreases with genetic distance from Europeans
+## PRS accuracy decreases with genetic distance from Europeans
 
 ![](fig1.png)
 Wang & Wisscher (2020) Nat. Comm
@@ -230,59 +184,61 @@ class: top, left
 class: middle, center, inverse
 
 
-##Why?
+##Why is this loss of prediction observed?
 --
 
 ##What can we do about it?
 ---
-class: top, left
+class: top, center
 
 
-# How does ancestry impact prediction accuracy?
+# Many factors may impact prediction accuracy
 .pull-left[.full-width[
 
-* causal variants 
+ causal variants 
+
+
+ local selection
 
 
 
-* true effect sizes
+ gene-gene interactions
 
 
 
-* local selection
-
-
-
-* gene-gene interactions
-
-
-
-* gene-environment interactions
+ gene-environment interactions
 ]]
 .pull-right[.full-width[
 
 
 
-* **marginal effect sizes**
+ **marginal effect sizes**
+--
 
 
+ **LD **
+--
 
-* **LD **
+ **site frequency spectrum **
+--
 
-
-* **site frequency spectrum **
+**phenotypic variance**
 
 ]]
 --
 
 ###These factors are not mutually exclusive!
 
-
 ---
 class: inverse, middle, center
+## Questions
 
-# Let's look at height
+### How do these different factors affect prediction accuracy?
+### Can we leverage ancestry into the PRS and improve predictions?
+---
+class: middle, center
 
+#Let's look at height
 ---
 class:  top, left
 ##Ancestry as a continuous variable
@@ -350,7 +306,7 @@ class: top, center
 
 ---
 class: top, center
-## Allelic Frequencies?
+## Allelic Frequency Differences explain about 20%
 
 .pull-left[.full-width[
 ![](Fig4c.png)
@@ -363,8 +319,19 @@ $$G_{PRS}=\frac{\sum2f_{i_afr}(1-f_{i, afr})\beta_{i,eur}^2}{\sum2f_{i,eur}(1-f_
 
 
 
-.small[Bitarello & Mathieson (2020), *G3*]
+Bitarello & Mathieson (2020), *G3*
 ---
+class: top, center
+
+###**Phenotypic** variance does not change with ancestry
+
+genome-wide genetic variance in EUR is $\sim 76%$ of that in AFR
+$$y=\mu+\beta p_{j, eur}+\epsilon; \epsilon_{j}\sim N(0,\delta ^2  + \gamma p_{j, eur})$$
+
+![](pheno_var.png)
+Bitarello & Mathieson (2020), *G3*
+---
+class: top, center
 class: top, center
 ## Differences in LD?
 
@@ -373,58 +340,54 @@ class: top, center
 
 ---
 class: top, center
-##Differences in LD?
-![](Fig4c.png)
+##Imputation doesn't help
+![](Fig4a.png)
 
-**Imputation doesn't help!**
 
 ---
 class: top, center
-##Differences in LD?
+##Is loss of accuracy dependent on recombination rate?
 ![](Screen Shot 2020-09-16 at 4.28.28 PM.png)
 
 ---
 class: top, center
-##Differences in LD?
+##Is loss of accuracy dependent on recombination rate?
 ![](Screen Shot 2020-09-16 at 4.28.34 PM.png)
 
 ---
 class: center
-##Differences in LD?
+##Loss of accuracy is **somewhat** dependent on recombination rate
 ![](Fig3b.png)
 
 ---
-class:top, left
-##Differences in true effect size?
+class:middle, center
+##Differences in **marginal** effect size?
 --
 
+ most GWAS variants can be validated in other ancestries
 
-###Unlikely!
---
-
-* most GWAS variants can be validated in other ancestries
-
-* genetic correlations are high when available
-
---
-
-But...what really matters is the .large[**marginal**] effect sizes
+ genetic correlations are high for height
 ---
-class: center
-##Differences in **marginal** effect sizes?
-
+class: top, center
+##Allele frequency differences across ancestries are larger with increasing difference in marginal effect sizes
+.pull-left[.full-width[
 ![](Fig5b.png)
+Bitarello & Mathieson (2020), *G3*
+]]
+.pull-right[.full-width[
+
 $N_{AFR}\sim8,800$
+
 $N_{EUR}\sim350,000$
 
 $$\chi_{diff}^2=\left[\frac{\beta_{eur}-\beta_{afr}}{\sqrt{SE_{eur}^2+SE_{afr}^2}}\right]^2$$
 
 
-small[Bitarello & Mathieson (2020), *G3*]
 
+]]
 ---
 class: center
-##Assuming there **are** Differences in **marginal** effect sizes:
+##Assuming there **are** differences in **marginal** effect sizes:
 
 
 
@@ -433,16 +396,24 @@ class: center
 ##Assuming there **are** Differences in **marginal** effect sizes:
 
 $$PRS_1^{C}=\alpha PRS_{AFR}+(1-\alpha) PRS_{EUR}$$
-[Marquez-Luna et al. (2018) Genet Epidem]
+Marquez-Luna *et al.* (2018) *Genet Epidem*
+
+--
+
+
 
 $$PRS_2^{C}=\alpha(1-p_{eur,j}) PRS_{afr,j}+(1-\alpha+\alpha p_{eur,j}) PRS_{EUR}$$
+Bitarello & Mathieson (2020), *G3*
+--
 
 $$PRS_3^{C}= \alpha\left[\sum_{i\in AFR}\beta_{i, afr} G_{i}\right]+(1-\alpha)\left[\sum_{i\in AFR}\beta_{i, eur} G_{i}\right]+\left[\sum_{i\in EUR}\beta_{i, eur} G_{i}\right]$$
-
+Bitarello & Mathieson (2020), *G3*
 ---
-class: center, inverse
+class: center
+###Improvement in prediction accuracy when using **linear combinations of ancestry-specific** PRS
 
 ![](Fig2.png)
+Bitarello & Mathieson (2020), *G3*
 ---
 ##Take Home Message
 
