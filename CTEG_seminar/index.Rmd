@@ -56,7 +56,6 @@ style_duo_accent(primary_color = "#7294D4",
           code_font_google   = google_font("Fira Mono")
 )
 ```
----
 
 class: center, middle
 ##Many variants with small effect size
