@@ -541,6 +541,7 @@ knitr::include_graphics("Fig2.png")
 * include more co-variates?
 
 ---
+class: top, center
 # Acknowledgements
 
 .pull-left[.full-width[
