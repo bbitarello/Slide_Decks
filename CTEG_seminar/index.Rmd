@@ -22,7 +22,12 @@ library(shiny)
 library(ggplot2)
 library(data.table)
 library(scales)
+library(xaringanExtra)
 knitr::opts_chunk$set(tidy = FALSE, eval = TRUE)
+```
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+xaringanExtra::use_broadcast()
 ```
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
