@@ -12,13 +12,14 @@ output:
       highlightLines: true
       countIncrementalSlides: false
       ratio: 16:9
-     
 ---
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 library(knitr)
 library(shiny)
 library(ggplot2)
+library(data.table)
+library(scales)
 knitr::opts_chunk$set(tidy = FALSE, eval = TRUE)
 ```
 
@@ -54,37 +55,60 @@ style_duo_accent(primary_color = "#7294D4",
           title_slide_background_color = "#D8A499",
           header_font_google = google_font("Josefin Sans"),
           text_font_google   = google_font("Montserrat", "300", "300i"),
-          code_font_google   = google_font("Fira Mono")
+          code_font_google   = google_font("Fira Mono"),
+          colors = c(
+  pink = "#E6A0C4",
+  cornflowerblue = "#7294D4",
+  weirdbrown = "#D8A499",
+  lilac="#C6CDF7"
 )
+)
+
+
 ```
 
-class: center, middle
+class: center, top
 ##Many variants with small effect size
 
-![](polygenic_2.png)
+
+```{r, out.width = "650px",echo=FALSE, eval=T}
+#library(png)
+#library(grid)
+#img <- readPNG("tam_et_al_2019.png")
+#grid.raster(img)
+knitr::include_graphics("tam_et_al_2019.png")
+```
+
+[Tam et al. (2019) *Nat Rev Genet*]
 
 
-[Crouch & Bodmer (2020 PNAS]
 
 ---
 class: inverse, center, middle
-# Combined, they explain a lot!
+# .lilac[Combined, they explain a lot!]
 
 ---
-class: left, middle
+class: middle, center
 # Combined, they explain a lot!
 
+
+
 ```{r, echo=F}
-library(data.table)
-dt2<-data.table(Phenotype=c('height', 'schizophrenia', 'ADHD', 'breast cancer', 'cardiovascular disease (CAD)'), Statistic=c(rep('R-squared',3), rep('AUC',2)), Value=c(25,7,5.5,60,81), Variants=c(3000,100,100,1000,6000))
+dt2<-data.table(Phenotype=c('height', 'schizophrenia', 'ADHD', 'breast cancer', 'cardiovascular disease (CAD)'), Statistic=c(rep('R-squared',3), rep('AUC',2)), Value=round(c(25,7,5.5,60,81),1), Variants=c(3000,100,100,1000,6000))
 knitr::kable(dt2)
 ```
 ---
-class: left, top
+class: center, top
 
-### Combined, they explain a lot!
+## Combined, they explain a lot!
 .pull-left[.full-width[
-![](gwas_schema_pasaniuc_price.png)
+```{r, out.width = "650px",echo=FALSE, eval=T}
+#library(png)
+#library(grid)
+#img <- readPNG("tam_et_al_2019.png")
+#grid.raster(img)
+knitr::include_graphics("gwas_schema_pasaniuc_price.png")
+```
 
 .small[Pasaniuc & Price (2017), *Nat Rev Genet*]
 
@@ -106,11 +130,13 @@ $G$ : Effect allele dosage
 $j$: Individuals
 
 $i$: SNPs
-]]
 
 **independence**
 
 **additive model**
+
+]]
+
 
 ---
 class: top, center
@@ -133,61 +159,102 @@ class: top, center
 --
 ---
 class: top,  center
-##Promising
-![](cad.png)
 
-Khera *et. al* (2019) *Nat Genet.*
+```{r, out.width = "550px",echo=FALSE, eval=T}
+#library(png)
+#library(grid)
+#img <- readPNG("tam_et_al_2019.png")
+#grid.raster(img)
+knitr::include_graphics("cad.png")
+```
+
+
+[Khera *et. al* (2019) *Nat Genet.*]
 
 ---
 class: middle, center, inverse
 
-#What about ancestry?
+# .lilac[What about ancestry?]
 
 ---
 class: center, top
-# Lack of diversity is an issue
-![](Screen Shot 2020-09-16 at 4.28.04 PM.png)
+.pull-left[.full-width[
+## Europeans represent almost 80% of GWAS participants...
+```{r, out.width = "350px",echo=FALSE, eval=T}
+knitr::include_graphics("Screen Shot 2020-09-16 at 4.28.04 PM.png")
+```
 
----
-class: center, middle
-# Lack of diversity is an issue
-![](Screen Shot 2020-09-16 at 2.44.43 PM.png)
+[Sirugo, Williams & Tishkoff (2019) *Cell*]]]
+.pull-left[.full-width[
+
+```{r, echo=FALSE, eval=T, out.width = "420px"}
+world<-fread('~/Downloads/csvData.csv')
+#library(plotly)
+blank_theme <- theme_minimal()+
+  theme(
+  axis.title.x = element_blank(),
+  axis.title.y = element_blank(),
+  panel.border = element_blank(),
+  panel.grid=element_blank(),
+  axis.ticks = element_blank(),
+  plot.title=element_text(size=14, face="bold")
+  )
+bp<- ggplot(world, aes(x="", y=WorldPop, fill=Name))+
+geom_bar(width = 1, stat = "identity") + coord_polar("y", start=0)+ 
+  scale_fill_manual(values=c("red","#E6A0C4","#7294D4", "#999999","#899DA4","#A2A475")) + blank_theme +
+  theme(axis.text.x=element_blank()) + 
+  geom_text(aes(y=c(0.9,0.4,0.17, 0.10, 0.05, 0.025), label=paste0((c(0.1720, 0.5954, 0.0959, 0.0473,0.0055, 0.0553)*100), "%")), size=c(6,6,6,6,2,3))
+ 
+print(bp)
+```
+```{r, out.width = "650px",echo=FALSE, eval=F}
+knitr::include_graphics("Screen Shot 2020-09-16 at 2.44.43 PM.png")
+```
+[Martin et al. (2019) *Nat Genet*]
+
+## .. and about 11% of the world's population
+]]
 ---
 class: center, middle, inverse
-# How does PRS accuracy transfer across ancestries?
+# .lilac[How does PRS accuracy transfer across ancestries?]
 
 ---
 class: center, top
 ## PRS accuracy decreases with genetic distance from Europeans
 
+```{r, out.width = "690px",echo=FALSE, eval=T}
+knitr::include_graphics("Screen Shot 2020-09-16 at 10.26.28 PM.png")
+```
 
-![](Screen Shot 2020-09-16 at 10.26.28 PM.png)
-
-Martin et al. (2019) *Nat Genet*
+[Martin et al. (2019) *Nat Genet*]
 ---
 class: top,center
 
 ## PRS accuracy decreases with genetic distance from Europeans
+```{r, out.width = "670px",echo=FALSE, eval=T}
+knitr::include_graphics("fig1.png")
+```
 
-![](fig1.png)
 Wang & Wisscher (2020) Nat. Comm
 
----
-class: top, left
+#---
+#class: middle, center, inverse
 
 
-# This had been known way before human geneticists became interested
+## .lilac[This had been known way before human geneticists became interested!]
 
 
-![](scutari2003.png)
+#![](scutari2003.png)
+
+### .lilac[*2003*]
 ---
 class: middle, center, inverse
 
 
-##Why is this loss of prediction observed?
+## .lilac[Why is this loss of prediction observed?]
 --
 
-##What can we do about it?
+##.lilac[What] can *we do* .lilac[about it?]
 ---
 class: top, center
 
@@ -198,12 +265,12 @@ class: top, center
  causal variants 
 
 
+
  local selection
 
 
 
  gene-gene interactions
-
 
 
  gene-environment interactions
@@ -223,6 +290,7 @@ class: top, center
 --
 
 **phenotypic variance**
+--
 
 ]]
 --
@@ -231,10 +299,10 @@ class: top, center
 
 ---
 class: inverse, middle, center
-## Questions
+# .lilac[Questions]
 
-### How do these different factors affect prediction accuracy?
-### Can we leverage ancestry into the PRS and improve predictions?
+### How do these .lilac[different factors] affect prediction accuracy?
+### Can we .lilac[leverage ancestry] into the PRS and improve predictions?
 ---
 class: middle, center
 
@@ -245,12 +313,19 @@ class:  top, left
 
 .large[highly polygenic]
 
+--
+
 .large[many cohorts phenotyped]
+
+--
 
 .large[large GWAS (UKBB] $\sim$ 360,000 **Europeans**)
 
 --
 ###European + African ancestry
+
+--
+
 ```{r, include=FALSE}
 library(data.table)
 library(kableExtra)
@@ -263,9 +338,11 @@ knitr::kable(dt)
 .small[Bitarello & Mathieson (2020), *G3*]
 ---
 class: top, center
-##PRS accuracy decreases with genetic distance from Europeans
+##PRS accuracy decreases with proportion of European ancestry
 
-![](Fig1a.png)
+```{r, out.width = "670px",echo=FALSE, eval=T}
+knitr::include_graphics("Fig1a.png")
+```
 
 
 .small[Bitarello & Mathieson (2020), *G3*]
@@ -277,7 +354,9 @@ class: top, left
 
 
 .pull-left[.full-width[
-![](Fig3c.png)
+```{r, out.width = "670px",echo=FALSE, eval=T}
+knitr::include_graphics("Fig3c.png")
+```
 
 ]]
 
@@ -298,7 +377,9 @@ $$\chi_{diff}^2=\left[\frac{\beta_{eur}-\beta_{afr}}{\sqrt{SE_{eur}^2+SE_{afr}^2
 ---
 class: top, center
 ##Using only EUR chunks of each genome
-![](Fig1b.png)
+```{r, out.width = "670px",echo=FALSE, eval=T}
+knitr::include_graphics("Fig1b.png")
+```
 
 
 
@@ -309,15 +390,15 @@ class: top, center
 ## Allelic Frequency Differences explain about 20%
 
 .pull-left[.full-width[
-![](Fig4c.png)
+```{r, out.width = "370px",echo=FALSE, eval=T}
+knitr::include_graphics("Fig4c.png")
+```
 ]]
 .pull-right[.full-width[
 **Additive genetic variance**
 $$G_{PRS}=\frac{\sum2f_{i_afr}(1-f_{i, afr})\beta_{i,eur}^2}{\sum2f_{i,eur}(1-f_{i,eur})\beta_{i,eur}^2}$$
 
 ]]
-
-
 
 Bitarello & Mathieson (2020), *G3*
 ---
@@ -328,50 +409,68 @@ class: top, center
 genome-wide genetic variance in EUR is $\sim 76%$ of that in AFR
 $$y=\mu+\beta p_{j, eur}+\epsilon; \epsilon_{j}\sim N(0,\delta ^2  + \gamma p_{j, eur})$$
 
-![](pheno_var.png)
-Bitarello & Mathieson (2020), *G3*
+```{r, out.width = "470px",echo=FALSE, eval=T}
+knitr::include_graphics("pheno_var.png")
+```
+
+[Bitarello & Mathieson (2020), *G3*]
 ---
 class: top, center
 class: top, center
 ## Differences in LD?
 
-![](LD_SCHEMA.png)
+```{r, out.width = "670px",echo=FALSE, eval=T}
+knitr::include_graphics("LD_SCHEMA.png")
+```
 
 
 ---
 class: top, center
 ##Imputation doesn't help
-![](Fig4a.png)
+```{r, out.width = "670px",echo=FALSE, eval=T}
+knitr::include_graphics("Fig4a.png")
+```
 
+[Bitarello & Mathieson (2020), *G3*]
+---
+class: top, center
+##Is loss of accuracy dependent on recombination rate?
+
+```{r, out.width = "670px",echo=FALSE, eval=T}
+knitr::include_graphics("Screen Shot 2020-09-16 at 4.28.28 PM.png")
+```
 
 ---
 class: top, center
 ##Is loss of accuracy dependent on recombination rate?
-![](Screen Shot 2020-09-16 at 4.28.28 PM.png)
 
----
-class: top, center
-##Is loss of accuracy dependent on recombination rate?
-![](Screen Shot 2020-09-16 at 4.28.34 PM.png)
+```{r, out.width = "670px",echo=FALSE, eval=T}
+knitr::include_graphics("Screen Shot 2020-09-16 at 4.28.34 PM.png")
+```
+
 
 ---
 class: center
 ##Loss of accuracy is **somewhat** dependent on recombination rate
-![](Fig3b.png)
+```{r, out.width = "670px",echo=FALSE, eval=T}
+knitr::include_graphics("Fig3b.png")
+```
 
 ---
-class:middle, center
-##Differences in **marginal** effect size?
---
+class:middle, center, inverse
+##.lilac[Differences in] *marginal* .lilac[effect size?]
+#--
 
- most GWAS variants can be validated in other ancestries
+# most GWAS variants can be validated in other ancestries
 
- genetic correlations are high for height
+#genetic correlations are high for height
 ---
 class: top, center
-##Allele frequency differences across ancestries are larger with increasing difference in marginal effect sizes
+##Difference in marginal effect sizes *increase* with allele frequency differences across ancestries 
 .pull-left[.full-width[
-![](Fig5b.png)
+```{r, out.width = "670px",echo=FALSE, eval=T}
+knitr::include_graphics("Fig5b.png")
+```
 Bitarello & Mathieson (2020), *G3*
 ]]
 .pull-right[.full-width[
@@ -387,13 +486,13 @@ $$\chi_{diff}^2=\left[\frac{\beta_{eur}-\beta_{afr}}{\sqrt{SE_{eur}^2+SE_{afr}^2
 ]]
 ---
 class: center
-##Assuming there **are** differences in **marginal** effect sizes:
+##*Assuming* there **are** differences in **marginal** effect sizes
 
 
 
 ---
 class: center
-##Assuming there **are** Differences in **marginal** effect sizes:
+##*Assuming* there **are** differences in **marginal** effect sizes
 
 $$PRS_1^{C}=\alpha PRS_{AFR}+(1-\alpha) PRS_{EUR}$$
 Marquez-Luna *et al.* (2018) *Genet Epidem*
@@ -412,8 +511,11 @@ Bitarello & Mathieson (2020), *G3*
 class: center
 ###Improvement in prediction accuracy when using **linear combinations of ancestry-specific** PRS
 
-![](Fig2.png)
-Bitarello & Mathieson (2020), *G3*
+```{r, out.width = "630px",echo=FALSE, eval=T}
+knitr::include_graphics("Fig2.png")
+```
+
+[Bitarello & Mathieson (2020), *G3*]
 ---
 ##Take Home Message
 
@@ -435,11 +537,15 @@ Bitarello & Mathieson (2020), *G3*
 
 --
 
-**Ongoing**
+**Future work**
 
 * optimizing ancestry-sensitive approach
 
-* explore gene-gene 
+--
+
+* explore ancestry-dependent gene-gene interactions
+
+--
 
 * include more co-variates?
 
@@ -459,11 +565,6 @@ Laura Colbran
 Samantha Cox
 
 
-
-![](tpf_logo_rgb-Facebook.jpg)
-
-![](NIGMS_logo.jpg)
-
 ]]
 
 .pull-right[.full-width[
@@ -478,21 +579,29 @@ Jackson Heart Study
 
 Health and Retirement Study
 
-![](PerelmanSchoolofMedicineLogoVertical.png)
-![](kaufman-logo-tag.png)
 ]]
 
-
-
+```{r, out.width = "230px",echo=FALSE, eval=T}
+knitr::include_graphics("tpf_logo_rgb-Facebook.jpg")
+```
+```{r, out.width = "170px",echo=FALSE, eval=T}
+knitr::include_graphics("NIGMS_logo.jpg")
+```
+```{r, out.width = "170px",echo=FALSE, eval=T}
+knitr::include_graphics("PerelmanSchoolofMedicineLogoVertical.png")
+```
+```{r, out.width = "370px",echo=FALSE, eval=T}
+knitr::include_graphics("kaufman-logo-tag.png")
+```
 
 
 ---
 
-class: center, middle
+class: inverse,center, middle
 
-# Thank you!
+# .lilac[Thank you!]
 
-# Questions?
+# .lilac[Questions?]
 
 
 

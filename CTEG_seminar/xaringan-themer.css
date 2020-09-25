@@ -59,6 +59,10 @@
   --secondary: #D8A499;
   --white: #FFFFFF;
   --black: #000000;
+  --pink: #E6A0C4;
+  --cornflowerblue: #7294D4;
+  --weirdbrown: #D8A499;
+  --lilac: #C6CDF7;
 }
 
 html {
@@ -257,5 +261,29 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 }
 .bg-black {
   background-color: var(--black);
+}
+.pink {
+  color: var(--pink);
+}
+.bg-pink {
+  background-color: var(--pink);
+}
+.cornflowerblue {
+  color: var(--cornflowerblue);
+}
+.bg-cornflowerblue {
+  background-color: var(--cornflowerblue);
+}
+.weirdbrown {
+  color: var(--weirdbrown);
+}
+.bg-weirdbrown {
+  background-color: var(--weirdbrown);
+}
+.lilac {
+  color: var(--lilac);
+}
+.bg-lilac {
+  background-color: var(--lilac);
 }
 
