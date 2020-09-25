@@ -5,6 +5,8 @@ author: "Bárbara Domingues Bitarello"
 institute: "Perelman School of Medicine, University of Pennsylvania"
 output:
   xaringan::moon_reader:
+    seal: false
+    transition: slide
     css: xaringan-themer.css
     lib_dir: libs
     nature:
@@ -64,49 +66,89 @@ style_duo_accent(primary_color = "#7294D4",
 )
 )
 
-
 ```
+class: inverse, center, middle
 
+# .lilac[What drives the reduced prediction accuracy of polygenic scores in non-European individuals?]
+
+### .lilac[Bárbara Domingues Bitarello]
+
+### .lilac[Perelman School of Medicine, University of Pennsylvania]
+
+???
+
+Good afternoon everyone, or good evening depending on where you are.
+Thank you, Debora, for this warm introduction. And thank you CTEG for inviting me to give this talk.
+
+So today I am going to be talking about phenotype prediction using polygenic risk scores, and why they don't work well for any ancestry other than European and, for some traits, East Asian.
+
+---
 class: center, top
-##Many variants with small effect size
+##**Many** variants
 
-
-```{r, out.width = "650px",echo=FALSE, eval=T}
-#library(png)
-#library(grid)
-#img <- readPNG("tam_et_al_2019.png")
-#grid.raster(img)
+.pull-left[
+```{r, out.width = "500px",echo=FALSE, eval=T}
 knitr::include_graphics("tam_et_al_2019.png")
 ```
+]
+
+
+
+???
+Two decades of genomewide association studies, or GWAS, have shown us that most genetically inherited traits are highly polygenic. This means that they dozens, or hundreds or thousands of variants contribute to the trait
+---
+class: center, top
+##**Many** variants with **small** effect size
+
+.pull-left[.full-width[
+```{r, out.width = "500px",echo=FALSE, eval=T}
+knitr::include_graphics("tam_et_al_2019.png")
+```
+]]
+
+
+.pull-right[.full-width[
+```{r, out.width = "600px",echo=FALSE, eval=T}
+knitr::include_graphics("tam_et_al_2019_2.png")
+```
+]]
+
 
 [Tam et al. (2019) *Nat Rev Genet*]
 
-
-
+???
+Also, these variants are largely small in their reffect size.
+This results in the landscape of polygenic traits to look something like we see on the right: GWAS are mostly successful at capturing variants between these two diagonal lines: common, with moderate or small effect variants, and some rare but highly penetrant mutations, that is, that have a considerable effect size.
+Rare variants with small effect sizes are difficult to identify using GWAS, and common variants with large effects are unusual for common complex diseases
 ---
 class: inverse, center, middle
 # .lilac[Combined, they explain a lot!]
+???
 
+So although most of these variants we detect in genome-wide association studies have very small effect, when you add them up, they explain quite a lot of the variation in a trait.
 ---
 class: middle, center
-# Combined, they explain a lot!
-
-
+# Some examples
 
 ```{r, echo=F}
 dt2<-data.table(Phenotype=c('height', 'schizophrenia', 'ADHD', 'breast cancer', 'cardiovascular disease (CAD)'), Statistic=c(rep('R-squared',3), rep('AUC',2)), Value=round(c(25,7,5.5,60,81),1), Variants=c(3000,100,100,1000,6000))
 knitr::kable(dt2)
 ```
+--
+
+
+### PS: In **Europeans...**
+
+???
+
+To mention a few example, height is one of the most well-studied and most polygenic traits we know of. So far more than 3,000 independently associated variants have been uncovered through GWAS and together they explain about 25% of variation in height as show by linear regression models. For schizophrenia and ADHD, those values are between 5.5-7%. That might seem low, but actually it isn't if you think about this...
 ---
 class: center, top
 
-## Combined, they explain a lot!
+## Polygenic risk scores add up those small effects
 .pull-left[.full-width[
 ```{r, out.width = "650px",echo=FALSE, eval=T}
-#library(png)
-#library(grid)
-#img <- readPNG("tam_et_al_2019.png")
-#grid.raster(img)
+
 knitr::include_graphics("gwas_schema_pasaniuc_price.png")
 ```
 
@@ -138,44 +180,44 @@ $i$: SNPs
 ]]
 
 
+???
+So you did a GWAS for height. Then, for each variant in the genome you have something like this: the genotype in that locus has an effect on height, and can be modelled as a linear relationship. So you have an effect size for one allele in that locus, which is a correlation between the phenotype and the genotype. 
+
+Then you make some assumptions about independence of these loci and that an additive model is appropriate and you have this polygenic score, which is a weighted sum of the genotypes in an individuals. Weighted by the effect sizes.
 ---
 class: top, center
 # PRSs are appealing
 
 .pull-left[.full-width[
-**easy**
---
-**promising**
---
-]]
+## **easy**
 
---
+## **promising**
+
+## **fast**
+
+## **minimal requirements**
+]]
 .pull-right[.full-width[
-**fast**
---
-**minimal requirements**
---
-]]
---
----
-class: top,  center
-
-```{r, out.width = "550px",echo=FALSE, eval=T}
-#library(png)
-#library(grid)
-#img <- readPNG("tam_et_al_2019.png")
-#grid.raster(img)
+```{r, out.width = "460px",echo=FALSE, eval=T}
 knitr::include_graphics("cad.png")
 ```
+[Khera et al (2018) Nat Genet]
+]]
 
+???
+So as you can see from this, PRS are very appealing...They are easy and simple to implement, all you need are some summary statistics from a GWAS, and no further complicated modeling.
 
-[Khera *et. al* (2019) *Nat Genet.*]
+Here is one promising example. The x axis shows the percentile of polygenic score. And the y axis shows the pravalence of CAD. IF we look at the highest bins of PRS, prevalance of CAD is 10%. These individuals have a 8-fold increase of CAD compared to the rest of the population. This makes the PRS able to find 20-fold mroe people at risk for CAD than if you were simply testing for large effect mutations, which have large effect but are rare.
+There are a few other examples like this sofar for breast cancer for instance.
+The main point I want to emphasize is...This is for individuals with European ancestry.
 
 ---
 class: middle, center, inverse
 
 # .lilac[What about ancestry?]
 
+???
+right. So what about ancestry?
 ---
 class: center, top
 .pull-left[.full-width[
@@ -185,6 +227,7 @@ knitr::include_graphics("Screen Shot 2020-09-16 at 4.28.04 PM.png")
 ```
 
 [Sirugo, Williams & Tishkoff (2019) *Cell*]]]
+--
 .pull-left[.full-width[
 
 ```{r, echo=FALSE, eval=T, out.width = "420px"}
@@ -210,14 +253,21 @@ print(bp)
 ```{r, out.width = "650px",echo=FALSE, eval=F}
 knitr::include_graphics("Screen Shot 2020-09-16 at 2.44.43 PM.png")
 ```
-[Martin et al. (2019) *Nat Genet*]
+[Data: https://worldpopulationreview.com/]
 
-## .. and about 11% of the world's population
+## .. and 10% of the world's population
 ]]
+
+???
+Ok, so let's look at this pie chart from last year, with the proportion of individuals from Each of these groups of ancestry that appear in GWAS. Europeans make up almost 80%, Asians about 20% and Africans about 2%. Note that this is a big improvement since 2009. The same survey in 2009 showed that 96% of individuals were European!
+
+Anyway, now look at this pie chart on the right, which I made from data from worldpopulationreview for 2020. Now, the colors are not a true match, but I did my best. BEar in mind that the plot on the left is about ancestry, and the one on the right is about continents, regardless of ancestry. Nevertheless, it's a reasonable approximation for this purpose. Europeans in Blue represent a disproportionate amount of GWAS participants especially if you consider their share of the world's population. Asians represent 60% of the world and only 20% of GWAS, and africans 17 and 2%. Not to mention the other ancestries which are virtually non-existent.
 ---
 class: center, middle, inverse
 # .lilac[How does PRS accuracy transfer across ancestries?]
 
+???
+this is obviously not ideal and reflects many biases which I don't have time to go into to, but considering the hype i showed about PRS before, how does this affect popygenic risk score predictions?
 ---
 class: center, top
 ## PRS accuracy decreases with genetic distance from Europeans
@@ -227,6 +277,10 @@ knitr::include_graphics("Screen Shot 2020-09-16 at 10.26.28 PM.png")
 ```
 
 [Martin et al. (2019) *Nat Genet*]
+
+???
+Over the past two years or so a few papers have come out showing that prediction accuracy from PRS decreases with genetic distance from Europeans.
+This figure from Martin et al showes average prediction accuracies for 17 traits, using GWAS summary statisticas derived from 100% European cohorts. I am not sure what american means?
 ---
 class: top,center
 
@@ -235,8 +289,10 @@ class: top,center
 knitr::include_graphics("fig1.png")
 ```
 
-Wang & Wisscher (2020) Nat. Comm
+[Wang & Wisscher (2020) *Nat Comms*]
 
+???
+And wang & wisscher recently showed through simulations tat this is expected. On the x axis here you have south asians, east asians and africans, and they axis shows the reltive accuracy, i.e, divided by Eur accuracy. It's expected to decline under a range of genetic architectures. I won't go into this but the different colors here represent different estimators they used. 
 #---
 #class: middle, center, inverse
 
@@ -255,7 +311,12 @@ class: middle, center, inverse
 --
 
 ##.lilac[What] can *we do* .lilac[about it?]
+
+???
+What about empirically? What does this look like?
+Ideally, we would have diverse GWAS, so that phenotypic prediction would be informed by ancestry background. But as I showed, that's far from being the case. So what can we do.
 ---
+
 class: top, center
 
 
@@ -293,6 +354,11 @@ class: top, center
 --
 
 ]]
+
+???
+Many factors can affect PRS prediction accuracy. Causal variants might actually differ to some extent accross ancestries. There might have been local selection in some populations but not others. There might be population-specifc gene-gene and gene-E interactions.
+
+Also, marginal effect sizes might differ for a number of reasons, and we know that LD patters and SFS patterns differ across ancestries and can impact this RA. Finally, phenotypic variance might actually differ. So in my work taht I am about to show you, I explored these factors highlighted here.
 --
 
 ###These factors are not mutually exclusive!
@@ -303,28 +369,34 @@ class: inverse, middle, center
 
 ### How do these .lilac[different factors] affect prediction accuracy?
 ### Can we .lilac[leverage ancestry] into the PRS and improve predictions?
+
+???
+So the quesitons that motivated this work were:
 ---
 class: middle, center
 
 #Let's look at height
+???
+We chose to look at height in individuals with Eur, afr and admixed ancestry.
 ---
-class:  top, left
-##Ancestry as a continuous variable
+class:  top, center
+##Ancestry as a **continuous** variable
 
-.large[highly polygenic]
+.pull-left[.full-width[
 
---
+#### highly polygenic
 
-.large[many cohorts phenotyped]
+#### many cohorts phenotyped
 
---
+#### large GWAS (UKBB] $\sim$ 360,000 **Europeans**)
 
-.large[large GWAS (UKBB] $\sim$ 360,000 **Europeans**)
+$height\sim Sex+Age+ Age^2+p_{eur}$
 
---
-###European + African ancestry
+$height\sim Sex+Age+ Age^2+p_{eur}+PRS$
+]
 
---
+.pull-right[.full-width[
+#### European + African ancestry
 
 ```{r, include=FALSE}
 library(data.table)
@@ -336,6 +408,17 @@ knitr::kable(dt)
 ```
 
 .small[Bitarello & Mathieson (2020), *G3*]
+]]
+???
+why height? It's a somehwat well-udnerstood trait. it's hgihly popygenic and easy to measure. It is highly heritable (80% based ont twin studies, about 50% based on SNP heritability)
+
+So in this work we used GWAS summary statistics for height from a cohort of 360K europeans from the UK biobank. And we verified how well we could predicti height in individuals with different degrees of african ancestry.
+
+Importantly, unlike most studies, we consdierted ancestry as a continuous variable. So each individuals we analysed had a "proportion of Eur ancestry" inferred by local ancestry inference and averaged across the genome.
+
+In the end we looked at about 19,000 individuals with admied ancestry, and 10,000 with eur ancestry from different cohorts.
+
+we modell height as a function of sex age and eur ancesty and compare that to a mdoel that also includes prs.
 ---
 class: top, center
 ##PRS accuracy decreases with proportion of European ancestry
@@ -377,17 +460,35 @@ $$\chi_{diff}^2=\left[\frac{\beta_{eur}-\beta_{afr}}{\sqrt{SE_{eur}^2+SE_{afr}^2
 ---
 class: top, center
 ##Using only EUR chunks of each genome
+.pull-left[.full-width[
 ```{r, out.width = "670px",echo=FALSE, eval=T}
 knitr::include_graphics("Fig1b.png")
 ```
-
-
-
 .small[Bitarello & Mathieson (2020), *G3*]
+]]
 
+.pull-right[.full-width[
+
+$$y=0.15^k$$
+
+$k=1$ 
+
+all prediction power comes from European chunks
+
+
+$\kappa=2:$
+
+prediction power is randomly scattered across the genome
+]]
+
+
+### **Surprisingly, this relationship seems to be more like $\kappa=2$**
+
+???
+In both scenarios, mroe Eur ancestry means more data, so of course prediction increases, but while kappa=1 entails that it is the EUr chunks themselves that contribute to this, kappa=2 entails that 
 ---
 class: top, center
-## Allelic Frequency Differences explain about 20%
+## Allelic Frequency differences explain about 20%
 
 .pull-left[.full-width[
 ```{r, out.width = "370px",echo=FALSE, eval=T}
@@ -406,18 +507,20 @@ class: top, center
 
 ###**Phenotypic** variance does not change with ancestry
 
-genome-wide genetic variance in EUR is $\sim 76%$ of that in AFR
+.pull-left[.full-width[
+genome-wide genetic variance in EUR is $\sim 76\%$ of that in AFR
 $$y=\mu+\beta p_{j, eur}+\epsilon; \epsilon_{j}\sim N(0,\delta ^2  + \gamma p_{j, eur})$$
-
+]]
+.pull-right[.full-width[
 ```{r, out.width = "470px",echo=FALSE, eval=T}
 knitr::include_graphics("pheno_var.png")
 ```
 
 [Bitarello & Mathieson (2020), *G3*]
+]]
 ---
 class: top, center
-class: top, center
-## Differences in LD?
+## Differences in linkage disequilibrium
 
 ```{r, out.width = "670px",echo=FALSE, eval=T}
 knitr::include_graphics("LD_SCHEMA.png")
@@ -426,43 +529,62 @@ knitr::include_graphics("LD_SCHEMA.png")
 
 ---
 class: top, center
-##Imputation doesn't help
-```{r, out.width = "670px",echo=FALSE, eval=T}
+### **Prediction:** better tagging of causal variants should decrease loss-of-accuracy(LOA)
+--
+
+```{r, out.width = "570px",echo=FALSE, eval=T}
 knitr::include_graphics("Fig4a.png")
 ```
 
 [Bitarello & Mathieson (2020), *G3*]
+
+### **Observation:** Imputation doesn't help
 ---
 class: top, center
-##Is loss of accuracy dependent on recombination rate?
+## Prediction: 
 
+$$Rel_{R2}=\frac{R^2_{bin}}{R^2_{total}}$$
+
+.pull-left[.full-width[
 ```{r, out.width = "670px",echo=FALSE, eval=T}
 knitr::include_graphics("Screen Shot 2020-09-16 at 4.28.28 PM.png")
 ```
+]]
 
----
-class: top, center
-##Is loss of accuracy dependent on recombination rate?
-
+--
+.pull-right[.full-width[
 ```{r, out.width = "670px",echo=FALSE, eval=T}
 knitr::include_graphics("Screen Shot 2020-09-16 at 4.28.34 PM.png")
 ```
 
-
+]]
 ---
 class: center
-##Loss of accuracy is **somewhat** dependent on recombination rate
-```{r, out.width = "670px",echo=FALSE, eval=T}
+.pull-left[.full-width[
+
+$$Rel_{R2}=\frac{R^2_{bin}}{R^2_{total}}$$
+]]
+
+.pull-right[.full-width[
+```{r, out.width = "580px",echo=FALSE, eval=T}
 knitr::include_graphics("Fig3b.png")
 ```
+####Recombination Rate
+
+[Bitarello & Mathieson (2020), *G3*]
+
+]]
+
+###**Observation:** loss of accuracy is **somewhat** dependent on recombination rate
+
 ---
 class: top, center
-##Difference in marginal effect sizes *increase* with allele frequency differences across ancestries 
+##Difference in marginal effect sizes **increases** with allele frequency differences across ancestries 
 .pull-left[.full-width[
 ```{r, out.width = "670px",echo=FALSE, eval=T}
 knitr::include_graphics("Fig5b.png")
 ```
-Bitarello & Mathieson (2020), *G3*
+[Bitarello & Mathieson (2020), *G3*]
 ]]
 .pull-right[.full-width[
 
@@ -500,7 +622,7 @@ $$PRS_3^{C}= \alpha\left[\sum_{i\in AFR}\beta_{i, afr} G_{i}\right]+(1-\alpha)\l
 Bitarello & Mathieson (2020), *G3*
 ---
 class: center
-###Improvement in prediction accuracy when using **linear combinations of ancestry-specific** PRS
+###Modest improvement when using **linear combinations of ancestry-specific** PRS
 
 ```{r, out.width = "630px",echo=FALSE, eval=T}
 knitr::include_graphics("Fig2.png")
@@ -570,6 +692,7 @@ Women's Health Initiative
 Jackson Heart Study
 
 Health and Retirement Study
+
 
 ]]
 
