@@ -231,7 +231,7 @@ right. So what about ancestry?
 ---
 class: center, top
 .pull-left[.full-width[
-## Europeans represent almost 80% of GWAS participants...
+## European **ancestry** represent almost 80% of GWAS participants...
 ```{r, out.width = "350px",echo=FALSE, eval=T}
 knitr::include_graphics("Screen Shot 2020-09-16 at 4.28.04 PM.png")
 ```
@@ -265,7 +265,7 @@ knitr::include_graphics("Screen Shot 2020-09-16 at 2.44.43 PM.png")
 ```
 [Data: https://worldpopulationreview.com/]
 
-## .. and 10% of the world's population
+## .. and <15% of the world's population
 ]]
 
 ???
@@ -419,7 +419,7 @@ dt<-data.table(Data=c('UKBB_eur', 'HRS_EUR','UKBB_afr','WHI_afr', 'JHS_afr', 'HR
 knitr::kable(dt)
 ```
 
-.small[Bitarello & Mathieson (2020), *G3*]
+[.small[Bitarello & Mathieson (2020), *G3*]]
 ]]
 ???
 why height? It's a somehwat well-udnerstood trait. it's hgihly popygenic and easy to measure. It is highly heritable (80% based ont twin studies, about 50% based on SNP heritability)
@@ -440,7 +440,7 @@ knitr::include_graphics("Fig1a.png")
 ```
 
 
-.small[Bitarello & Mathieson (2020), *G3*]
+[.small[Bitarello & Mathieson (2020), *G3*]]
 ---
 class: top, center
 
@@ -465,16 +465,16 @@ $N_{EUR}\sim350,000$
 $$\chi_{diff}^2=\left[\frac{\beta_{eur}-\beta_{afr}}{\sqrt{SE_{eur}^2+SE_{afr}^2}}\right]^2$$
 ]]
 
-.small[Bitarello & Mathieson (2020), *G3*]
+[.small[Bitarello & Mathieson (2020), *G3*]]
 
 ---
-class: top, center
+class: top, left
 ###Using only EUR chunks of each genome
 .pull-left[.full-width[
 ```{r, out.width = "670px",echo=FALSE, eval=T}
 knitr::include_graphics("Fig1b.png")
 ```
-.small[Bitarello & Mathieson (2020), *G3*]
+[.small[Bitarello & Mathieson (2020), *G3*]]
 ]]
 
 .pull-right[.full-width[
@@ -488,16 +488,17 @@ all predictive power comes from European chunks
 
 $k=2$
 
-predictive power is uniformly distributed across the genome
+predictive power is uniformly distributed 
+
+#### **Surprisingly**, this relationship seems to be more like **k=2**
 ]]
 
-
-### **Surprisingly, this relationship seems to be more like k=2**
+Others found that the LOA can be fully recovered by including EUR chunks [Marnetto et al. (2020) *Nat Comms*]
 
 ???
 In both scenarios, mroe Eur ancestry means more data, so of course prediction increases, but while kappa=1 entails that it is the EUr chunks themselves that contribute to this, kappa=2 entails that 
 ---
-class: top, center
+class: top, left
 ### Allele frequency differences explain up to **20%** of **LOA**
 
 .pull-left[.full-width[
@@ -505,13 +506,16 @@ class: top, center
 knitr::include_graphics("Fig4c.png")
 ```
 ]]
+
 .pull-right[.full-width[
 **Additive genetic variance**
+
 $$G_{PRS}=\frac{\sum2f_{i_afr}(1-f_{i, afr})\beta_{i,eur}^2}{\sum2f_{i,eur}(1-f_{i,eur})\beta_{i,eur}^2}$$
 
+[Bitarello & Mathieson (2020), *G3*]
 ]]
 
-Bitarello & Mathieson (2020), *G3*
+
 ---
 class: top, center
 
