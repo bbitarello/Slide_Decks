@@ -28,6 +28,8 @@ knitr::opts_chunk$set(tidy = FALSE, eval = TRUE)
 ```{r xaringan-tile-view, echo=FALSE}
 xaringanExtra::use_tile_view()
 xaringanExtra::use_broadcast()
+#xaringanExtra::use_animate_all("slide_left")
+xaringanExtra::use_animate_css()
 ```
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
