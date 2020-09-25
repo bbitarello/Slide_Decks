@@ -455,15 +455,6 @@ class: center
 ```{r, out.width = "670px",echo=FALSE, eval=T}
 knitr::include_graphics("Fig3b.png")
 ```
-
----
-class:middle, center, inverse
-##.lilac[Differences in] *marginal* .lilac[effect size?]
-#--
-
-# most GWAS variants can be validated in other ancestries
-
-#genetic correlations are high for height
 ---
 class: top, center
 ##Difference in marginal effect sizes *increase* with allele frequency differences across ancestries 
