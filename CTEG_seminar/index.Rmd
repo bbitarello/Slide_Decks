@@ -497,6 +497,7 @@ Others found that the LOA can be fully recovered by including EUR chunks [Marnet
 
 ???
 In both scenarios, mroe Eur ancestry means more data, so of course prediction increases, but while kappa=1 entails that it is the EUr chunks themselves that contribute to this, kappa=2 entails that 
+ On the other hand, if the predictive power were uniformly distributed across the genome, we would expect a quadratic relationship: the partial-R2 of the whole genome (which scales linearly with ancestry) would be multiplied by the proportion of the genome in European ancestry segments (i.e., ancestry). Our observations are intermediate to these extremes (Figure 1B). We conclude that the predictive power of the PRS is enriched in, but does not entirely come from, the European ancestry segments of the admixed genomes, suggesting that the ancestry-specific interactions might play a role.
 ---
 class: top, left
 ### Allele frequency differences explain up to **20%** of **LOA**
