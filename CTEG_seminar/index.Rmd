@@ -273,7 +273,7 @@ class: center, middle, inverse
 this is obviously not ideal and reflects many biases which I don't have time to go into to, but considering the hype i showed about PRS before, how does this affect popygenic risk score predictions?
 ---
 class: center, top
-## PRS accuracy decreases with genetic distance from Europeans
+### PRS accuracy decreases with genetic distance from Europeans
 
 ```{r, out.width = "690px",echo=FALSE, eval=T}
 knitr::include_graphics("Screen Shot 2020-09-16 at 10.26.28 PM.png")
@@ -287,15 +287,17 @@ This figure from Martin et al showes average prediction accuracies for 17 traits
 ---
 class: top,center
 
-## PRS accuracy decreases with genetic distance from Europeans
+### PRS accuracy decreases with genetic distance from Europeans
 ```{r, out.width = "670px",echo=FALSE, eval=T}
 knitr::include_graphics("fig1.png")
 ```
 
 [Wang & Wisscher (2020) *Nat Comms*]
 
+####LOA: loss of accuracy
 ???
 And wang & wisscher recently showed through simulations tat this is expected. On the x axis here you have south asians, east asians and africans, and they axis shows the reltive accuracy, i.e, divided by Eur accuracy. It's expected to decline under a range of genetic architectures. I won't go into this but the different colors here represent different estimators they used. 
+For the remainder of this talk I will use LOA to refer to this loss of accuracy
 #---
 #class: middle, center, inverse
 
@@ -323,7 +325,7 @@ Ideally, we would have diverse GWAS, so that phenotypic prediction would be info
 class: top, center
 
 
-# Many factors may impact prediction accuracy
+## Many factors may influence **LOA**
 .pull-left[.full-width[
 
  causal variants 
@@ -344,17 +346,17 @@ class: top, center
 
 
  **marginal effect sizes**
---
+
 
 
  **LD **
---
+
 
  **site frequency spectrum **
---
+
 
 **phenotypic variance**
---
+
 
 ]]
 
@@ -424,7 +426,7 @@ In the end we looked at about 19,000 individuals with admied ancestry, and 10,00
 we modell height as a function of sex age and eur ancesty and compare that to a mdoel that also includes prs.
 ---
 class: top, center
-##PRS accuracy increases with proportion of European ancestry
+###PRS accuracy **increases** with proportion of European ancestry
 
 ```{r, out.width = "670px",echo=FALSE, eval=T}
 knitr::include_graphics("Fig1a.png")
@@ -433,11 +435,9 @@ knitr::include_graphics("Fig1a.png")
 
 .small[Bitarello & Mathieson (2020), *G3*]
 ---
-class: top, left
+class: top, center
 
-##GWAS from UKBB (AFR) individuals
-
-
+###GWAS from UKBB (AFR) individuals
 
 .pull-left[.full-width[
 ```{r, out.width = "670px",echo=FALSE, eval=T}
@@ -462,7 +462,7 @@ $$\chi_{diff}^2=\left[\frac{\beta_{eur}-\beta_{afr}}{\sqrt{SE_{eur}^2+SE_{afr}^2
 
 ---
 class: top, center
-##Using only EUR chunks of each genome
+###Using only EUR chunks of each genome
 .pull-left[.full-width[
 ```{r, out.width = "670px",echo=FALSE, eval=T}
 knitr::include_graphics("Fig1b.png")
@@ -472,16 +472,16 @@ knitr::include_graphics("Fig1b.png")
 
 .pull-right[.full-width[
 
-$$y=0.15^k$$
+$$y=0.15p_{eur}^k$$
 
 $k=1$ 
 
-all prediction power comes from European chunks
+all predictive power comes from European chunks
 
 
 $k=2$
 
-prediction power is uniformly distributed across the genome
+predictive power is uniformly distributed across the genome
 ]]
 
 
@@ -491,7 +491,7 @@ prediction power is uniformly distributed across the genome
 In both scenarios, mroe Eur ancestry means more data, so of course prediction increases, but while kappa=1 entails that it is the EUr chunks themselves that contribute to this, kappa=2 entails that 
 ---
 class: top, center
-## Allelic Frequency differences explain about 20%
+### Allele frequency differences explain up to **20%** of **LOA**
 
 .pull-left[.full-width[
 ```{r, out.width = "370px",echo=FALSE, eval=T}
@@ -508,7 +508,7 @@ Bitarello & Mathieson (2020), *G3*
 ---
 class: top, center
 
-###**Prediction:** phenotypic variance lower in EUR
+###**Prediction:** variance in phenotype lower in EUR
 
 --
 .pull-left[.full-width[
@@ -538,10 +538,10 @@ knitr::include_graphics("FigureS13.png")
 --
 ###**Observation:** Phenotypic variance does not change with ancestry
 ???
-Gray lines show mean height, and dashed lines show ∓1 sd. In orange, we show the expected sd if it were negatively dependent on European ancestry. In blue, we show the fitted model with variable variance, which is not significantly different from the constant variance model (green). We reject the model (orange line) whereby the phenotypic variance in people with 100% European ancestry is 76% that of people with 0% European ancestry.
+Gray lines show mean height, and dashed lines show ∓1 sd. In orange, we show the expected sd if it were negatively dependent on European ancestry. In green, we show the fitted model with variable variance, which is not significantly different from the constant variance model (gray). We reject the model (orange line) whereby the phenotypic variance in people with 100% European ancestry is 76% that of people with 0% European ancestry.
 ---
 class: top, center
-## Differences in linkage disequilibrium
+### Differences in linkage disequilibrium
 
 ```{r, out.width = "670px",echo=FALSE, eval=T}
 knitr::include_graphics("LD_SCHEMA.png")
@@ -550,7 +550,7 @@ knitr::include_graphics("LD_SCHEMA.png")
 
 ---
 class: top, center
-### **Prediction:** better tagging of causal variants decreases loss-of-accuracy
+### **Prediction:** better tagging of causal variants decreases **LOA**
 --
 
 ```{r, out.width = "570px",echo=FALSE, eval=T}
@@ -559,39 +559,39 @@ knitr::include_graphics("Fig4a.png")
 
 [Bitarello & Mathieson (2020), *G3*]
 
-### **Observation:** Imputation doesn't help
+### **Observation:** Imputation doesn't influence **LOA**
 ---
-class: top, center
-## **Prediction 1:** LOA in Africans is **independent** of LD differences
+class: top, left
+### **Prediction 1:** LOA is **independent** of LD differences
 
 $$Rel_{R2}=\frac{R^2_{bin}}{R^2_{total}}$$
 
 .pull-left[.fix-width[
-```{r, out.width = "570px",echo=FALSE, eval=T}
-knitr::include_graphics("LD_cartoon.001.png")
+```{r, out.width = "700px",echo=FALSE, eval=T}
+knitr::include_graphics("LD_cartoon.001.jpeg")
 ```
 ]]
 .pull-right[.fix-width[
-```{r, out.width = "570px",echo=FALSE, eval=T}
-knitr::include_graphics("LD_cartoon.002.png")
+```{r, out.width = "700px",echo=FALSE, eval=T}
+knitr::include_graphics("LD_cartoon.002.jpeg")
 ```
 ]]
 ###**Similar** slopes
 
 ---
-class: top, center
-## **Prediction 2:** LOA in Africans is **dependent** of LD differences
+class: top, left
+### **Prediction 2:** LOA is **dependent** of LD differences
 
 $$Rel_{R2}=\frac{R^2_{bin}}{R^2_{total}}$$
 
 .pull-left[.fix-width[
 ```{r, out.width = "600px",echo=FALSE, eval=T}
-knitr::include_graphics("LD_cartoon2.001.png")
+knitr::include_graphics("LD_cartoon2.001.jpeg")
 ```
 ]]
 .pull-right[.fix-width[
 ```{r, out.width = "600px",echo=FALSE, eval=T}
-knitr::include_graphics("LD_cartoon2.002.png")
+knitr::include_graphics("LD_cartoon2.002.jpeg")
 ```
 ]]
 ###**Different** slopes
@@ -599,18 +599,26 @@ knitr::include_graphics("LD_cartoon2.002.png")
 ---
 class: top, center
 
+.pull-left[
+
+$$Rel_{R2}=\frac{R^2_{bin}}{R^2_{total}}$$
+]
+
+.pull-right[.fix-width[
+
 ```{r, out.width = "500px",echo=FALSE, eval=T}
 knitr::include_graphics("Fig3b.png")
 ```
 ####Recombination Rate
 
 [Bitarello & Mathieson (2020), *G3*]
+]]
 
-###**Observation:** loss of accuracy is **somewhat** dependent on recombination rate
+###**Observation:** LOA is **somewhat** dependent on recombination rate
 
 ---
-class: top, center
-###**Prediction:** Differences in marginal effect sizes depend on allele frequency differences
+class: top, left
+###**Prediction:** Differences in effect sizes depend on allele frequency differences
  
 .pull-left[.full-width[
 ```{r, out.width = "630px",echo=FALSE, eval=T}
@@ -628,16 +636,16 @@ $$\chi_{diff}^2=\left[\frac{\beta_{eur}-\beta_{afr}}{\sqrt{SE_{eur}^2+SE_{afr}^2
 ]]
 
 
-###**Observation:** Difference in marginal effect sizes **increase** with allele frequency differences across ancestries
+###**Observation:** Difference in effect sizes **increase** with allele frequency differences across ancestries
 ---
 class: center
-##*Assuming* there **are** differences in **marginal** effect sizes
+###*Assuming* there **are** differences in **marginal** effect sizes
 
 
 
 ---
 class: center
-##*Assuming* there **are** differences in **marginal** effect sizes
+###*Assuming* there **are** differences in **marginal** effect sizes
 
 $$PRS_1^{C}=\alpha PRS_{AFR}+(1-\alpha) PRS_{EUR}$$
 Marquez-Luna *et al.* (2018) *Genet Epidem*
@@ -653,27 +661,30 @@ Bitarello & Mathieson (2020), *G3*
 $$PRS_3^{C}= \alpha\left[\sum_{i\in AFR}\beta_{i, afr} G_{i}\right]+(1-\alpha)\left[\sum_{i\in AFR}\beta_{i, eur} G_{i}\right]+\left[\sum_{i\in EUR}\beta_{i, eur} G_{i}\right]$$
 Bitarello & Mathieson (2020), *G3*
 ---
-class: center
+class:left
 ###**Prediction:** Including ancestry-specific effect sizes improves accuracy for admixed individuals
 
+.center[
 ```{r, out.width = "630px",echo=FALSE, eval=T}
 knitr::include_graphics("Fig2.png")
 ```
 
 [Bitarello & Mathieson (2020), *G3*]
 
+
+]
 ###**Observation:** Modest improvement 
 ---
 class:left, top
-##.lilac[Take Home Message]
+##.lilac[Take Home Messages]
 
 --
 
-* LD and SFS impact PRS accuracy across ancestries
+* LD and SFS contribute to **LOA** across ancestries
 
 --
 
-* not enough to explain loss of accuracy
+* not enough to explain entire **LOA**
 
 --
 
@@ -697,6 +708,8 @@ class:left, top
 
 * include more co-variates?
 
+???
+Marginal effect size results suggest there might be something worth looking into there. Perhaps local epistasis or other population-specific phenomena.
 ---
 class: top, center
 # Acknowledgements
@@ -704,19 +717,6 @@ class: top, center
 .pull-left[.full-width[
 
 **Iain Mathieson**
-
-Arslan Zaidi
-
-Dan Ju
-
-Laura Colbran
-
-Samantha Cox
-
-
-]]
-
-.pull-right[.full-width[
 
 Neale Lab
 
@@ -728,22 +728,28 @@ Jackson Heart Study
 
 Health and Retirement Study
 
-
-]]
-
-```{r, out.width = "230px",echo=FALSE, eval=T}
-knitr::include_graphics("tpf_logo_rgb-Facebook.jpg")
-```
-```{r, out.width = "170px",echo=FALSE, eval=T}
-knitr::include_graphics("NIGMS_logo.jpg")
-```
-```{r, out.width = "170px",echo=FALSE, eval=T}
-knitr::include_graphics("PerelmanSchoolofMedicineLogoVertical.png")
-```
-```{r, out.width = "370px",echo=FALSE, eval=T}
+```{r, out.width = "350px",echo=FALSE, eval=T}
 knitr::include_graphics("kaufman-logo-tag.png")
 ```
 
+]]
+.pull-right[.full-width[
+
+
+```{r, out.width = "170px",echo=FALSE, eval=T}
+knitr::include_graphics("PerelmanSchoolofMedicineLogoVertical.png")
+```
+
+```{r, out.width = "210px",echo=FALSE, eval=T}
+knitr::include_graphics("tpf_logo_rgb-Facebook.jpg")
+```
+
+
+
+```{r, out.width = "120px",echo=FALSE, eval=T}
+knitr::include_graphics("NIGMS_logo.jpg")
+```
+]]
 
 ---
 
