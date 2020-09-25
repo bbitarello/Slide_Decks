@@ -566,13 +566,17 @@ class: top, center
 
 $$Rel_{R2}=\frac{R^2_{bin}}{R^2_{total}}$$
 
-
-
-```{r, out.width = "750px",echo=FALSE, eval=T}
-knitr::include_graphics("LD_cartoon.gif")
+.pull-left[.fix-width[
+```{r, out.width = "570px",echo=FALSE, eval=T}
+knitr::include_graphics("LD_cartoon.001.png")
 ```
-
-###Similar slopes
+]]
+.pull-right[.fix-width[
+```{r, out.width = "570px",echo=FALSE, eval=T}
+knitr::include_graphics("LD_cartoon.002.png")
+```
+]]
+###**Similar** slopes
 
 ---
 class: top, center
@@ -580,12 +584,17 @@ class: top, center
 
 $$Rel_{R2}=\frac{R^2_{bin}}{R^2_{total}}$$
 
-
-```{r, out.width = "750px",echo=FALSE, eval=T}
-knitr::include_graphics("LD_cartoon2.gif")
+.pull-left[.fix-width[
+```{r, out.width = "600px",echo=FALSE, eval=T}
+knitr::include_graphics("LD_cartoon2.001.png")
 ```
-
-###Different slopes
+]]
+.pull-right[.fix-width[
+```{r, out.width = "600px",echo=FALSE, eval=T}
+knitr::include_graphics("LD_cartoon2.002.png")
+```
+]]
+###**Different** slopes
 
 ---
 class: top, center
@@ -655,7 +664,8 @@ knitr::include_graphics("Fig2.png")
 
 ###**Observation:** Modest improvement 
 ---
-##Take Home Message
+class:left, top
+##.lilac[Take Home Message]
 
 --
 
