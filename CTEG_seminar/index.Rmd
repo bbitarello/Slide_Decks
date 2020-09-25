@@ -62,7 +62,10 @@ style_duo_accent(primary_color = "#7294D4",
   pink = "#E6A0C4",
   cornflowerblue = "#7294D4",
   weirdbrown = "#D8A499",
-  lilac="#C6CDF7"
+  lilac="#C6CDF7",
+  gray="#8D8680",
+  green="#78B7C5",
+  orange="#F2AD00"
 )
 )
 
@@ -476,7 +479,7 @@ $k=1$
 all prediction power comes from European chunks
 
 
-$\kappa=2:$
+$\kappa=2$
 
 prediction power is randomly scattered across the genome
 ]]
@@ -505,19 +508,37 @@ Bitarello & Mathieson (2020), *G3*
 ---
 class: top, center
 
-###**Phenotypic** variance does not change with ancestry
+###**Prediction:** phenotypic variance lower in EUR
 
+--
 .pull-left[.full-width[
 genome-wide genetic variance in EUR is $\sim 76\%$ of that in AFR
+
+$$height\sim Sex+Age+ Age^2+p_{eur}$$
+
+Variable variance model:
 $$y=\mu+\beta p_{j, eur}+\epsilon; \epsilon_{j}\sim N(0,\delta ^2  + \gamma p_{j, eur})$$
+
+####.gray[Mean+1 1sd, constant variance]
+
+####.green[fitted, variable variance]
+
+####.orange[model, variance in phenotypic variance is 100% in AFR and 76% in EUR]
 ]]
+
+
 .pull-right[.full-width[
-```{r, out.width = "470px",echo=FALSE, eval=T}
-knitr::include_graphics("pheno_var.png")
+```{r, out.width = "390px",echo=FALSE, eval=T}
+knitr::include_graphics("FigureS13.png")
 ```
 
 [Bitarello & Mathieson (2020), *G3*]
 ]]
+
+--
+###**Observation:** Phenotypic variance does not change with ancestry
+???
+Gray lines show mean height, and dashed lines show ∓1 sd. In orange, we show the expected sd if it were negatively dependent on European ancestry. In blue, we show the fitted model with variable variance, which is not significantly different from the constant variance model (green). We reject the model (orange line) whereby the phenotypic variance in people with 100% European ancestry is 76% that of people with 0% European ancestry.
 ---
 class: top, center
 ## Differences in linkage disequilibrium
@@ -529,7 +550,7 @@ knitr::include_graphics("LD_SCHEMA.png")
 
 ---
 class: top, center
-### **Prediction:** better tagging of causal variants should decrease loss-of-accuracy(LOA)
+### **Prediction:** better tagging of causal variants decreases loss-of-accuracy
 --
 
 ```{r, out.width = "570px",echo=FALSE, eval=T}
@@ -541,47 +562,49 @@ knitr::include_graphics("Fig4a.png")
 ### **Observation:** Imputation doesn't help
 ---
 class: top, center
-## Prediction: 
+## **Prediction 1:** LOA in Africans is **independent** of LD differences
 
 $$Rel_{R2}=\frac{R^2_{bin}}{R^2_{total}}$$
 
-.pull-left[.full-width[
-```{r, out.width = "670px",echo=FALSE, eval=T}
-knitr::include_graphics("Screen Shot 2020-09-16 at 4.28.28 PM.png")
-```
-]]
 
---
-.pull-right[.full-width[
-```{r, out.width = "670px",echo=FALSE, eval=T}
-knitr::include_graphics("Screen Shot 2020-09-16 at 4.28.34 PM.png")
+
+```{r, out.width = "750px",echo=FALSE, eval=T}
+knitr::include_graphics("LD_cartoon.gif")
 ```
 
-]]
+###Similar slopes
+
 ---
-class: center
-.pull-left[.full-width[
+class: top, center
+## **Prediction 2:** LOA in Africans is **dependent** of LD differences
 
 $$Rel_{R2}=\frac{R^2_{bin}}{R^2_{total}}$$
-]]
 
-.pull-right[.full-width[
-```{r, out.width = "580px",echo=FALSE, eval=T}
+
+```{r, out.width = "750px",echo=FALSE, eval=T}
+knitr::include_graphics("LD_cartoon2.gif")
+```
+
+###Different slopes
+
+---
+class: top, center
+
+```{r, out.width = "500px",echo=FALSE, eval=T}
 knitr::include_graphics("Fig3b.png")
 ```
 ####Recombination Rate
 
 [Bitarello & Mathieson (2020), *G3*]
 
-]]
-
 ###**Observation:** loss of accuracy is **somewhat** dependent on recombination rate
 
 ---
 class: top, center
-##Difference in marginal effect sizes **increases** with allele frequency differences across ancestries 
+###**Prediction:** Differences in marginal effect sizes depend on allele frequency differences
+ 
 .pull-left[.full-width[
-```{r, out.width = "670px",echo=FALSE, eval=T}
+```{r, out.width = "630px",echo=FALSE, eval=T}
 knitr::include_graphics("Fig5b.png")
 ```
 [Bitarello & Mathieson (2020), *G3*]
@@ -593,10 +616,10 @@ $N_{AFR}\sim8,800$
 $N_{EUR}\sim350,000$
 
 $$\chi_{diff}^2=\left[\frac{\beta_{eur}-\beta_{afr}}{\sqrt{SE_{eur}^2+SE_{afr}^2}}\right]^2$$
-
-
-
 ]]
+
+
+###**Observation:** Difference in marginal effect sizes **increase** with allele frequency differences across ancestries
 ---
 class: center
 ##*Assuming* there **are** differences in **marginal** effect sizes
@@ -622,13 +645,15 @@ $$PRS_3^{C}= \alpha\left[\sum_{i\in AFR}\beta_{i, afr} G_{i}\right]+(1-\alpha)\l
 Bitarello & Mathieson (2020), *G3*
 ---
 class: center
-###Modest improvement when using **linear combinations of ancestry-specific** PRS
+###**Prediction:** Including ancestry-specific effect sizes improves accuracy for admixed individuals
 
 ```{r, out.width = "630px",echo=FALSE, eval=T}
 knitr::include_graphics("Fig2.png")
 ```
 
 [Bitarello & Mathieson (2020), *G3*]
+
+###**Observation:** Modest improvement 
 ---
 ##Take Home Message
 

@@ -423,7 +423,7 @@ class: top, center
 all prediction power comes from European chunks
 
 
-`\(\kappa=2:\)`
+`\(\kappa=2\)`
 
 prediction power is randomly scattered across the genome
 ]]
@@ -450,17 +450,35 @@ Bitarello &amp; Mathieson (2020), *G3*
 ---
 class: top, center
 
-###**Phenotypic** variance does not change with ancestry
+###**Prediction:** phenotypic variance lower in EUR
 
+--
 .pull-left[.full-width[
 genome-wide genetic variance in EUR is `\(\sim 76\%\)` of that in AFR
+
+`$$height\sim Sex+Age+ Age^2+p_{eur}$$`
+
+Variable variance model:
 `$$y=\mu+\beta p_{j, eur}+\epsilon; \epsilon_{j}\sim N(0,\delta ^2  + \gamma p_{j, eur})$$`
+
+####.gray[Mean+1 1sd, constant variance]
+
+####.green[fitted, variable variance]
+
+####.orange[model, variance in phenotypic variance is 100% in AFR and 76% in EUR]
 ]]
+
+
 .pull-right[.full-width[
-&lt;img src="pheno_var.png" width="470px" /&gt;
+&lt;img src="FigureS13.png" width="390px" /&gt;
 
 [Bitarello &amp; Mathieson (2020), *G3*]
 ]]
+
+--
+###**Observation:** Phenotypic variance does not change with ancestry
+???
+Gray lines show mean height, and dashed lines show ∓1 sd. In orange, we show the expected sd if it were negatively dependent on European ancestry. In blue, we show the fitted model with variable variance, which is not significantly different from the constant variance model (green). We reject the model (orange line) whereby the phenotypic variance in people with 100% European ancestry is 76% that of people with 0% European ancestry.
 ---
 class: top, center
 ## Differences in linkage disequilibrium
@@ -470,7 +488,7 @@ class: top, center
 
 ---
 class: top, center
-### **Prediction:** better tagging of causal variants should decrease loss-of-accuracy(LOA)
+### **Prediction:** better tagging of causal variants decreases loss-of-accuracy
 --
 
 &lt;img src="Fig4a.png" width="570px" /&gt;
@@ -480,41 +498,43 @@ class: top, center
 ### **Observation:** Imputation doesn't help
 ---
 class: top, center
-## Prediction: 
+## **Prediction 1:** LOA in Africans is **independent** of LD differences
 
 `$$Rel_{R2}=\frac{R^2_{bin}}{R^2_{total}}$$`
 
-.pull-left[.full-width[
-&lt;img src="Screen Shot 2020-09-16 at 4.28.28 PM.png" width="670px" /&gt;
-]]
 
---
-.pull-right[.full-width[
-&lt;img src="Screen Shot 2020-09-16 at 4.28.34 PM.png" width="670px" /&gt;
 
-]]
+&lt;img src="LD_cartoon.gif" width="750px" /&gt;
+
+###Similar slopes
+
 ---
-class: center
-.pull-left[.full-width[
+class: top, center
+## **Prediction 2:** LOA in Africans is **dependent** of LD differences
 
 `$$Rel_{R2}=\frac{R^2_{bin}}{R^2_{total}}$$`
-]]
 
-.pull-right[.full-width[
-&lt;img src="Fig3b.png" width="580px" /&gt;
+
+&lt;img src="LD_cartoon2.gif" width="750px" /&gt;
+
+###Different slopes
+
+---
+class: top, center
+
+&lt;img src="Fig3b.png" width="500px" /&gt;
 ####Recombination Rate
 
 [Bitarello &amp; Mathieson (2020), *G3*]
-
-]]
 
 ###**Observation:** loss of accuracy is **somewhat** dependent on recombination rate
 
 ---
 class: top, center
-##Difference in marginal effect sizes **increases** with allele frequency differences across ancestries 
+###**Prediction:** Differences in marginal effect sizes depend on allele frequency differences
+ 
 .pull-left[.full-width[
-&lt;img src="Fig5b.png" width="670px" /&gt;
+&lt;img src="Fig5b.png" width="630px" /&gt;
 [Bitarello &amp; Mathieson (2020), *G3*]
 ]]
 .pull-right[.full-width[
@@ -524,10 +544,10 @@ class: top, center
 `\(N_{EUR}\sim350,000\)`
 
 `$$\chi_{diff}^2=\left[\frac{\beta_{eur}-\beta_{afr}}{\sqrt{SE_{eur}^2+SE_{afr}^2}}\right]^2$$`
-
-
-
 ]]
+
+
+###**Observation:** Difference in marginal effect sizes **increase** with allele frequency differences across ancestries
 ---
 class: center
 ##*Assuming* there **are** differences in **marginal** effect sizes
@@ -553,11 +573,13 @@ Bitarello &amp; Mathieson (2020), *G3*
 Bitarello &amp; Mathieson (2020), *G3*
 ---
 class: center
-###Modest improvement when using **linear combinations of ancestry-specific** PRS
+###**Prediction:** Including ancestry-specific effect sizes improves accuracy for admixed individuals
 
 &lt;img src="Fig2.png" width="630px" /&gt;
 
 [Bitarello &amp; Mathieson (2020), *G3*]
+
+###**Observation:** Modest improvement 
 ---
 ##Take Home Message
 

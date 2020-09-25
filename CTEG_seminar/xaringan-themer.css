@@ -63,6 +63,9 @@
   --cornflowerblue: #7294D4;
   --weirdbrown: #D8A499;
   --lilac: #C6CDF7;
+  --gray: #8D8680;
+  --green: #78B7C5;
+  --orange: #F2AD00;
 }
 
 html {
@@ -285,5 +288,23 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 }
 .bg-lilac {
   background-color: var(--lilac);
+}
+.gray {
+  color: var(--gray);
+}
+.bg-gray {
+  background-color: var(--gray);
+}
+.green {
+  color: var(--green);
+}
+.bg-green {
+  background-color: var(--green);
+}
+.orange {
+  color: var(--orange);
+}
+.bg-orange {
+  background-color: var(--orange);
 }
 
