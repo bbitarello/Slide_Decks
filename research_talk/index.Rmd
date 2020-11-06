@@ -1,0 +1,724 @@
+---
+title: "Genetic diversity in humans: evolutionary and medical perspectives"
+subtitle: "Research Talk"
+author: "Bárbara Domingues Bitarello"
+institute: "Perelman School of Medicine, University of Pennsylvania"
+output:
+  xaringan::moon_reader:
+    seal: false
+    transition: slide
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: 16:9
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>`
+ 
+---
+class: center, middle
+<style>
+.remark-slide-number {
+  position: inherit;
+}
+
+.remark-slide-number .progress-bar-container {
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  display: block;
+  left: 0;
+  right: 0;
+}
+
+.remark-slide-number .progress-bar {
+  height: 100%;
+  background-color: gray;
+}
+</style>
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+library(shiny)
+library(ggplot2)
+library(data.table)
+library(scales)
+library(xaringanExtra)
+knitr::opts_chunk$set(tidy = FALSE, eval = TRUE)
+```
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+xaringanExtra::use_broadcast()
+#xaringanExtra::use_animate_all("slide_left")
+xaringanExtra::use_animate_css()
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+#xaringanthemer::style_duo_accent(primary_color = "#D8A499",secondary_color = "#7294D4")
+wes_palettes <- list(
+  BottleRocket1 = c("#A42820", "#5F5647", "#9B110E", "#3F5151", "#4E2A1E", "#550307", "#0C1707"),
+  BottleRocket2 = c("#FAD510", "#CB2314", "#273046", "#354823", "#1E1E1E"),
+  Rushmore1 = c("#E1BD6D", "#EABE94", "#0B775E", "#35274A" ,"#F2300F"),
+  Rushmore = c("#E1BD6D", "#EABE94", "#0B775E", "#35274A" ,"#F2300F"),
+  Royal1 = c("#899DA4", "#C93312", "#FAEFD1", "#DC863B"),
+  Royal2 = c("#9A8822", "#F5CDB4", "#F8AFA8", "#FDDDA0", "#74A089"),
+  Zissou1 = c("#3B9AB2", "#78B7C5", "#EBCC2A", "#E1AF00", "#F21A00"),
+  Darjeeling1 = c("#FF0000", "#00A08A", "#F2AD00", "#F98400", "#5BBCD6"),
+  Darjeeling2 = c("#ECCBAE", "#046C9A", "#D69C4E", "#ABDDDE", "#000000"),
+  Chevalier1 = c("#446455", "#FDD262", "#D3DDDC", "#C7B19C"),
+  FantasticFox1 = c("#DD8D29", "#E2D200", "#46ACC8", "#E58601", "#B40F20"),
+  Moonrise1 = c("#F3DF6C", "#CEAB07", "#D5D5D3", "#24281A"),
+  Moonrise2 = c("#798E87", "#C27D38", "#CCC591", "#29211F"),
+  Moonrise3 = c("#85D4E3", "#F4B5BD", "#9C964A", "#CDC08C", "#FAD77B"),
+  Cavalcanti1 = c("#D8B70A", "#02401B", "#A2A475", "#81A88D", "#972D15"),
+  GrandBudapest1 = c("#F1BB7B", "#FD6467", "#5B1A18", "#D67236"),
+  GrandBudapest2 = c("#E6A0C4", "#C6CDF7", "#D8A499", "#7294D4"),
+  IsleofDogs1 = c("#9986A5", "#79402E", "#CCBA72", "#0F0D0E", "#D9D0D3", "#8D8680"),
+  IsleofDogs2 = c("#EAD3BF", "#AA9486", "#B6854D", "#39312F", "#1C1718")
+)
+
+style_duo_accent(primary_color = "#7294D4", 
+          secondary_color = "#D8A499",
+          text_bold_color = "#E6A0C4",
+          title_slide_text_color = "#C6CDF7",
+          title_slide_background_color = "#D8A499",
+          text_font_size=2,
+          header_font_google = google_font("Josefin Sans"),
+          text_font_google   = google_font("Montserrat", "300", "300i"),
+          code_font_google   = google_font("Fira Mono"),
+          colors = c(
+  pink = "#E6A0C4",
+  cornflowerblue = "#7294D4",
+  weirdbrown = "#D8A499",
+  lilac="#C6CDF7",
+  gray="#8D8680",
+  green="#78B7C5",
+  orange="#F2AD00"
+)
+)
+extra_css <- list(
+  ".small" = list("font-size" = "90%"),
+  ".large" = list("font-size" = "120%"),
+  ".LARGE" = list("font-size" = "150%"),
+  ".full-width" = list(
+    display = "flex",
+    width   = "100%",
+    flex    = "1 1 auto"
+  )
+)
+
+```
+
+# .pink[Genetic diversity in humans: evolutionary and medical perspectives]
+
+### .lilac[Research Talk]
+
+### .lilac[Bárbara Domingues Bitarello]
+
+
+---
+
+# .center[Outline]
+
+## 1. .pink[Introduction]
+
+## 2. .lilac[Research Theme 1: Balancing selection in humans]
+
+## 3. .lilac[Research Theme 2: Polygenic risk prediction for individuals with non-European ancestry] 
+
+## 4. .lilac[Conclusions & Future Directions]
+
+---
+class: center, top
+
+## My research
+```{r, out.width = "980px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.001.png")
+```
+
+---
+class: center, top
+
+## Hominin genomics
+```{r, out.width = "1000px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.002.png")
+```
+
+---
+class: center, top
+
+## Comparative genomics
+```{r, out.width = "980px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.003.png")
+```
+---
+class: center, top
+
+## Population genomics
+```{r, out.width = "1000px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.004.png")
+```
+---
+
+class: center, top
+
+## Genomic functional categories
+```{r, out.width = "1000px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.008.png")
+```
+---
+class: center, top
+
+## Great Apes
+```{r, out.width = "1000px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.005.png")
+```
+---
+class: center, top
+
+## Human expansion
+```{r, out.width = "980px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.006.png")
+```
+---
+class: center, top
+
+## Processes that shape genomic diversity
+```{r, out.width = "910px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.007.png")
+```
+---
+# .center[Outline]
+
+## 1. .lilac[Introduction]
+
+## 2. .pink[Research Theme 1: Balancing selection in humans]
+
+## 3. .lilac[Research Theme 2: Polygenic risk prediction for individuals with non-European ancestry] 
+
+## 4. .lilac[Conclusions & Future Directions]
+---
+class: center, top
+
+## Balancing selection: an umbrella term 
+
+```{r, out.width = "970px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.009.png")
+```
+
+---
+class: center, top
+## MHC/HLA: an extreme instance of balancing selection
+
+```{r, out.width = "1000px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.010.png")
+```
+
+---
+class: center, top
+## MHC/HLA: an extreme instance of balancing selection
+
+```{r, out.width = "900px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.011.png")
+```
+
+---
+class: center, top
+
+```{r, out.width = "1000px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.012.png")
+```
+
+---
+class: inverse, center, middle
+
+
+### .lilac[How prevalent has balancing selection been throughout human evolution?]
+
+---
+class:left, top
+
+## Genomic "signatures" of balancing selection
+
+```{r, out.width = "1000px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.013.png")
+```
+
+---
+class:left, top
+## A novel method to detect signatures of balancing selection
+```{r, out.width = "900px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.014.png")
+```
+---
+```{r, out.width = "1000px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.015.png")
+```
+---
+```{r, out.width = "1000px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.016.png")
+```
+---
+class:left, top
+# .center[Outline]
+
+## 1. .lilac[Introduction]
+
+## 2. .lilac[Research Theme 1: Balancing selection in humans]
+
+## 3. .pink[Research Theme 2: Polygenic risk prediction for individuals with non-European ancestry] 
+
+## 4. .lilac[Conclusions & Future Directions]
+
+???
+As hinted by this last slide, genetics is more complicated than simply 'good variants' get selected. Maladaptive variants can get fixated because of genetic drift, other variants can be good in certain situations but not others. So this is a good way to shift into the next topic of research, which revolves around disease risk prediction
+---
+class: center, top
+## Genome-wide association studies (GWAS)
+
+```{r, out.width = "970px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.020.png")
+```
+
+???
+How are associated variants detected? Introducing: the GWAS. 
+
+---
+class:center, top
+##**Many** variants with **small** effect size
+
+.pull-left[.full-width[
+```{r, out.width = "600px",echo=FALSE, eval=T}
+knitr::include_graphics("tam_et_al_2019_2.png")
+```
+
+[Tam et al. (2019) *Nat Rev Genet*]
+]]
+
+.pull-right[.full-width[
+
+ rare, monogenic diseases/traits:
+ 
+ phenylketonuria, sickle-cell anemia, Duchenne muscular dystrophia
+
+complex, common diseases/traits: 
+
+cardiovascular  disease, T2 Diabetes, cancers, *height*, BMI
+]]
+???
+A picture that has emerged from human genetics from a biomedical standpoint is that most genomic variants (or polymorphisms) that have a statistically significant association with a disease or trait are somewhat common (appreciable frequencies) and have a realtively small 'effect size'. On the other hand, what you may have learned as monogenic diseases/traits, such as muscualr distrofia
+
+This results in the landscape of polygenic traits to look something like we see on the right: GWAS are mostly successful at capturing variants between these two diagonal lines: common, with moderate or small effect variants, and some rare but highly penetrant mutations, that is, that have a considerable effect size.
+Rare variants with small effect sizes are difficult to identify using GWAS, and common variants with large effects are unusual for common complex diseases
+class: inverse, center, middle
+# .lilac[Combined, they explain a lot!]
+???
+
+So you might be thinking this is bad news in terms of predicting outcomes. So although most of these variants we detect in genome-wide association studies have very small effect, when you add them up, they explain quite a lot of the variation in a trait.
+---
+class: middle, center
+# Some examples
+
+```{r, echo=F}
+dt2<-data.table(Phenotype=c('height', 'schizophrenia', 'ADHD', 'breast cancer', 'cardiovascular disease (CAD)'), Statistic=c(rep('R-squared',3), rep('AUC',2)), Value=round(c(25,7,5.5,60,81),1), Variants=c(3000,100,100,1000,6000))
+knitr::kable(dt2)
+```
+
+
+### PS: for **Europeans** ancestry only...
+
+???
+
+To mention a few examples, height is one of the most well-studied and most polygenic traits we know of. So far more than 3,000 independently associated variants have been uncovered through GWAS and together they explain about 25% of variation in height as show by linear regression models. For schizophrenia and ADHD, those values are between 5.5-7%. That might seem low, but actually it isn't if you think about this...
+---
+class: center, top
+
+## Polygenic risk scores add up those small effects
+.pull-left[.full-width[
+```{r, out.width = "650px",echo=FALSE, eval=T}
+
+knitr::include_graphics("gwas_schema_pasaniuc_price.png")
+```
+
+.small[Pasaniuc & Price (2017), *Nat Rev Genet*]
+
+
+]]
+
+.pull-right[.full-width[
+
+
+
+
+$$PRS=\sum_{i=1}^{m} \hat\beta_{i} G_{j,i}$$ 
+
+
+$\hat\beta$ : effect size (from GWAS)
+
+$G$ : Effect allele dosage
+
+$j$: Individuals
+
+$i$: SNPs
+
+**independence**
+
+**additive model**
+
+]]
+
+
+???
+So you did a GWAS for height. Then, for each variant in the genome you have something like this: the genotype in that locus has an effect on height, and can be modelled as a linear relationship. So you have an effect size for one allele in that locus, which is a correlation between the phenotype and the genotype. 
+
+Then you make some assumptions about independence of these loci and that an additive model is appropriate and you have this polygenic score, which is a weighted sum of the genotypes in an individuals. Weighted by the effect sizes.
+---
+class: top, center
+# PRSs are appealing
+
+.pull-left[.full-width[
+## **easy**
+
+## **promising**
+
+## **fast**
+
+## **minimal requirements**
+]]
+.pull-right[.full-width[
+```{r, out.width = "460px",echo=FALSE, eval=T}
+knitr::include_graphics("cad.png")
+```
+[Khera et al (2018) Nat Genet]
+]]
+
+???
+So as you can see from this, PRS are very appealing...They are easy and simple to implement, all you need are some summary statistics from a GWAS, and no further complicated modeling.
+
+Here is one promising example. The x axis shows the percentile of polygenic score. And the y axis shows the pravalence of CAD. IF we look at the highest bins of PRS, prevalance of CAD is 10%. These individuals have a 8-fold increase of CAD compared to the rest of the population. This makes the PRS able to find 20-fold mroe people at risk for CAD than if you were simply testing for large effect mutations, which have large effect but are rare.
+There are a few other examples like this sofar for breast cancer for instance.
+The main point I want to emphasize is...This is for individuals with European ancestry.
+
+---
+class: middle, center, inverse
+
+# .lilac[What about ancestry?]
+
+???
+right. So what about ancestry?
+---
+class: center, top
+.pull-left[.full-width[
+## European **ancestry** represent almost 80% of GWAS participants...
+```{r, out.width = "350px",echo=FALSE, eval=T}
+knitr::include_graphics("Screen Shot 2020-09-16 at 4.28.04 PM.png")
+```
+
+[Sirugo, Williams & Tishkoff (2019) *Cell*]]]
+--
+.pull-left[.full-width[
+
+```{r, echo=FALSE, eval=T, out.width = "420px"}
+world<-fread('~/Downloads/csvData.csv')
+#library(plotly)
+blank_theme <- theme_minimal()+
+  theme(
+  axis.title.x = element_blank(),
+  axis.title.y = element_blank(),
+  panel.border = element_blank(),
+  panel.grid=element_blank(),
+  axis.ticks = element_blank(),
+  plot.title=element_text(size=14, face="bold")
+  )
+bp<- ggplot(world, aes(x="", y=WorldPop, fill=Name))+
+geom_bar(width = 1, stat = "identity") + coord_polar("y", start=0)+ 
+  scale_fill_manual(values=c("red","#E6A0C4","#7294D4", "#999999","#899DA4","#A2A475")) + blank_theme +
+  theme(axis.text.x=element_blank()) + 
+  geom_text(aes(y=c(0.9,0.4,0.17, 0.10, 0.05, 0.025), label=paste0((c(0.1720, 0.5954, 0.0959, 0.0473,0.0055, 0.0553)*100), "%")), size=c(6,6,6,6,2,3))
+ 
+print(bp)
+```
+```{r, out.width = "650px",echo=FALSE, eval=F}
+knitr::include_graphics("Screen Shot 2020-09-16 at 2.44.43 PM.png")
+```
+[Data: https://worldpopulationreview.com/]
+
+## .. and <15% of the world's population
+]]
+
+???
+Ok, so let's look at this pie chart from last year, with the proportion of individuals from Each of these groups of ancestry that appear in GWAS. Europeans make up almost 80%, Asians about 20% and Africans about 2%. Note that this is a big improvement since 2009. The same survey in 2009 showed that 96% of individuals were European!
+
+Anyway, now look at this pie chart on the right, which I made from data from worldpopulationreview for 2020. Now, the colors are not a true match, but I did my best. BEar in mind that the plot on the left is about ancestry, and the one on the right is about continents, regardless of ancestry. Nevertheless, it's a reasonable approximation for this purpose. Europeans in Blue represent a disproportionate amount of GWAS participants especially if you consider their share of the world's population. Asian POPULATION represent 60% of the world and ASIAN ANCESTRY only 10% of GWAS, and African POPULATION 17 and AND AFRICAN ANCESTRY 2%. Not to mention the other ancestries which are virtually non-existent.
+---
+class: center, middle, inverse
+# .lilac[How does PRS accuracy transfer across ancestries?]
+
+???
+this is obviously not ideal and reflects many biases which I don't have time to go into to, but considering the hype i showed about PRS before, how does this affect popygenic risk score predictions?
+---
+class: center, top
+### PRS accuracy decreases with genetic distance from Europeans
+
+```{r, out.width = "690px",echo=FALSE, eval=T}
+knitr::include_graphics("Screen Shot 2020-09-16 at 10.26.28 PM.png")
+```
+
+[Martin et al. (2019) *Nat Genet*]
+
+???
+Over the past two years or so a few papers have come out showing that prediction accuracy from PRS decreases with genetic distance from Europeans.
+This figure from Martin et al showes average prediction accuracies for 17 traits, using GWAS summary statisticas derived from 100% European cohorts. I am not sure what american means?
+---
+class: middle, center, inverse
+
+
+## .lilac[Why is this loss of prediction observed?]
+
+##.lilac[What can we do about it?]
+
+???
+What about empirically? What does this look like?
+Ideally, we would have diverse GWAS, so that phenotypic prediction would be informed by ancestry background. But as I showed, that's far from being the case. So what can we do.
+---
+
+class: top,middle
+## Many factors may influence this loss of accuracy
+.pull-left[.full-width[
+
+ ### .pink[different causal variants]
+
+
+
+ ### .pink[local selection]
+
+
+
+ ### .pink[gene-gene interactions]
+
+
+ ### .pink[gene-environment interactions]
+]]
+
+.pull-right[.full-width[
+
+
+
+ ### .pink[effect sizes]
+
+
+
+ ### .pink[linkage disequilibrium]
+
+
+ ### .pink[allele frequencies]
+
+
+ ### .pink[phenotypic variance]
+
+
+]]
+
+???
+Many factors can affect PRS prediction accuracy. Causal variants might actually differ to some extent accross ancestries. There might have been local selection in some populations but not others. There might be population-specifc gene-gene and gene-E interactions.
+
+Also, marginal effect sizes might differ for a number of reasons, and we know that LD patters and SFS patterns differ across ancestries and can impact this RA. Finally, phenotypic variance might actually differ. So in my work taht I am about to show you, I explored these factors highlighted here.
+--
+
+### These factors are not mutually exclusive!
+
+---
+class: middle, center
+
+
+### How do these .pink[different factors] affect prediction accuracy?
+### Can we .pink[leverage ancestry] into the PRS and improve predictions?
+
+???
+So the quesitons that motivated this work were:
+---
+class: middle, center
+
+# .lilac[Let's look at] height
+???
+We chose to look at height in individuals with Eur, afr and admixed ancestry.
+
+---
+class:  top, center
+##Ancestry as a **continuous** variable
+
+.pull-left[.full-width[
+
+#### highly polygenic
+
+#### many cohorts phenotyped
+
+#### large GWAS (UKBB] $\sim$ 360,000 **Europeans**
+
+$height\sim Sex+Age+ Age^2+p_{eur}$
+
+$height\sim Sex+Age+ Age^2+p_{eur}+PRS$
+]
+
+.pull-right[.full-width[
+#### European + African ancestry
+
+```{r, include=FALSE}
+library(data.table)
+library(kableExtra)
+dt<-data.table(Data=c('UKBB_eur', 'HRS_EUR','UKBB_afr','WHI_afr', 'JHS_afr', 'HRS_afr'), Ancestry=c('European', 'European','African + European', 'African American', 'African American', 'African American'), N=c(9998, 10159, 8700,6863, 1773,2251), Number_SNPs=c(685475,1511742,685475,741983,702685,1511742))
+```
+```{r, echo=F}
+knitr::kable(dt)
+```
+
+
+]]
+???
+why height? It's a somehwat well-udnerstood trait. it's hgihly popygenic and easy to measure. It is highly heritable (80% based ont twin studies, about 50% based on SNP heritability)
+
+So in this work we used GWAS summary statistics for height from a cohort of 360K europeans from the UK biobank. And we verified how well we could predicti height in individuals with different degrees of african ancestry.
+
+Importantly, unlike most studies, we consdierted ancestry as a continuous variable. So each individuals we analysed had a "proportion of Eur ancestry" inferred by local ancestry inference and averaged across the genome.
+
+In the end we looked at about 19,000 individuals with admied ancestry, and 10,000 with eur ancestry from different cohorts.
+
+we modell height as a function of sex age and eur ancesty and compare that to a mdoel that also includes prs.
+---
+class:left, top
+
+```{r, out.width = "1200px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.022.png")
+```
+
+---
+class:left, top
+
+```{r, out.width = "1200px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.021.png")
+```
+
+---
+class:left, top
+# .center[Outline]
+
+## 1. .lilac[Introduction]
+
+## 2. .lilac[Research Theme 1: Balancing selection in humans]
+
+## 3. .lilac[Research Theme 2: Polygenic risk prediction for individuals with non-European ancestry] 
+
+## 4. .pink[Conclusions & Future Directions]
+---
+## Recap
+
+* Support for divergent allele advantage model in HLA antigen recognition site evolution
+
+* Balancing selection has been more common than previously thought in humans 
+  
+  - about 1/3 of target genes are immune-related
+  - mostly targeted coding regions
+  - testis expressed genes, reproductive genes, defense genes
+
+* Polygenic risk scores have very little use for individuals with non-European ancestry
+  - bigger, more diverse GWAS
+  - methods
+  - understand environment effects
+
+---
+class:left, top
+
+
+```{r, out.width = "1000px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.019.png")
+```
+---
+class: right, top
+```{r, out.width = "1200px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.017.png")
+```
+
+---
+class: right, top
+
+```{r, out.width = "1000px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.018.png")
+```
+---
+class: right, top
+
+```{r, out.width = "1000px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.019.png")
+```
+---
+class: top, center
+# Acknowledgements
+
+.pull-left[.full-width[
+
+**Iain Mathieson**
+
+**Diogo Meyer**
+
+**Aida Andrés**
+
+Joshua Schmidt
+
+Cesare de Filippo
+
+Rodrigo dos Santos Francisco
+
+Débora Brandt
+
+]]
+
+.pull-right[.full-width[
+Neale Lab
+
+UK Biobank
+
+Women's Health Initiative
+
+Jackson Heart Study
+
+Health and Retirement Study
+
+1000 Genomes Project
+]]
+
+
+```{r, out.width = "260px",echo=FALSE, eval=T}
+knitr::include_graphics("kaufman-logo-tag.png")
+```
+```{r, out.width = "200px",echo=FALSE, eval=T}
+knitr::include_graphics("fapesp-logo.jpg")
+```
+```{r, out.width = "150px",echo=FALSE, eval=T}
+knitr::include_graphics("PerelmanSchoolofMedicineLogoVertical.png")
+```
+```{r, out.width = "180px",echo=FALSE, eval=T}
+knitr::include_graphics("tpf_logo_rgb-Facebook.jpg")
+```
+```{r, out.width = "100px",echo=FALSE, eval=T}
+knitr::include_graphics("NIGMS_logo.jpg")
+```
+
+
+---
+
+class: inverse,center, middle
+
+# .lilac[Thank you!]
+
+# .lilac[Questions?]
+
+
+
+

@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="http://1000genomes.kr/jquery-3.4.1.min.js"></script>
+
+	<link href="http://1000genomes.kr/bootstrap-4.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!--<link href="bootstrap-3.3.2-dist/css/navbar-fixed-top.css" rel="stylesheet">-->
+
+	<title>Korea1K</title>
+	<style type="text/css">
+		body {line-height: 2em}
+		hr { border-top:1px solid #9C9C9C; border-bottom:1px solid #F6F6F6; }
+	</style>
+</head>
+<body>
+<style type="text/css">
+a:hover{font-weight:bold;};
+body
+{
+	font-family: "돋움", dotum, "굴림", gulim, arial, helvetica, sans-serif;
+	line-height: 1.5em;
+
+	/*background-image:url('/Images/background.png');*/
+
+};
+
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141734371-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141734371-2');
+</script>
+
+	<header>
+
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+		  <a class="navbar-brand font-weight-bold text-decoration-none" href="http://1000genomes.kr"> <font color="red">The Korean Genome Project</font></a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <!--
+		  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Link</a>
+		      </li>
+
+		    </ul>
+
+		</div>-->
+		</nav>
+</header>
+
+<main role="main">
+      <div class="jumbotron">
+        <div class="container">
+      <p></p><p></p><p></p>
+          <h1 class="display-4">Korea1K Variome</h1>
+          <p>This webpage is for data sharing of 1K Korean human genomes.</p>
+
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Example row of columns -->
+
+
+
+
+<div class="row">
+  <div class="col-md-1">
+
+  </div>
+  <div class="col-md-10">
+	<p class="h4">For allele frequency data</p>
+  </div>
+  <div class="col-md-1">
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-1">
+
+  </div>
+  <div class="col-md-10" style="text-indent: 1em;">
+	<p>You can download the allele frequency of SNVs and Indels, Copy Number variants (CNV), Transposable element (TE) insertions of Korea1K genomes for academic purposes.
+	For the method about calling variants, please refer to the publication ( S. Jeon, Y. Bhak, Y. Choi, Y. Jeon, S. Kim, J. Jang, J. Jang, A. Blazyte, C. Kim, Y. Kim,
+J. Shim, N. Kim, Y. J. Kim, S. G. Park, J. Kim, Y. S. Cho, Y. Park, H.-M. Kim, B.-C. Kim, N.-H. Park,
+E.-S. Shin, B. C. Kim, D. Bolser, A. Manica, J. S. Edwards, G. Church, S. Lee, J. Bhak, Korean Genome
+Project: 1094 Korean personal genomes with clinical information. Sci. Adv. 6, eaaz7835 (2020).).
+	</p>
+  </div>
+  <div class="col-md-1">
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-1">
+
+  </div>
+  <div class="col-md-8"> <!-- main -->
+	<div class="row">
+	  <div class="col-md" style="text-indent: 1em;">
+		<input type="checkbox" id="testChk">
+			I agree with <a href="terms_conditions.php">the terms and conditions</a> <br>
+
+	  </div>
+	</div>
+	<span id="alert_term_conditions">
+	<div class="row">
+		<div class="alert alert-warning alert-dismissable" role="alert" style="display:none;">
+  			You must agree the terms and conditions.
+		</div>
+	</div>
+	</span>
+
+	<span class="btn" id="test_btn">
+	<div class="row" style="text-indent: 1em;">
+
+	  <a id="ftp1" href="ftp://biodisk.org/Release/Korea1K/SNV_Indel/">Korea1K SNP and Indel Allele frequency data</a>
+
+	</div>
+	<div class="row" style="text-indent: 1em;">
+	  <a id="ftp2" href="ftp://biodisk.org/Release/Korea1K/CNV/">Korea1K Copy Number Variants Allele frequency data</a>
+	</div>
+	<div class="row" style="text-indent: 1em;">
+	  <a id="ftp3" href="ftp://biodisk.org/Release/Korea1K/TE_Insertion/">Korea1K TE insertion Allele frequency data</a>
+	</div>
+  </span>
+
+
+
+  </div>
+  <div class="col-md-2">
+
+  </div>
+</div>
+<br>
+<br>
+
+
+<div class="row">
+  <div class="col-md-1">
+
+  </div>
+  <div class="col-md-10">
+	<p class="h4">For Raw data and clinical information</p>
+  </div>
+  <div class="col-md-1">
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-1">
+
+  </div>
+  <div class="col-md-10">
+	<p style="text-indent: 1em;">Sequencing data (FASTQ), individual genotypes, and clinical data can be provided upon request and document screening. <br/>  To request the data, please contact <b>Sungwon Jeon (jsw0061@unist.ac.kr), Jong Bhak (jongbhak@genomics.org) </b> with a completed request form.</p>
+  </div>
+  <div class="col-md-1">
+
+  </div>
+  <div class="col-md-1">
+
+</div>
+  <div class="col-md-10">
+	<p class="h5" style="text-indent: 1em;">Download data request forms</p>
+	<p class="" style="text-indent: 2em;">Korean:  <a href="/resources/[Form.KOR]KOGIC_Korea1K_DatasharingRequest_20200604.docx">Download the request form</a></p>
+	<p class="" style="text-indent: 2em;">English:  <a href="/resources/[Form.ENG]KOGIC_Korea1K_DatasharingRequest_20200709.docx">Download the request form</a></p>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-md-1">
+
+  </div>
+  <div class="col-md-10">
+	<br>
+
+  </div>
+  <div class="col-md-1">
+
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-1">
+
+  </div>
+  <div class="col-md-10">
+	<p class="h4">Related Links</p>
+  </div>
+  <div class="col-md-1">
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-1">
+
+  </div>
+  <div class="col-md-10">
+	<ul>
+		<li>Korean genome project: <a href="http://koreangenome.org/">http://koreangenome.org/</a> </li>
+		<li>KoVariome: <a href="http://opengenome.net/">http://opengenome.net/</a></li>
+		<li>KOREF: <a href="http://koreanreference.org/">http://koreanreference.org/</a> </li>
+		<li>KOGIC: <a href="http://kogic.net/">http://kogic.net/</a> </li>
+	</ul>
+  </div>
+  <div class="col-md-1">
+
+  </div>
+</div>
+
+
+
+
+      </div> <!-- /container -->
+<hr>
+
+</main>
+
+<script type="text/javascript">
+$('#test_btn').click(function(e){
+  if($('#testChk').is(':checked') != true){
+    e.preventDefault();
+    $(".alert").show()
+  }
+});
+$('#test_btn').click(function(){
+
+});
+if($('#testChk').is(':checked') == true){
+  console.log("HI");
+
+}
+</script>
+
+</div>
+<style type="text/css">
+#LOGO{
+width: 70%;
+margin:auto;
+text-align: center;
+border:0px solid;
+}
+#LOGO1{
+
+border:0px solid;
+}
+</style>
+
+<div class="col-xs-12" id="footer" style="text-align:center;margin:auto;" >
+<table id="LOGO" >
+	<tr>
+	<td id="LOGO1"><a href="http://kogic.net"><img src="http://1000genomes.kr/images/KOGIC_20200220.png" class="img-responsive" style="width:auto; height: 70px;"></a></td>
+	<td id="LOGO1"><a href="http://unist.ac.kr"><img src="http://1000genomes.kr/images/UNIST.png" class="img-responsive" style="width:auto; height: 50px;"></a></td>
+	</tr>
+
+</table>
+</div>
+<br>
+<br>
+<br>
+<br>
+</body>
+
+</html>
