@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Genetic diversity in humans: evolutionary and medical perspectives</title>
+    <title>Causes and effects of genetic diversity</title>
     <meta charset="utf-8" />
     <meta name="author" content="Bárbara Domingues Bitarello" />
     <script src="libs/header-attrs/header-attrs.js"></script>
@@ -66,7 +66,7 @@ class: center, middle
 ---
 class: center, top
 
-## My research
+# My research
 &lt;img src="meat/schemas/schemas.001.png" width="980px" /&gt;
 
 ---
@@ -74,38 +74,22 @@ class: center, top
 
 ## Hominin genomics
 &lt;img src="meat/schemas/schemas.002.png" width="1000px" /&gt;
-
 ---
-class: center, top
-
-## Comparative genomics
-&lt;img src="meat/schemas/schemas.003.png" width="980px" /&gt;
----
-class: center, top
-
-## Population genomics
-&lt;img src="meat/schemas/schemas.004.png" width="1000px" /&gt;
----
-
 class: center, top
 
 ## Genomic functional categories
-&lt;img src="meat/schemas/schemas.008.png" width="1000px" /&gt;
----
-class: center, top
-
-## Great Apes
-&lt;img src="meat/schemas/schemas.005.png" width="1000px" /&gt;
----
-class: center, top
-
-## Human expansion
-&lt;img src="meat/schemas/schemas.006.png" width="980px" /&gt;
+&lt;img src="meat/schemas/schemas.004.png" width="1000px" /&gt;
 ---
 class: center, top
 
 ## Processes that shape genomic diversity
-&lt;img src="meat/schemas/schemas.007.png" width="910px" /&gt;
+&lt;img src="meat/schemas/schemas.003.png" width="1000px" /&gt;
+---
+class: center, top
+
+## Balancing Selection
+&lt;img src="meat/schemas/schemas.005.png" width="1000px" /&gt;
+class: center, top
 ---
 # .center[Outline]
 
@@ -121,25 +105,19 @@ class: center, top
 
 ## Balancing selection: an umbrella term 
 
-&lt;img src="meat/schemas/schemas.009.png" width="970px" /&gt;
+&lt;img src="meat/schemas/schemas.006.png" width="970px" /&gt;
 
 ---
 class: center, top
 ## MHC/HLA: an extreme instance of balancing selection
 
-&lt;img src="meat/schemas/schemas.010.png" width="1000px" /&gt;
+&lt;img src="meat/schemas/schemas.007.png" width="1000px" /&gt;
 
 ---
 class: center, top
 ## MHC/HLA: an extreme instance of balancing selection
 
-&lt;img src="meat/schemas/schemas.011.png" width="900px" /&gt;
-
----
-class: center, top
-
-&lt;img src="meat/schemas/schemas.012.png" width="1000px" /&gt;
-
+&lt;img src="meat/schemas/schemas.008.png" width="900px" /&gt;
 ---
 class: inverse, center, middle
 
@@ -151,16 +129,16 @@ class:left, top
 
 ## Genomic "signatures" of balancing selection
 
-&lt;img src="meat/schemas/schemas.013.png" width="1000px" /&gt;
+&lt;img src="meat/schemas/schemas.009.png" width="1000px" /&gt;
 
 ---
 class:left, top
 ## A novel method to detect signatures of balancing selection
-&lt;img src="meat/schemas/schemas.014.png" width="900px" /&gt;
+&lt;img src="meat/schemas/schemas.010.png" width="900px" /&gt;
 ---
-&lt;img src="meat/schemas/schemas.015.png" width="1000px" /&gt;
+&lt;img src="meat/schemas/schemas.011.png" width="1000px" /&gt;
 ---
-&lt;img src="meat/schemas/schemas.016.png" width="1000px" /&gt;
+&lt;img src="meat/schemas/schemas.012.png" width="1000px" /&gt;
 ---
 class:left, top
 # .center[Outline]
@@ -179,7 +157,7 @@ As hinted by this last slide, genetics is more complicated than simply 'good var
 class: center, top
 ## Genome-wide association studies (GWAS)
 
-&lt;img src="meat/schemas/schemas.020.png" width="970px" /&gt;
+&lt;img src="meat/schemas/schemas.016.png" width="970px" /&gt;
 
 ???
 How are associated variants detected? Introducing: the GWAS. 
@@ -219,13 +197,11 @@ class: middle, center
 # Some examples
 
 
-|Phenotype                    |Statistic | Value| Variants|
-|:----------------------------|:---------|-----:|--------:|
-|height                       |R-squared |  25.0|     3000|
-|schizophrenia                |R-squared |   7.0|      100|
-|ADHD                         |R-squared |   5.5|      100|
-|breast cancer                |AUC       |  60.0|     1000|
-|cardiovascular disease (CAD) |AUC       |  81.0|     6000|
+|Phenotype     | Variance_Explained| Variants|
+|:-------------|------------------:|--------:|
+|height        |               25.0|     3000|
+|schizophrenia |                7.0|      100|
+|ADHD          |                5.5|      100|
 
 
 ### PS: for **Europeans** ancestry only...
@@ -314,7 +290,7 @@ class: center, top
 --
 .pull-left[.full-width[
 
-&lt;img src="index_files/figure-html/unnamed-chunk-23-1.png" width="420px" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-19-1.png" width="420px" /&gt;
 
 [Data: https://worldpopulationreview.com/]
 
@@ -392,13 +368,11 @@ class: top,middle
 
 ]]
 
+### These factors are not mutually exclusive!
 ???
 Many factors can affect PRS prediction accuracy. Causal variants might actually differ to some extent accross ancestries. There might have been local selection in some populations but not others. There might be population-specifc gene-gene and gene-E interactions.
 
 Also, marginal effect sizes might differ for a number of reasons, and we know that LD patters and SFS patterns differ across ancestries and can impact this RA. Finally, phenotypic variance might actually differ. So in my work taht I am about to show you, I explored these factors highlighted here.
---
-
-### These factors are not mutually exclusive!
 
 ---
 class: middle, center
@@ -415,26 +389,16 @@ class: middle, center
 # .lilac[Let's look at] height
 ???
 We chose to look at height in individuals with Eur, afr and admixed ancestry.
-
 ---
-class:  top, center
-##Ancestry as a **continuous** variable
+class:left, top
+## Methods
 
 .pull-left[.full-width[
 
-#### highly polygenic
-
-#### many cohorts phenotyped
-
-#### large GWAS (UKBB] `\(\sim\)` 360,000 **Europeans**
-
-`\(height\sim Sex+Age+ Age^2+p_{eur}\)`
-
-`\(height\sim Sex+Age+ Age^2+p_{eur}+PRS\)`
-]
+&lt;img src="meat/schemas/schemas.018.png" width="1200px" /&gt;
+]]
 
 .pull-right[.full-width[
-#### European + African ancestry
 
 
 &lt;table&gt;
@@ -485,9 +449,8 @@ class:  top, center
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
-
 ]]
+
 ???
 why height? It's a somehwat well-udnerstood trait. it's hgihly popygenic and easy to measure. It is highly heritable (80% based ont twin studies, about 50% based on SNP heritability)
 
@@ -500,13 +463,8 @@ In the end we looked at about 19,000 individuals with admied ancestry, and 10,00
 we modell height as a function of sex age and eur ancesty and compare that to a mdoel that also includes prs.
 ---
 class:left, top
-
-&lt;img src="meat/schemas/schemas.022.png" width="1200px" /&gt;
-
----
-class:left, top
-
-&lt;img src="meat/schemas/schemas.021.png" width="1200px" /&gt;
+## Results
+&lt;img src="meat/schemas/schemas.019.png" width="1200px" /&gt;
 
 ---
 class:left, top
@@ -520,38 +478,66 @@ class:left, top
 
 ## 4. .pink[Conclusions &amp; Future Directions]
 ---
-## Recap
+class: left, top
+## Take Home Messages
 
-* Support for divergent allele advantage model in HLA antigen recognition site evolution
+## Support for .lilac[divergent allele advantage model] as a selective mechanism that has shaped  the evolution of HLA genes in humans
 
-* Balancing selection has been more common than previously thought in humans 
+## Balancing selection has been more common than previously thought in humans 
   
-  - about 1/3 of target genes are immune-related
-  - mostly targeted coding regions
-  - testis expressed genes, reproductive genes, defense genes
+  #### mostly targeted coding regions
+  #### about 1/3 of target genes are immune-related
+  #### testis expressed genes, reproductive genes, defense genes
 
-* Polygenic risk scores have very little use for individuals with non-European ancestry
-  - bigger, more diverse GWAS
-  - methods
-  - understand environment effects
+## Polygenic risk scores show great promise in clinical practice, but:
+
+  #### little use for individuals with non-European ancestry
+  #### many factors are responsible
+  #### need to diversify genetics studies at all stages
 
 ---
 class:left, top
 
 
-&lt;img src="meat/schemas/schemas.019.png" width="1000px" /&gt;
+&lt;img src="meat/schemas/schemas.013.png" width="1000px" /&gt;
 ---
 class: right, top
-&lt;img src="meat/schemas/schemas.017.png" width="1200px" /&gt;
+# Future Research Axis I: Balancing selection as a force that shapes diversity
 
+.pull-left[.full-width[
+1. Understand MHC/HLA evolutionary history (intra and inter-species)
+  - methods to infer HLA alleles from ancient DNA
+  - comparative genomics of HLA genes
+  - methods to quantify HLA diversity
+  -Comparative genomics of HLA alleles
+  
+2. Understand, differentiate, quantify different mechanisms of balancing selection
+
+3. Evolution of defense and reproduction-related genes
+  -in vertebrates, primates, humans
+
+4. What are the deleterious consequences of adaptive evolution?
+  - in model organisms, humans
+  ]]
+  
+  .pull-right[.full-width[]
+&lt;img src="meat/schemas/schemas.014.png" width="1000px" /&gt;
+]]
 ---
 class: right, top
+# Future Research Axis II: Polygenic risk prediction in admixed populations
 
-&lt;img src="meat/schemas/schemas.018.png" width="1000px" /&gt;
----
-class: right, top
+1. How does human demographic history impact the potential for genetic risk prediction?
 
-&lt;img src="meat/schemas/schemas.019.png" width="1000px" /&gt;
+2. Can genetic associations be replicated in Brazilian and Hispanic cohorts?
+
+3. What determines the performance of these polygenic risk predictors?
+
+4. How do non-geneticists perceive consumer genetics?
+
+  -Educational and outreach material
+  
+&lt;img src="meat/schemas/schemas.015.png" width="1000px" /&gt;
 ---
 class: top, center
 # Acknowledgements
@@ -589,11 +575,7 @@ Health and Retirement Study
 ]]
 
 
-&lt;img src="kaufman-logo-tag.png" width="260px" /&gt;
-&lt;img src="fapesp-logo.jpg" width="200px" /&gt;
-&lt;img src="PerelmanSchoolofMedicineLogoVertical.png" width="150px" /&gt;
-&lt;img src="tpf_logo_rgb-Facebook.jpg" width="180px" /&gt;
-&lt;img src="NIGMS_logo.jpg" width="100px" /&gt;
+&lt;img src="fapesp-logo.jpg" width="300px" /&gt;
 
 
 ---

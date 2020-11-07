@@ -1,5 +1,5 @@
 ---
-title: "Genetic diversity in humans: evolutionary and medical perspectives"
+title: "Causes and effects of genetic diversity"
 subtitle: "Research Talk"
 author: "Bárbara Domingues Bitarello"
 institute: "Perelman School of Medicine, University of Pennsylvania"
@@ -138,7 +138,7 @@ extra_css <- list(
 ---
 class: center, top
 
-## My research
+# My research
 ```{r, out.width = "980px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.001.png")
 ```
@@ -150,50 +150,28 @@ class: center, top
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.002.png")
 ```
-
 ---
-class: center, top
-
-## Comparative genomics
-```{r, out.width = "980px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.003.png")
-```
----
-class: center, top
-
-## Population genomics
-```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.004.png")
-```
----
-
 class: center, top
 
 ## Genomic functional categories
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.008.png")
-```
----
-class: center, top
-
-## Great Apes
-```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.005.png")
-```
----
-class: center, top
-
-## Human expansion
-```{r, out.width = "980px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.006.png")
+knitr::include_graphics("meat/schemas/schemas.004.png")
 ```
 ---
 class: center, top
 
 ## Processes that shape genomic diversity
-```{r, out.width = "910px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.007.png")
+```{r, out.width = "1000px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.003.png")
 ```
+---
+class: center, top
+
+## Balancing Selection
+```{r, out.width = "1000px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.005.png")
+```
+class: center, top
 ---
 # .center[Outline]
 
@@ -210,7 +188,7 @@ class: center, top
 ## Balancing selection: an umbrella term 
 
 ```{r, out.width = "970px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.009.png")
+knitr::include_graphics("meat/schemas/schemas.006.png")
 ```
 
 ---
@@ -218,7 +196,7 @@ class: center, top
 ## MHC/HLA: an extreme instance of balancing selection
 
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.010.png")
+knitr::include_graphics("meat/schemas/schemas.007.png")
 ```
 
 ---
@@ -226,16 +204,8 @@ class: center, top
 ## MHC/HLA: an extreme instance of balancing selection
 
 ```{r, out.width = "900px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.011.png")
+knitr::include_graphics("meat/schemas/schemas.008.png")
 ```
-
----
-class: center, top
-
-```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.012.png")
-```
-
 ---
 class: inverse, center, middle
 
@@ -248,22 +218,22 @@ class:left, top
 ## Genomic "signatures" of balancing selection
 
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.013.png")
+knitr::include_graphics("meat/schemas/schemas.009.png")
 ```
 
 ---
 class:left, top
 ## A novel method to detect signatures of balancing selection
 ```{r, out.width = "900px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.014.png")
+knitr::include_graphics("meat/schemas/schemas.010.png")
 ```
 ---
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.015.png")
+knitr::include_graphics("meat/schemas/schemas.011.png")
 ```
 ---
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.016.png")
+knitr::include_graphics("meat/schemas/schemas.012.png")
 ```
 ---
 class:left, top
@@ -284,7 +254,7 @@ class: center, top
 ## Genome-wide association studies (GWAS)
 
 ```{r, out.width = "970px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.020.png")
+knitr::include_graphics("meat/schemas/schemas.016.png")
 ```
 
 ???
@@ -327,7 +297,7 @@ class: middle, center
 # Some examples
 
 ```{r, echo=F}
-dt2<-data.table(Phenotype=c('height', 'schizophrenia', 'ADHD', 'breast cancer', 'cardiovascular disease (CAD)'), Statistic=c(rep('R-squared',3), rep('AUC',2)), Value=round(c(25,7,5.5,60,81),1), Variants=c(3000,100,100,1000,6000))
+dt2<-data.table(Phenotype=c('height', 'schizophrenia', 'ADHD'), Variance_Explained=c(25,7,5.5), Variants=c(3000,100,100))
 knitr::kable(dt2)
 ```
 
@@ -526,13 +496,11 @@ class: top,middle
 
 ]]
 
+### These factors are not mutually exclusive!
 ???
 Many factors can affect PRS prediction accuracy. Causal variants might actually differ to some extent accross ancestries. There might have been local selection in some populations but not others. There might be population-specifc gene-gene and gene-E interactions.
 
 Also, marginal effect sizes might differ for a number of reasons, and we know that LD patters and SFS patterns differ across ancestries and can impact this RA. Finally, phenotypic variance might actually differ. So in my work taht I am about to show you, I explored these factors highlighted here.
---
-
-### These factors are not mutually exclusive!
 
 ---
 class: middle, center
@@ -549,26 +517,18 @@ class: middle, center
 # .lilac[Let's look at] height
 ???
 We chose to look at height in individuals with Eur, afr and admixed ancestry.
-
 ---
-class:  top, center
-##Ancestry as a **continuous** variable
+class:left, top
+## Methods
 
 .pull-left[.full-width[
 
-#### highly polygenic
-
-#### many cohorts phenotyped
-
-#### large GWAS (UKBB] $\sim$ 360,000 **Europeans**
-
-$height\sim Sex+Age+ Age^2+p_{eur}$
-
-$height\sim Sex+Age+ Age^2+p_{eur}+PRS$
-]
+```{r, out.width = "1200px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.018.png")
+```
+]]
 
 .pull-right[.full-width[
-#### European + African ancestry
 
 ```{r, include=FALSE}
 library(data.table)
@@ -578,9 +538,8 @@ dt<-data.table(Data=c('UKBB_eur', 'HRS_EUR','UKBB_afr','WHI_afr', 'JHS_afr', 'HR
 ```{r, echo=F}
 knitr::kable(dt)
 ```
-
-
 ]]
+
 ???
 why height? It's a somehwat well-udnerstood trait. it's hgihly popygenic and easy to measure. It is highly heritable (80% based ont twin studies, about 50% based on SNP heritability)
 
@@ -593,16 +552,9 @@ In the end we looked at about 19,000 individuals with admied ancestry, and 10,00
 we modell height as a function of sex age and eur ancesty and compare that to a mdoel that also includes prs.
 ---
 class:left, top
-
+## Results
 ```{r, out.width = "1200px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.022.png")
-```
-
----
-class:left, top
-
-```{r, out.width = "1200px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.021.png")
+knitr::include_graphics("meat/schemas/schemas.019.png")
 ```
 
 ---
@@ -617,45 +569,71 @@ class:left, top
 
 ## 4. .pink[Conclusions & Future Directions]
 ---
-## Recap
+class: left, top
+## Take Home Messages
 
-* Support for divergent allele advantage model in HLA antigen recognition site evolution
+## Support for .lilac[divergent allele advantage model] as a selective mechanism that has shaped  the evolution of HLA genes in humans
 
-* Balancing selection has been more common than previously thought in humans 
+## Balancing selection has been more common than previously thought in humans 
   
-  - about 1/3 of target genes are immune-related
-  - mostly targeted coding regions
-  - testis expressed genes, reproductive genes, defense genes
+  #### mostly targeted coding regions
+  #### about 1/3 of target genes are immune-related
+  #### testis expressed genes, reproductive genes, defense genes
 
-* Polygenic risk scores have very little use for individuals with non-European ancestry
-  - bigger, more diverse GWAS
-  - methods
-  - understand environment effects
+## Polygenic risk scores show great promise in clinical practice, but:
+
+  #### little use for individuals with non-European ancestry
+  #### many factors are responsible
+  #### need to diversify genetics studies at all stages
 
 ---
 class:left, top
 
 
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.019.png")
+knitr::include_graphics("meat/schemas/schemas.013.png")
 ```
 ---
 class: right, top
-```{r, out.width = "1200px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.017.png")
-```
+# Future Research Axis I: Balancing selection as a force that shapes diversity
 
----
-class: right, top
+.pull-left[.full-width[
+1. Understand MHC/HLA evolutionary history (intra and inter-species)
+  - methods to infer HLA alleles from ancient DNA
+  - comparative genomics of HLA genes
+  - methods to quantify HLA diversity
+  -Comparative genomics of HLA alleles
+  
+2. Understand, differentiate, quantify different mechanisms of balancing selection
 
+3. Evolution of defense and reproduction-related genes
+  -in vertebrates, primates, humans
+
+4. What are the deleterious consequences of adaptive evolution?
+  - in model organisms, humans
+  ]]
+  
+  .pull-right[.full-width[]
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.018.png")
+knitr::include_graphics("meat/schemas/schemas.014.png")
 ```
+]]
 ---
 class: right, top
+# Future Research Axis II: Polygenic risk prediction in admixed populations
 
+1. How does human demographic history impact the potential for genetic risk prediction?
+
+2. Can genetic associations be replicated in Brazilian and Hispanic cohorts?
+
+3. What determines the performance of these polygenic risk predictors?
+
+4. How do non-geneticists perceive consumer genetics?
+
+  -Educational and outreach material
+  
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.019.png")
+knitr::include_graphics("meat/schemas/schemas.015.png")
 ```
 ---
 class: top, center
@@ -694,20 +672,8 @@ Health and Retirement Study
 ]]
 
 
-```{r, out.width = "260px",echo=FALSE, eval=T}
-knitr::include_graphics("kaufman-logo-tag.png")
-```
-```{r, out.width = "200px",echo=FALSE, eval=T}
+```{r, out.width = "300px",echo=FALSE, eval=T}
 knitr::include_graphics("fapesp-logo.jpg")
-```
-```{r, out.width = "150px",echo=FALSE, eval=T}
-knitr::include_graphics("PerelmanSchoolofMedicineLogoVertical.png")
-```
-```{r, out.width = "180px",echo=FALSE, eval=T}
-knitr::include_graphics("tpf_logo_rgb-Facebook.jpg")
-```
-```{r, out.width = "100px",echo=FALSE, eval=T}
-knitr::include_graphics("NIGMS_logo.jpg")
 ```
 
 
