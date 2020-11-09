@@ -128,11 +128,11 @@ class: middle, left
 
 ## .lilac[Introduction]
 
-## .pink[Research Project 1]
+## .pink[Research Project 1: Heterozygote advantage in HLA genes]
 
-## .pink[Research Project 2]
+## .pink[Research Project 2: Balancing selection in the human genome]
 
-## .pink[Research Project 3]
+## .pink[Research Project 3: Polygenic scores for height in admixed populations]
 
 ## .pink[Conclusions & Future Directions]
 
