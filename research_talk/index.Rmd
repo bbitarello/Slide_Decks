@@ -124,6 +124,18 @@ extra_css <- list(
 
 ### .lilac[Perelman School of Medicine, University of Pennsylvania]
 ---
+class: middle, center
+
+## Similar, but different 
+```{r, out.width = "780px",echo=FALSE, eval=T}
+knitr::include_graphics("intro/tarsila.png")
+```
+
+???
+
+Tarsila do Amaral (1933) [Source: www.wikiart.org]
+
+---
 class: middle, left
 
 ## .lilac[Introduction]
