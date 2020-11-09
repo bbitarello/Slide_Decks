@@ -146,25 +146,30 @@ class: middle, left
 ## Big questions
 
 ### .pink[1)] How has .lilac[evolution] shaped genetic diversity?
-
+???
+In a sense, the main questions that drives my research interests have this common thread.p
 --
 
 ### .pink[2)] What are some of the .lilac[most diverse genetic systems] known and .lilac[how] did they evolve?
 
+???
+What evolutionary processes shape genetic diversity
+What examples do we have of extremely diverse systems and what do they tell us about selective pressures?
 --
 
-### .pink[3)] What are the .lilac[consequences of genetic diversity] and its link to complex diseases?
-
+### .pink[3)] What are the .lilac[consequences of genetic diversity] and their link to common diseases?
+???
+Are these consequences to such diversity, i.e, the presence of 'common variants' that predispose us to disease? 
 --
 
 ### .pink[4)] Can we .lilac[predict complex phenotypes] using genetics in an equitable way that encompasses all of human genetic diversity?
 
 ???
-In a sense, the main questions that drive my research interests have this common thread.What evolutionary processes shape genetic diversity? What examples do we have of extremely diverse systems and what do they tell us about selective pressures? Are these consequences to such diversity, i.e, the presence of 'common variants' that predispose us to disease? And, finally, since it seems inevitable that we are headed towards personalized genomic medicine, can it be done in a fair way?
+And, finally, since it seems inevitable that we are headed towards personalized genomic medicine, can it be done in a fair way?
 ---
 class: middle, left
 
-## .lilac[Introduction]
+## .lilac[Introductpion]
 
 ## .pink[Research Project 1]
 
@@ -261,6 +266,8 @@ class: middle, left
 ???
 
 Ok, so Now that we've covered what a variant or a polymorphic site in the genome is, what balancing selection is, we can jump into some research questions
+
+[7:30 minutes until here]
 ---
 class: center, middle
 
@@ -268,7 +275,8 @@ class: center, middle
 
 
 ### .pink[2)] What are some of the .lilac[most diverse genetic systems] known and .lilac[how] did they evolve?
-
+???
+Let's start by focusing on the most diverse region of the vertebrate genome: the MHC
 ---
 class: center, top
 ## The MHC is the .lilac[most genetically diverse] region of the vertebrate genome
@@ -276,6 +284,10 @@ class: center, top
 ```{r, out.width = "950px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.006.png")
 ```
+???
+
+The major histocompatibility was first detected as the factor behind transplant rejection, hence the name 'histocompatibility'. The reason for this is that this rgion harbours many genes respnsible for the adaptive immune response, that is, the one that we lear, not the innate one. Early in life our immune systems learn to discriminate self from non-self, and the rejection of transplants from incompatible donors comes from one immune system recognizing another as an invader. In addition to modulalting our immune responses, then, the genes in this locus have negative links to disease,, including many auto-immune diseases like celiac disease and psoriasis, to infectious disease like HIV and hepatitis,  to other complex diseases like T2 diabetes.
+There is a vast literature on how certain alleles in these genes confer higher resistance to certain types of infection.
 
 ---
 class: center, top
@@ -284,12 +296,18 @@ class: center, top
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.007.png")
 ```
+???
+So this is clearly a very interesting locus, both from an evolutionary standpoint, as well as a more applied, health perspective. It has been known for some time that these genes represent the strongest instance of balancing selection in humans, and there is a good mechanistic basis behind it. The MHC genes code for cell surface proteins that present a antigen to the bonafide immune cells, the T cells shown here on the left. On the middle we see a schematic of the MHC molecule binding an antigen. Take note that this grove here corresponds to the part of the MHC genes that is actually very genetically diverse. In the 70s, it was suggested that individuals that are heterozygote for HLA alleles would have higher fitness, since each allele codes for one of these chains in the molecule and a heterozygote would be able to present a wider array of antigens.
+
+This is fascinating, because on the one hand, our immune sustems are evolving to better present antigens efficiently, while pathogens are evolving to evade our immune systems. This is behind the diversity in these loci and why it is a good exaple of host-pathogen arms race or red queen hypothesis. In alice in wonderland, the red queen effect, which proposes that species must constantly adapt, evolve, and proliferate in order to survive while pitted against ever-evolving opposing species. 
 ---
 class: center, middle
 
 # Do .lilac[all heterozygotes] have the same fitness?
 
 # Is there support for the .lilac[divergent allele advantage model?]
+
+??? This makes complete sense. A question that motivated me was whether all heterozygotes are equally adaptive.
 ---
 class:  middle, left
 
@@ -298,6 +316,8 @@ class:  middle, left
 #### .pink[Hypothesis:] divergent allele advantage model (heterozygote advantage is greater for genotypes with more divergent alleles) explains selective patterns in the HLA genes
 
 #### .pink[Prediction:] increased signatures of balancing selection between pairs of HLA alleles that match different antigens
+???
+In other words, is there support for a model where heterozygotes composed of alleles that present a different antigen repertoire from each other more adaptive?
 ---
 class: center, top
 ### To answer these questions, I looked at the human class I HLA genes
@@ -307,9 +327,17 @@ knitr::include_graphics("meat/schemas/schemas.008.png")
 ```
 
 ???
-Conclusion: stronger balancing selection shaping diversity between allelic lineages than between
+To answer this, I looked at the three class I classical genes: HLA-A, HLA-B, HLA-C. Each one of those have thousands of different alleles described in a heavily curated immunogenetics database, and that number keeps increasing. The first step consisted in gathering the data and splitting these genes into ARS - the portions in the genome where the antigen binding sites are located - and the non-ARS - the rest of the gene. The latter were used as controls.
 
-This supports the divergent allele advantage model proposed by Wakeland (1990)
+Now, HLA alleles are related to each other genealogically, like any other DNA sequences. Some of them are more closely related then others, and they are normally described either as supertypes (groups of alleles that present smilar sets of antigens) or allelic lineages (clades of alleles). For example this tree here is a subset of the allelic lineages for HLA-B. 
+
+The next step was to use phylogenetic methods for hypothesis testing. The main hypothesis I tested was whether balancing selection was stronger in the branches that separate lineages than within lineages themselves. 
+
+What I observed is that 
+
+1) the evidence for selection is stronger between linages, supporting the divergent allele advantage model and
+
+2) the evidence for selection is also significant within lineages, meaning that it is also important, even if less so.
 ---
 class: middle, left
 
@@ -357,7 +385,7 @@ knitr::include_graphics("meat/schemas/schemas.009.png")
 ---
 class:left, top
 ## A statistical test .lilac[specifically] tailored for .lilac[balancing selection?]
-```{r, out.width = "1200px",echo=FALSE, eval=T}
+```{r, out.width = "1100px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.010.png")
 ```
 ---
