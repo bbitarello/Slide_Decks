@@ -307,7 +307,8 @@ class: center, middle
 
 # Is there support for the .lilac[divergent allele advantage model?]
 
-??? This makes complete sense. A question that motivated me was whether all heterozygotes are equally adaptive.
+??? 
+This makes complete sense. A question that motivated me was whether all heterozygotes are equally adaptive.
 ---
 class:  middle, left
 
