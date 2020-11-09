@@ -169,7 +169,7 @@ And, finally, since it seems inevitable that we are headed towards personalized 
 ---
 class: middle, left
 
-## .lilac[Introductpion]
+## .lilac[Introduction]
 
 ## .pink[Research Project 1]
 
@@ -177,7 +177,7 @@ class: middle, left
 
 ## .pink[Research Project 3]
 
-## .pink[Conclusions & Future Directions]
+## .pink[Conclusions]
 
 ???
 I will start off by giving an overview of some important concepts that are used throughout this presentation, followed by three stories I want to tell of how I addressed some of these questions. Finally, I will wrap it all up and talk about some exciting venues for my future research.
@@ -259,9 +259,9 @@ class: middle, left
 
 ## .pink[Research Project 2: Balancing selection in the human genome]
 
-## .pink[Research Project 3: Polygenic scores for height in admixed populations]
+## .pink[Research Project 3: Polygenic scores in different populations]
 
-## .pink[Conclusions & Future Directions]
+## .pink[Conclusions]
 
 ???
 
@@ -308,7 +308,7 @@ class: center, middle
 # Is there support for the .lilac[divergent allele advantage model?]
 
 ??? 
-This makes complete sense. A question that motivated me was whether all heterozygotes are equally adaptive.
+This makes complete sense. A question that motivated me was whether all heterozygotes are equally adaptive. 
 ---
 class:  middle, left
 
@@ -348,9 +348,9 @@ class: middle, left
 
 ## .lilac[Research Project 2: Balancing selection in the human genome]
 
-## .pink[Research Project 3: Polygenic scores for height in admixed populations]
+## .pink[Research Project 3: Polygenic scores in different populations]
 
-## .pink[Conclusions & Future Directions]
+## .pink[Conclusions]
 ---
 
 class: center, middle
@@ -405,9 +405,9 @@ class: middle, left
 
 ## .lilac[Research Project 2: Balancing selection in the human genome]
 
-## .lilac[Research Project 3: Polygenic scores for height in admixed populations]
+## .lilac[Research p: Polygenic scores in different populations]
 
-## .pink[Conclusions & Future Directions]
+## .pink[Conclusions]
 ---
 
 class: center, top
