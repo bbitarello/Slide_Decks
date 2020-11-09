@@ -592,14 +592,14 @@ class:left, top
 knitr::include_graphics("meat/schemas/schemas.012.png")
 ```
 ---
-class: left, top
+class: center, top
 ## Research Axis I: Balancing selection as a force that shapes diversity
 
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.014.png")
 ```
 ---
-class: left, top
+class: center, top
 ## Research Axis II: Polygenic risk prediction in admixed populations
 
 ```{r, out.width = "930px",echo=FALSE, eval=T}
