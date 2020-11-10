@@ -118,11 +118,11 @@ extra_css <- list(
 
 # .pink[Evolutionary causes and clinical implications of genetic diversity]
 
-### .lilac[Research Talk]
+## .lilac[Bárbara Domingues Bitarello]
 
-### .lilac[Bárbara Domingues Bitarello, Postdoctoral Scholar]
+### .lilac[Postdoctoral Scholar]
 
-### .lilac[Perelmax School of Medicine, University of Pennsylvania]
+### .lilac[Perelman School of Medicine, University of Pennsylvania]
 
 ???
 Good afternoon everyone, my name is Bárbara and I am a postdoctoral scholar in the genetics department of the school of medicine at Upenn. I am excited to present my research to all of you today.
@@ -624,9 +624,9 @@ knitr::include_graphics("meat/schemas/schemas.019.png")
 
 
 ???
-this is obviously not ideal and reflects many biases which I don't have time to go into to, but considering the hype i showed about PRS before, how does this affect popygenic risk score predictions?
-Over the past two years or so a few papers have come out showing that prediction accuracy from PRS decreases with genetic distance from Europeans.
-This figure from Martin et al showes average prediction accuracies for 17 traits, using GWAS summary statisticas derived from 100% European cohorts. I am not sure what american means?
+this is obviously not ideal and reflects many biases which I don't have time to go into to, but considering the hype i showed about PRS before, how does this affect popygenic risk score predictions? If personalized genomics are to became a part of medical care, we need be sure that we understand how these predictions work for the mostly unsampled populations of the world.
+
+This figure from Martin et al showes average prediction accuracies for 17 traits, using GWAS summary statisticas derived from 100% European cohorts. I am not sure what american means? As you can see, relative to the European ancestrie, all the other ancestries see a much reduced prediction accuracy for all traits
 
 ---
 class: middle, center
@@ -639,7 +639,7 @@ class: middle, center
 
 
 ???
-So the questions that motivated this work were:
+So the questions that motivated this work were: how 
 ---
 class: middle, left
 
@@ -659,7 +659,7 @@ class: middle, center
 
 # .lilac[Let's look at] height
 ???
-We chose to look at height in individuals with Eur, afr and admixed ancestry.
+We chose to look at height because it is ahighly heritable trait, that is, it has a large genetic component.
 ---
 class:left, top
 ## Wow well can we predict a .lilac[highly heritable] trait?
@@ -672,9 +672,10 @@ knitr::include_graphics("meat/schemas/schemas.017.png")
 ???
 why height? It's a somehwat well-udnerstood trait. it's hgihly popygenic and easy to measure. It is highly heritable (80% based ont twin studies, about 50% based on SNP heritability)
 
-So in this work we used GWAS summary statistics for height from a cohort of 360K europeans from the UK biobank. And we verified how well we could predicti height in individuals with different degrees of african ancestry.
-
-Importantly, unlike most studies, we consdierted ancestry as a continuous variable. So each individuals we analysed had a "proportion of Eur ancestry" inferred by local ancestry inference and averaged across the genome.
+Also, it is rather easy to measure and is measured in most biomedical studies, so that increases the amount of available data. We used GWAS results for height that were performed in more than 3000K inds from the UK Biobank. That includes exclusively individuals whose main ancestry component is European.
+Then, we selected almost 30,000 indds from independent cohorts ranging from about 0-100% african ancestry. For those individuals, we had genetic and phenotypic data, that is, their height, as well as their age and biolofical sex, important covariates for height.
+We then calculated polygenic scores for height for each individual, using effect sizes from the Eurpean ancestry cohort.
+Importantly, unlike most studies, we consdierted ancestry as a continuous variable going from 0-100% european ancestry. So each individuals we analysed had a "proportion of Eur ancestry" inferred by local ancestry inference and averaged across the genome.
 
 In the end we looked at about 19,000 individuals with admied ancestry, and 10,000 with eur ancestry from different cohorts.
 
@@ -686,6 +687,9 @@ class:left, top
 knitr::include_graphics("meat/schemas/schemas.018.png")
 ```
 
+???
+Here we have the main finding. Explain this figure.
+We then proceeded to investifate, one by one, the different methodological and statistical factors that could be driving this and concluded that there is no simply fix to this loss of prediction. That is, the fix would have to happen upstream, i.e, the discovery cohorts need to be more diverse. 
 ---
 class:left, middle
 
@@ -697,6 +701,9 @@ class:left, middle
 ## 3. .lilac[Research Theme 2: Polygenic risk prediction for individuals with non-European ancestry] 
 
 ## 4. .pink[Conclusions & Future Directions]
+
+???
+With that I will move on the final part of this talk, where I highlight some exciting venues for feature research.
 ---
 class: left, middle
 
@@ -710,7 +717,8 @@ class: left, middle
 
 ### .pink[How useful are polygenic risk predictors for individuals with non-European ancestries?]
 
-
+???
+A brief recap of what I presented in those three research projects. These were the main questions.
 ---
 class: middle, left
 
@@ -723,12 +731,15 @@ class: middle, left
 
 
 ### .pink[3)] At present, PRS approaches have little to no utility for individuals with non-European ancestry, many factors are responsible, need to diversify genetics studies at all stages
-
+???
+And these were the answers
 ---
 class:left, top
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.012.png")
 ```
+???
+Going back to this, now, I hope I have convinced you that there are many fascinating biological questions waiting to be answered, and that genomics provides powerful tools to answer many of them. My research path represented by these three projects helps contextualize my two main axis of fture research:
 ---
 class: center, top
 ## Research Axis I: Balancing selection as a force that shapes diversity
@@ -736,6 +747,9 @@ class: center, top
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.014.png")
 ```
+
+???
+Talk about this
 ---
 class: center, top
 ## Research Axis II: Polygenic risk prediction in admixed populations
@@ -743,6 +757,8 @@ class: center, top
 ```{r, out.width = "930px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.013.png")
 ```
+???
+Talk about this
 ---
 class: top, center
 # Acknowledgements
