@@ -134,7 +134,7 @@ class: middle, center
 knitr::include_graphics("intro/tarsila.png")
 ```
 
-Tarsila do Amaral (1933) [Source: www.wikiart.org]
+*"Operários"*, Tarsila do Amaral (1933) [Source: www.wikiart.org]
 
 ???
 A quick look around on the street, or at work, can make it clear that we, as a species, carry a lot of diversity. We differ in height, some diseases run in our families, some of us have asthama and can't see well, and so on.
