@@ -145,11 +145,11 @@ class:top, left
 
 ## Big questions
 
-### .pink[1)] How has .lilac[evolution] shaped genetic diversity?
+### .pink[1)] How has ***evolution** shaped genetic diversity?
 
 --
 
-### .pink[2)] What are some of the .lilac[most diverse genetic systems] known and .lilac[how] did they evolve?
+### .pink[2)] What are some of the ***most diverse*** genetic systems] known and ***how*** did they evolve?
 
 ???
 What evolutionary processes shape genetic diversity
@@ -176,7 +176,7 @@ class: middle, left
 
 ## .lilac[Project 3]
 
-## .lilac[Conclusions]
+## .lilac[Future Directions]
 
 ???
 I will start off by giving an overview of some important concepts that are used throughout this presentation, followed by three stories I want to tell of how I addressed some of these questions. Finally, I will wrap it all up and talk about some exciting venues for my future research.
@@ -200,7 +200,7 @@ knitr::include_graphics("meat/schemas/schemas.002.png")
 Zooming in a little bit, the three research topics I will be focusing on today will cover first the topic of MHC diversity, the most genetically diverse locus in the genomes of all vertebrates and an extreme case of balancing selection, followed by a project focused on balancing selection more broadly, and finally a project focused on  the power of genetic prediction pf phenotypes. 
 ---
 class: center, top
-# A polymorphism is .lilac[variable site] in the genome .lilac[across individuals]
+# A polymorphism is a _variable site_ in the genome _across individuals_
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.003.png")
 ```
@@ -212,7 +212,7 @@ For many of those positions, we are all the same. For some of those, however, we
 ---
 class: center, top
 
-## .lilac[Balancing selection] maintains diversity in populations
+## Balancing selection _maintains diversity_ in populations
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.004.png")
 ```
@@ -224,7 +224,7 @@ On the other hand, another type of natural selection, BALANCING SELECTION, will 
 ---
 class: center, top
 
-## Sometimes, it may be .lilac[beneficial] to harbour .lilac[deleterious variants]
+## Sometimes, it may be _beneficial_ to have _deleterious variants_
 
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.017.png")
@@ -239,11 +239,11 @@ this is very interesting. A detrimental variant (the S allele) is selectively ma
 class: middle, left
 ## .lilac[Introduction]
 
-## .pink[Project 1: Heterozygote advantage in HLA genes]
+## .pink[Project 1: Balancing selection in the MHC]
 
 ## .lilac[Project 2: Balancing selection in the human genome]
 
-## .lilac[Project 3: Polygenic scores in different populations]
+## .lilac[Project 3: Polygenic scores in diverse populations]
 
 ## .lilac[Future directions]
 
@@ -255,15 +255,15 @@ Ok, so Now that we've covered what a variant or a polymorphic site in the genome
 ---
 class: center, middle
 
-### .pink[1)] How has .lilac[evolution] shaped genetic diversity?
+### .pink[1)] How has _evolution_ shaped genetic diversity?
 
 
-### .pink[2)] What are some of the .lilac[most diverse genetic systems] known and .lilac[how] did they evolve?
+### .pink[2)] What are some of the _most diverse_ genetic systems known and *how* did they evolve?
 ???
 Let's start by focusing on the most diverse region of the vertebrate genome: the MHC
 ---
 class: center, top
-## The MHC is the .lilac[most genetically diverse] region of the vertebrate genome
+## The MHC is the _most genetically diverse_ region of the genome
 
 ```{r, out.width = "950px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.005.png")
@@ -275,7 +275,7 @@ There is a vast literature on how certain alleles in these genes confer higher r
 
 ---
 class: center, top
-## The MHC is an .lilac[extreme instance] of balancing selection
+## The MHC is an _extreme example_ of _balancing selection_
 
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.006.png")
@@ -287,25 +287,25 @@ This is fascinating, because on the one hand, our immune sustems are evolving to
 ---
 class: center, middle
 
-# Do .lilac[all heterozygotes] have the same fitness?
+# Do ***all heterozygotes*** have the same fitness?
 
-# Is there support for the .lilac[divergent allele advantage model?]
+# Do genotypes with _more diverse alleles_ have a larger advantage?
 
 ???
 This makes complete sense. A question that motivated me was whether all heterozygotes are equally adaptive. 
 ---
 class:  middle, left
 
-## Is there support for the .lilac[divergent allele advantage model?]
+## Do genotypes with _more diverse alleles_ have a larger advantage?
 
-#### .pink[Hypothesis:] divergent allele advantage model (heterozygote advantage is greater for genotypes with more divergent alleles) explains selective patterns in the HLA genes
+#### .pink[Hypothesis:] closely related alleles overlap in their antigen repertoire; less related alleles would make more fit heterozygotes
 
-#### .pink[Prediction:] increased signatures of balancing selection between pairs of HLA alleles that match different antigens
+#### .pink[Prediction:] stronger balancing selection for pairs of MHC alleles that match different antigens
 ???
 In other words, is there support for a model where heterozygotes composed of alleles that present a different antigen repertoire from each other more adaptive?
 ---
 class: center, top
-### Stronger evidence of balancing selection between allelic lineages
+## _Stronger_ evidence of balancing selection _between allelic lineages_
 
 ```{r, out.width = "1200px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.007.png")
@@ -328,11 +328,11 @@ class: middle, left
 
 ## .lilac[Introduction]
 
-## .lilac[Research Project 1: Heterozygote advantage in HLA genes]
+## .lilac[Project 1: Balancing selection in the MHC]
 
-## .pink[Research Project 2: Balancing selection in the human genome]
+## .pink[Project 2: Balancing selection in the human genome]
 
-## .lilac[Research Project 3: Polygenic scores in different populations]
+## .lilac[Project 3: Polygenic scores in diverse populations]
 
 ## .lilac[Future directions]
 
@@ -346,42 +346,44 @@ The MHC/HLA system is certainly very interesting and unique, but it led me to ot
 class: center, middle
 
 
-# .lilac[How prevalent] has balancing selection been throughout human evolution? 
+# _How prevalent_ has balancing selection been throughout human evolution? 
 
-# What are the instances .lilac[beyond the MHC] loci?
+# What are the instances _beyond the MHC_ loci?
+
+# What are the _common trends_ among the target
 
 ???
 What were the other isnances of balancing selection in our evolution beyong the MHC and how prevalent has this evolutionary process been?
 ---
 class:top, left
 
-### Can we devise a statistical test specific for signatures of balancing selection?
+### Goal 1: detect balancing selection in the human genome
 
-#### .pink[Approach:] combine independent signatures into one statistic
+#### .pink[Approach:] combine its two main signals into one statistic
 ???
 For starters this was hard to quantify because, unlike positive selection, balancing selection had not received a lot of attention in the literature, and most statistical tests used to detect it were not very specific
 
 --
 
-### If so, how prevalent has it been throughout human evolution?
+### Goal 2: quantify its occurrence  throughout human evolution?
 
-#### .pink[Approach:] perform a genome-wide scan using a test specifically tailored for balancing selection
+#### .pink[Approach:] perform a genome-wide scan using our test 
 
 ???
 So we conjectured that by first designing a specific test for abalncing selection and then applying it to real data we would get a more complete picture
 
 --
 
-### Are there commn trends amongst the candidate regions/genes?
+### Goal 3: Describe the candidate genes/regions
 
-#### .pink[Approach:] Explore candidate regions/genes for common functions/patterns
+#### .pink[Approach:] Verufy whether they are coding, regulatory, functions of the genes, etc
 
 ???
 Having used this statistic to search the genome, what can we say about the candidate targets of balancing selection in humans?
 ---
 class:left, top
 
-### Balancing selection results in .lilac[increased proportions] of polymorphic sites and .lilac[intermediate frequency] alleles
+## Balancing selection increases _proportions of polymorphic sites_ and _intermediate frequency alleles_
 
 ```{r, out.width = "930px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.008.png")
@@ -390,7 +392,7 @@ knitr::include_graphics("meat/schemas/schemas.008.png")
 These two trees show alleles segregating under neutral evolution and under balancing selection, and the arrow goes from the past to the present. Due to drift, neutral alleles have an expected time span before they fixate or get lost, shown in gray. A locus under balancing selection, on the other hand, will actively keep two or more variants segregating in a locus for a longer time than expected under neutral evolution.|This fact results in two characteristic signatures: 1) a higher proportion of intermediate frquency alleles, which is shown by the blue and red alleles in the tree; and 2) a higher proportion of polymorphisms (controlled by the underlying mutation rate) than a typical neutrally evolving region of the genome. So my idea in this project was to combine both of these signatures into one statistics.
 ---
 class:left, top
-## A statistical test .lilac[specifically] tailored for .lilac[balancing selection?]
+## Our test was more _powerful_, more _efficient_ and _faster_ than previous models
 ```{r, out.width = "1100px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.009.png")
 ```
@@ -399,7 +401,7 @@ knitr::include_graphics("meat/schemas/schemas.009.png")
 Once I did that, the first step was to assess if this statistically actually worked. To do that, I simulated DNA sequences evolving under no selective pressure (i.e neutrally) and sequences where a locus is under balancing selection with different strengths. Both of these sequences were simulated 1000s of times under a model of human drmographic history so that genetic drift, bottlenecks etc cna be taken into account.Step 2 then involved calculating our new statistic (NCD2) for both sets of sequences and asking if they were sufficiently different to allow discrimination into these two categories. And indeed they were. Moreovoer, they had more power to detect balancing selection and ran more efficiently in computers than prev know methods.
 ---
 
-### Pervasiveness and .lilac[targets] of balancing selection in humans
+## Balancing selection has been _more common_ than previously thought and targeted genes with many functions
 
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.010.png")
@@ -413,11 +415,11 @@ class: middle, left
 
 ## .lilac[Introduction]
 
-## .lilac[Research Project 1: Heterozygote advantage in HLA genes]
+## .lilac[Project 1: Balancing selection in the MHC]
 
-## .lilac[Research Project 2: Balancing selection in the human genome]
+## .lilac[Project 2: Balancing selection in the human genome]
 
-## .pink[Research Project 3: Polygenic scores in different populations]
+## .pink[Research Project 3: Polygenic scores in diverse populations]
 
 ## .lilac[Future directions]
 
@@ -425,33 +427,7 @@ class: middle, left
 This project made me very aware of how a given gene may be involved in many different processes and how balancing selection may play a role in explaining common diseases. This leads us to the final research story I am sharing today, which takes on a pretty different direction, focusing on biomedical data.
 
 As hinted by this last slide, genetics is more complicated than simply 'good variants' get selected. Maladaptive variants can get fixated because of genetic drift, other variants can be good in certain situations but not others. So this is a good way to shift into the next topic of research, which revolves around disease risk prediction
----
-class:center, top
-##**Many** variants with **small** effect size
 
-.pull-left[.full-width[
-```{r, out.width = "600px",echo=FALSE, eval=T}
-knitr::include_graphics("tam_et_al_2019_2.png")
-```
-
-Tam et al. (2019) *Nat Rev Genet*
-]]
-
-.pull-right[.full-width[
-
- .blue[Rare, monogenic diseases/traits:]
- 
- phenylketonuria, sickle-cell anemia, Duchenne muscular dystrophia
-
-.blue[complex, common diseases/traits:]
-
-cardiovascular  disease, T2 diabetes, cancers, **height**, BMI
-]]
-???
-A picture that has emerged from human genetics from a biomedical standpoint is that most genomic variants (or polymorphisms) that have a statistically significant association with a disease or trait are somewhat common (appreciable frequencies) and have a realtively small 'effect size'. On the other hand, what you may have learned as monogenic diseases/traits, such as muscualr distrofia
-
-This results in the landscape of polygenic traits to look something like we see on the right: GWAS are mostly successful at capturing variants between these two diagonal lines: common, with moderate or small effect variants, and some rare but highly penetrant mutations, that is, that have a considerable effect size.
-Rare variants with small effect sizes are difficult to identify using GWAS, and common variants with large effects are unusual for common complex diseases
 ---
 class: inverse, middle, center
 
@@ -473,10 +449,14 @@ knitr::include_graphics("meat/schemas/schemas.014.png")
 ???
 Earlier I mentioned that there were genetic associations to autoimmune diseases in the MHC region. How are those associations detected?
 GWAS are big scale studies. It works roughly like this: a trait of interest is chosen. Typically a binary trait such as presence or absence of disease status or a continuous trait, like height. A large cohort of individuals has their phenotype measured, and their genetic data analysed. Then, each variant is tested as shown in this plot on the right as to wehther it has an effect in the phenotype or not. In this fake example, depending on the genotype in this variant, the individual has remarkably different phenotypes. Next, each variant is represented in a plot such as this one, called a manhattan plot, where the peaks suggest the approx geneomic location of variants associated with the trait. Finally, the results from a gwas may be used in a so called polygenic score to asess the disease/phenotype status of a invidiaul outside the initial discovery cohort. 
+A picture that has emerged from human genetics from a biomedical standpoint is that most genomic variants (or polymorphisms) that have a statistically significant association with a disease or trait are somewhat common (appreciable frequencies) and have a realtively small 'effect size'. On the other hand, what you may have learned as monogenic diseases/traits, such as muscualr distrofia
+
+This results in the landscape of polygenic traits to look something like we see on the right: GWAS are mostly successful at capturing variants between these two diagonal lines: common, with moderate or small effect variants, and some rare but highly penetrant mutations, that is, that have a considerable effect size.
+Rare variants with small effect sizes are difficult to identify using GWAS, and common variants with large effects are unusual for common complex diseases
 ---
 class: center, top
 
-## Polygenic risk scores combine .lilac[all variants] with an effect on the phenotype
+## Polygenic risk scores combine _all variants_ with a phenotypic effect
 .pull-left[.full-width[
 ```{r, out.width = "650px",echo=FALSE, eval=T}
 
@@ -488,7 +468,7 @@ knitr::include_graphics("gwas_schema_pasaniuc_price.png")
 
 ]]
 
-.pull-right[.full-width[
+.pull-center[.full-width[
 
 
 
@@ -510,25 +490,6 @@ $i$: SNPs
 
 ]]
 
-
-???
-So you did a GWAS for height. Then, for each variant in the genome you have something like this: the genotype in that locus has an effect on height, and can be modelled as a linear relationship. So you have an effect size for one allele in that locus, which is a correlation between the phenotype and the genotype. 
-
-Then you make some assumptions about independence of these loci and that an additive model is appropriate and you have this polygenic score, which is a weighted sum of the genotypes in an individuals. Weighted by the effect sizes.
----
-class: top, center
-# PRSs are appealing
-
-
-.pull-left[.full-width[
-## **easy**
-
-### **promising**
-
-## **fast**
-
-### **minimal requirements**
-]]
 .pull-right[.full-width[
 
 #### Polygenic risk of cardiovascular disease
@@ -540,6 +501,10 @@ Khera et al. (2018), *Nat Genet*
 ]]
 
 ???
+So you did a GWAS for height. Then, for each variant in the genome you have something like this: the genotype in that locus has an effect on height, and can be modelled as a linear relationship. So you have an effect size for one allele in that locus, which is a correlation between the phenotype and the genotype. 
+
+Then you make some assumptions about independence of these loci and that an additive model is appropriate and you have this polygenic score, which is a weighted sum of the genotypes in an individuals. Weighted by the effect sizes.
+
 As a mentioned a few slides ago, a somehwat new approach is to combine the significant restuls from a GWAS into one single value, the polygenic score. The advantage is that althoguh each variatn has a small effect, overall they add up to substantial amounts of information.
 So as you can see from this, PRS are very appealing...They are easy and simple to implement, all you need are some summary statistics from a GWAS, and no further complicated modeling.
 Here is one promising example. The x axis shows the percentile of polygenic score. And the y axis shows the pravalence of CAD. IF we look at the highest bins of PRS, prevalance of CAD is 10%. These individuals have a 8-fold increase of CAD compared to the rest of the population. This makes the PRS able to find 20-fold mroe people at risk for CAD than if you were simply testing for large effect mutations, which have large effect but are rare.
@@ -601,10 +566,10 @@ Anyway, now look at this pie chart on the right, which I made from data from wor
 class: middle, center
 
 
-## How do these .lilac[different factors] affect prediction accuracy?
+## How do these _different factors_ affect prediction accuracy?
 
 
-## What can we .lilac[do about it?]
+## What can we _do_ about it?]
 
 
 ???
