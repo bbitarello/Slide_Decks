@@ -124,7 +124,7 @@ Zooming in a little bit, the three research topics I will be focusing on today w
 ---
 class: center, top
 # A polymorphism is .lilac[variable site] in the genome .lilac[across individuals]
-&lt;img src="meat/schemas/schemas.004.png" width="1000px" /&gt;
+&lt;img src="meat/schemas/schemas.003.png" width="1000px" /&gt;
 
 
 ???
@@ -133,21 +133,8 @@ For many of those positions, we are all the same. For some of those, however, we
 ---
 class: center, top
 
-## Genomic diversity in the .lilac[absense of selective pressures]
-&lt;img src="meat/schemas/schemas.003.png" width="1000px" /&gt;
-
-
-???
-Many sites in the genome evolve neutrally. Meaning that, even when a mutation arises, it has no appreciable consequence for the phenotype in a meaningful way. By meaningful I mean a way that affects the individuals fitness, that is, their reproductive success. 
-
-For instance, when a new population is founded by a small number of individuals from a larger popualtion, there is a loss of genetic diversity by genetic drift.
-
-Another example is admixture. When two populations from the same species, or even two related species, have different allele frequencies for many loci and they admix, the result is that more sites in the offsprings genome will be heterozygote, which is a measure of genetic diversity
----
-class: center, top
-
 ## .lilac[Balancing selection] maintains diversity in populations
-&lt;img src="meat/schemas/schemas.005.png" width="1000px" /&gt;
+&lt;img src="meat/schemas/schemas.004.png" width="1000px" /&gt;
 
 ???
 In addition to neutral process, natural selection can also shape genetic variation in population. If we think of this image as a population with two variants one variant (orange), Typically, when a new mutation arises (purple) that is either highly advantageous or highly deleterious, it will quickly and efficiently be targeted by natural selection, and that will result in reduced diversity, meaning that one variant will remain. 
@@ -158,7 +145,7 @@ class: center, top
 
 ## Sometimes, it may be .lilac[beneficial] to harbour .lilac[deleterious variants]
 
-&lt;img src="meat/schemas/schemas.020.png" width="1000px" /&gt;
+&lt;img src="meat/schemas/schemas.017.png" width="1000px" /&gt;
 
 ???
 What does this look like in practice? Let's take the classical example of sickle cell anemia. In the 1950s, it was documented that the regions of the world where malaria was endemic highly overlapped with those were sickle cell disease was prevalent. 
@@ -195,7 +182,7 @@ Let's start by focusing on the most diverse region of the vertebrate genome: the
 class: center, top
 ## The MHC is the .lilac[most genetically diverse] region of the vertebrate genome
 
-&lt;img src="meat/schemas/schemas.006.png" width="950px" /&gt;
+&lt;img src="meat/schemas/schemas.005.png" width="950px" /&gt;
 ???
 
 The major histocompatibility was first detected as the factor behind transplant rejection, hence the name 'histocompatibility'. The reason for this is that this rgion harbours many genes respnsible for the adaptive immune response, that is, the one that we lear, not the innate one. Early in life our immune systems learn to discriminate self from non-self, and the rejection of transplants from incompatible donors comes from one immune system recognizing another as an invader. In addition to modulalting our immune responses, then, the genes in this locus have negative links to disease,, including many auto-immune diseases like celiac disease and psoriasis, to infectious disease like HIV and hepatitis,  to other complex diseases like T2 diabetes.
@@ -205,7 +192,7 @@ There is a vast literature on how certain alleles in these genes confer higher r
 class: center, top
 ## The MHC is an .lilac[extreme instance] of balancing selection
 
-&lt;img src="meat/schemas/schemas.007.png" width="1000px" /&gt;
+&lt;img src="meat/schemas/schemas.006.png" width="1000px" /&gt;
 ???
 So this is clearly a very interesting locus, both from an evolutionary standpoint, as well as a more applied, health perspective. It has been known for some time that these genes represent the strongest instance of balancing selection in humans, and there is a good mechanistic basis behind it. The MHC genes code for cell surface proteins that present a antigen to the bonafide immune cells, the T cells shown here on the left. On the middle we see a schematic of the MHC molecule binding an antigen. Take note that this grove here corresponds to the part of the MHC genes that is actually very genetically diverse. In the 70s, it was suggested that individuals that are heterozygote for HLA alleles would have higher fitness, since each allele codes for one of these chains in the molecule and a heterozygote would be able to present a wider array of antigens.
 
@@ -231,9 +218,9 @@ class:  middle, left
 In other words, is there support for a model where heterozygotes composed of alleles that present a different antigen repertoire from each other more adaptive?
 ---
 class: center, top
-### To answer these questions, I looked at the human class I HLA genes
+### Stronger evidence of balancing selection between allelic lineages
 
-&lt;img src="meat/schemas/schemas.008.png" width="1200px" /&gt;
+&lt;img src="meat/schemas/schemas.007.png" width="1200px" /&gt;
 
 ???
 To answer this, I looked at the three class I classical genes: HLA-A, HLA-B, HLA-C. Each one of those have thousands of different alleles described in a heavily curated immunogenetics database, and that number keeps increasing. The first step consisted in gathering the data and splitting these genes into ARS - the portions in the genome where the antigen binding sites are located - and the non-ARS - the rest of the gene. The latter were used as controls.
@@ -307,13 +294,13 @@ class:left, top
 
 ### Balancing selection results in .lilac[increased proportions] of polymorphic sites and .lilac[intermediate frequency] alleles
 
-&lt;img src="meat/schemas/schemas.009.png" width="930px" /&gt;
+&lt;img src="meat/schemas/schemas.008.png" width="930px" /&gt;
 ???
 These two trees show alleles segregating under neutral evolution and under balancing selection, and the arrow goes from the past to the present. Due to drift, neutral alleles have an expected time span before they fixate or get lost, shown in gray. A locus under balancing selection, on the other hand, will actively keep two or more variants segregating in a locus for a longer time than expected under neutral evolution.|This fact results in two characteristic signatures: 1) a higher proportion of intermediate frquency alleles, which is shown by the blue and red alleles in the tree; and 2) a higher proportion of polymorphisms (controlled by the underlying mutation rate) than a typical neutrally evolving region of the genome. So my idea in this project was to combine both of these signatures into one statistics.
 ---
 class:left, top
 ## A statistical test .lilac[specifically] tailored for .lilac[balancing selection?]
-&lt;img src="meat/schemas/schemas.010.png" width="1100px" /&gt;
+&lt;img src="meat/schemas/schemas.009.png" width="1100px" /&gt;
 
 ???
 Once I did that, the first step was to assess if this statistically actually worked. To do that, I simulated DNA sequences evolving under no selective pressure (i.e neutrally) and sequences where a locus is under balancing selection with different strengths. Both of these sequences were simulated 1000s of times under a model of human drmographic history so that genetic drift, bottlenecks etc cna be taken into account.Step 2 then involved calculating our new statistic (NCD2) for both sets of sequences and asking if they were sufficiently different to allow discrimination into these two categories. And indeed they were. Moreovoer, they had more power to detect balancing selection and ran more efficiently in computers than prev know methods.
@@ -321,7 +308,7 @@ Once I did that, the first step was to assess if this statistically actually wor
 
 ### Pervasiveness and .lilac[targets] of balancing selection in humans
 
-&lt;img src="meat/schemas/schemas.011.png" width="1000px" /&gt;
+&lt;img src="meat/schemas/schemas.010.png" width="1000px" /&gt;
 
 ???
 So we verified that we had a powerful new test. We then applied it to real population genetics data from the 1000G project. In particular, we focused on populations from Africa and Europe. We then ran a genome-wide scan, defining windows of fixed size along the genome and calculating the statistic for each window. That results ina  distribution, awe wnd cutoffs can be defined either based on simulations (how unexpected?) or empirical (how uncommon). We used a mix of these two approaches and found that we were able to recriate most previous candidate genes in the literature, plus a number of novel, prev underscribed genes/regions. Among the most extreme outlier windows, there was a significantly higher proportion of protein-altering variants (compared to controls), a significantly higher thane xpected proportion of genes expressed preferentially in testis, an excess of immune genes (1/3 of total) as well as an excess of genes in 'defense' categories more broadly, including immunity but also skin barriers, bitter taste receptors etc
@@ -382,7 +369,7 @@ So you might be thinking this is bad news in terms of predicting outcomes. So al
 class: center, top
 ### Genome-wide association studies .pink[(GWAS)] detect .pink[genetic associations] to traits of interest
 
-&lt;img src="meat/schemas/schemas.015.png" width="980px" /&gt;
+&lt;img src="meat/schemas/schemas.014.png" width="980px" /&gt;
 
 ???
 Earlier I mentioned that there were genetic associations to autoimmune diseases in the MHC region. How are those associations detected?
@@ -472,7 +459,7 @@ Sirugo, Williams &amp; Tishkoff (2019), *Cell*]]
 --
 .pull-left[.full-width[
 
-&lt;img src="index_files/figure-html/unnamed-chunk-19-1.png" width="420px" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-18-1.png" width="420px" /&gt;
 
 [Data: https://worldpopulationreview.com/]
 
@@ -483,19 +470,6 @@ Sirugo, Williams &amp; Tishkoff (2019), *Cell*]]
 Ok, so let's look at this pie chart from last year, with the proportion of individuals from Each of these groups of ancestry that appear in GWAS. Europeans make up almost 80%, Asians about 20% and Africans about 2%. Note that this is a big improvement since 2009. The same survey in 2009 showed that 96% of individuals were European!
 
 Anyway, now look at this pie chart on the right, which I made from data from worldpopulationreview for 2020. Now, the colors are not a true match, but I did my best. BEar in mind that the plot on the left is about ancestry, and the one on the right is about continents, regardless of ancestry. Nevertheless, it's a reasonable approximation for this purpose. Europeans in Blue represent a disproportionate amount of GWAS participants especially if you consider their share of the world's population. Asian POPULATION represent 60% of the world and ASIAN ANCESTRY only 10% of GWAS, and African POPULATION 17 and AND AFRICAN ANCESTRY 2%. Not to mention the other ancestries which are virtually non-existent.
----
-class: center, top
-### How much do polygenic scores predict phenotypes in .pink[other populations?]
-
-
-&lt;img src="meat/schemas/schemas.019.png" width="1000px" /&gt;
-
-
-???
-this is obviously not ideal and reflects many biases which I don't have time to go into to, but considering the hype i showed about PRS before, how does this affect popygenic risk score predictions? If personalized genomics are to became a part of medical care, we need be sure that we understand how these predictions work for the mostly unsampled populations of the world.
-
-This figure from Martin et al showes average prediction accuracies for 17 traits, using GWAS summary statisticas derived from 100% European cohorts. I am not sure what american means? As you can see, relative to the European ancestrie, all the other ancestries see a much reduced prediction accuracy for all traits
-
 ---
 class: middle, center
 
@@ -525,14 +499,14 @@ So the questions that motivated this work were:
 ---
 class: middle, center
 
-# .lilac[Let's look at] height
+# Let's look at height
 ???
 We chose to look at height because it is ahighly heritable trait, that is, it has a large genetic component.
 ---
 class:left, top
-## Wow well can we predict a .lilac[highly heritable] trait?
+## Predicting a highly heritable trait in diverse populations
 
-&lt;img src="meat/schemas/schemas.017.png" width="1000px" /&gt;
+&lt;img src="meat/schemas/schemas.015.png" width="1000px" /&gt;
 
 
 ???
@@ -548,8 +522,8 @@ In the end we looked at about 19,000 individuals with admied ancestry, and 10,00
 we modell height as a function of sex age and eur ancesty and compare that to a mdoel that also includes prs.
 ---
 class:left, top
-## Wow well can we predict a .lilac[highly heritable] trait in .lilac[different populations?]
-&lt;img src="meat/schemas/schemas.018.png" width="1000px" /&gt;
+## Power to predict height increases with proportion of European ancestry
+&lt;img src="meat/schemas/schemas.016.png" width="1000px" /&gt;
 
 ???
 Here we have the main finding. Explain this figure.
@@ -586,8 +560,6 @@ A brief recap of what I presented in those three research projects. These were t
 ---
 class: middle, left
 
-
-
 ### .pink[1)] There is support for the .blue[divergent allele advantage model] in HLA evolution
 
 
@@ -606,7 +578,7 @@ Going back to this, now, I hope I have convinced you that there are many fascina
 class: center, top
 ## Research Axis I: Balancing selection as a force that shapes diversity
 
-&lt;img src="meat/schemas/schemas.014.png" width="1000px" /&gt;
+&lt;img src="meat/schemas/schemas.013.png" width="1000px" /&gt;
 
 ???
 Talk about this
@@ -614,7 +586,7 @@ Talk about this
 class: center, top
 ## Research Axis II: Polygenic risk prediction in admixed populations
 
-&lt;img src="meat/schemas/schemas.013.png" width="930px" /&gt;
+&lt;img src="meat/schemas/schemas.012.png" width="930px" /&gt;
 ???
 Talk about this
 ---

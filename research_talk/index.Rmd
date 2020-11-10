@@ -203,7 +203,7 @@ Zooming in a little bit, the three research topics I will be focusing on today w
 class: center, top
 # A polymorphism is .lilac[variable site] in the genome .lilac[across individuals]
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.004.png")
+knitr::include_graphics("meat/schemas/schemas.003.png")
 ```
 
 
@@ -213,24 +213,9 @@ For many of those positions, we are all the same. For some of those, however, we
 ---
 class: center, top
 
-## Genomic diversity in the .lilac[absense of selective pressures]
-```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.003.png")
-```
-
-
-???
-Many sites in the genome evolve neutrally. Meaning that, even when a mutation arises, it has no appreciable consequence for the phenotype in a meaningful way. By meaningful I mean a way that affects the individuals fitness, that is, their reproductive success. 
-
-For instance, when a new population is founded by a small number of individuals from a larger popualtion, there is a loss of genetic diversity by genetic drift.
-
-Another example is admixture. When two populations from the same species, or even two related species, have different allele frequencies for many loci and they admix, the result is that more sites in the offsprings genome will be heterozygote, which is a measure of genetic diversity
----
-class: center, top
-
 ## .lilac[Balancing selection] maintains diversity in populations
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.005.png")
+knitr::include_graphics("meat/schemas/schemas.004.png")
 ```
 
 ???
@@ -243,7 +228,7 @@ class: center, top
 ## Sometimes, it may be .lilac[beneficial] to harbour .lilac[deleterious variants]
 
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.020.png")
+knitr::include_graphics("meat/schemas/schemas.017.png")
 ```
 
 ???
@@ -282,7 +267,7 @@ class: center, top
 ## The MHC is the .lilac[most genetically diverse] region of the vertebrate genome
 
 ```{r, out.width = "950px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.006.png")
+knitr::include_graphics("meat/schemas/schemas.005.png")
 ```
 ???
 
@@ -294,7 +279,7 @@ class: center, top
 ## The MHC is an .lilac[extreme instance] of balancing selection
 
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.007.png")
+knitr::include_graphics("meat/schemas/schemas.006.png")
 ```
 ???
 So this is clearly a very interesting locus, both from an evolutionary standpoint, as well as a more applied, health perspective. It has been known for some time that these genes represent the strongest instance of balancing selection in humans, and there is a good mechanistic basis behind it. The MHC genes code for cell surface proteins that present a antigen to the bonafide immune cells, the T cells shown here on the left. On the middle we see a schematic of the MHC molecule binding an antigen. Take note that this grove here corresponds to the part of the MHC genes that is actually very genetically diverse. In the 70s, it was suggested that individuals that are heterozygote for HLA alleles would have higher fitness, since each allele codes for one of these chains in the molecule and a heterozygote would be able to present a wider array of antigens.
@@ -321,10 +306,10 @@ class:  middle, left
 In other words, is there support for a model where heterozygotes composed of alleles that present a different antigen repertoire from each other more adaptive?
 ---
 class: center, top
-### To answer these questions, I looked at the human class I HLA genes
+### Stronger evidence of balancing selection between allelic lineages
 
 ```{r, out.width = "1200px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.008.png")
+knitr::include_graphics("meat/schemas/schemas.007.png")
 ```
 
 ???
@@ -400,7 +385,7 @@ class:left, top
 ### Balancing selection results in .lilac[increased proportions] of polymorphic sites and .lilac[intermediate frequency] alleles
 
 ```{r, out.width = "930px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.009.png")
+knitr::include_graphics("meat/schemas/schemas.008.png")
 ```
 ???
 These two trees show alleles segregating under neutral evolution and under balancing selection, and the arrow goes from the past to the present. Due to drift, neutral alleles have an expected time span before they fixate or get lost, shown in gray. A locus under balancing selection, on the other hand, will actively keep two or more variants segregating in a locus for a longer time than expected under neutral evolution.|This fact results in two characteristic signatures: 1) a higher proportion of intermediate frquency alleles, which is shown by the blue and red alleles in the tree; and 2) a higher proportion of polymorphisms (controlled by the underlying mutation rate) than a typical neutrally evolving region of the genome. So my idea in this project was to combine both of these signatures into one statistics.
@@ -408,7 +393,7 @@ These two trees show alleles segregating under neutral evolution and under balan
 class:left, top
 ## A statistical test .lilac[specifically] tailored for .lilac[balancing selection?]
 ```{r, out.width = "1100px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.010.png")
+knitr::include_graphics("meat/schemas/schemas.009.png")
 ```
 
 ???
@@ -418,7 +403,7 @@ Once I did that, the first step was to assess if this statistically actually wor
 ### Pervasiveness and .lilac[targets] of balancing selection in humans
 
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.011.png")
+knitr::include_graphics("meat/schemas/schemas.010.png")
 ```
 
 ???
@@ -483,7 +468,7 @@ class: center, top
 ### Genome-wide association studies .pink[(GWAS)] detect .pink[genetic associations] to traits of interest
 
 ```{r, out.width = "980px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.015.png")
+knitr::include_graphics("meat/schemas/schemas.014.png")
 ```
 
 ???
@@ -614,21 +599,6 @@ Ok, so let's look at this pie chart from last year, with the proportion of indiv
 
 Anyway, now look at this pie chart on the right, which I made from data from worldpopulationreview for 2020. Now, the colors are not a true match, but I did my best. BEar in mind that the plot on the left is about ancestry, and the one on the right is about continents, regardless of ancestry. Nevertheless, it's a reasonable approximation for this purpose. Europeans in Blue represent a disproportionate amount of GWAS participants especially if you consider their share of the world's population. Asian POPULATION represent 60% of the world and ASIAN ANCESTRY only 10% of GWAS, and African POPULATION 17 and AND AFRICAN ANCESTRY 2%. Not to mention the other ancestries which are virtually non-existent.
 ---
-class: center, top
-### How much do polygenic scores predict phenotypes in .pink[other populations?]
-
-
-```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.019.png")
-```
-
-
-???
-this is obviously not ideal and reflects many biases which I don't have time to go into to, but considering the hype i showed about PRS before, how does this affect popygenic risk score predictions? If personalized genomics are to became a part of medical care, we need be sure that we understand how these predictions work for the mostly unsampled populations of the world.
-
-This figure from Martin et al showes average prediction accuracies for 17 traits, using GWAS summary statisticas derived from 100% European cohorts. I am not sure what american means? As you can see, relative to the European ancestrie, all the other ancestries see a much reduced prediction accuracy for all traits
-
----
 class: middle, center
 
 
@@ -657,15 +627,15 @@ So the questions that motivated this work were:
 ---
 class: middle, center
 
-# .lilac[Let's look at] height
+# Let's look at height
 ???
 We chose to look at height because it is ahighly heritable trait, that is, it has a large genetic component.
 ---
 class:left, top
-## Wow well can we predict a .lilac[highly heritable] trait?
+## Predicting a highly heritable trait in diverse populations
 
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.017.png")
+knitr::include_graphics("meat/schemas/schemas.015.png")
 ```
 
 
@@ -682,9 +652,9 @@ In the end we looked at about 19,000 individuals with admied ancestry, and 10,00
 we modell height as a function of sex age and eur ancesty and compare that to a mdoel that also includes prs.
 ---
 class:left, top
-## Wow well can we predict a .lilac[highly heritable] trait in .lilac[different populations?]
+## Power to predict height increases with proportion of European ancestry
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.018.png")
+knitr::include_graphics("meat/schemas/schemas.016.png")
 ```
 
 ???
@@ -722,8 +692,6 @@ A brief recap of what I presented in those three research projects. These were t
 ---
 class: middle, left
 
-
-
 ### .pink[1)] There is support for the .blue[divergent allele advantage model] in HLA evolution
 
 
@@ -745,7 +713,7 @@ class: center, top
 ## Research Axis I: Balancing selection as a force that shapes diversity
 
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.014.png")
+knitr::include_graphics("meat/schemas/schemas.013.png")
 ```
 
 ???
@@ -755,7 +723,7 @@ class: center, top
 ## Research Axis II: Polygenic risk prediction in admixed populations
 
 ```{r, out.width = "930px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.013.png")
+knitr::include_graphics("meat/schemas/schemas.012.png")
 ```
 ???
 Talk about this
