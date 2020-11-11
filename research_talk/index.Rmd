@@ -89,7 +89,7 @@ style_duo_accent(primary_color = "#7294D4",
           text_bold_color = "#E6A0C4",
           title_slide_text_color = "#C6CDF7",
           title_slide_background_color = "#D8A499",
-          text_font_size=2,
+          text_font_size=3,
           header_font_google = google_font("Josefin Sans"),
           text_font_google   = google_font("Montserrat", "300", "300i"),
           code_font_google   = google_font("Fira Mono"),
@@ -118,23 +118,23 @@ extra_css <- list(
 
 # .pink[Evolutionary causes and clinical implications of genetic diversity]
 
-## .lilac[Bárbara Domingues Bitarello]
+### .blue[Bárbara Domingues Bitarello]
 
-### .lilac[Postdoctoral Scholar]
+### .cornflowerblue[Postdoctoral Scholar]
 
-### .lilac[Perelman School of Medicine, University of Pennsylvania]
+### .weirdbrown[Perelman School of Medicine, University of Pennsylvania]
 
 ???
 Good afternoon everyone, my name is Bárbara and I am a postdoctoral scholar in the genetics department of the school of medicine at Upenn. I am excited to present my research to all of you today.
 ---
 class: middle, center
 
-## Similar, but different 
+## Similar, but .weirdbrown[different]
 ```{r, out.width = "780px",echo=FALSE, eval=T}
 knitr::include_graphics("intro/tarsila.png")
 ```
 
-*"Operários"*, Tarsila do Amaral (1933) [Source: www.wikiart.org]
+.large[.gray[*"Operários"*, Tarsila do Amaral (1933) [Source: www.wikiart.org]]]
 
 ???
 A quick look around on the street, or at work, can make it clear that we, as a species, carry a lot of diversity. We differ in height, some diseases run in our families, some of us have asthama and can't see well, and so on.
@@ -143,38 +143,38 @@ Part of that diversity is rooted in genetics, while another part is due to the e
 ---
 class:top, left
 
-## Big questions
+# .pink[Big questions]
 
-### .pink[1)] How has ***evolution*** shaped genetic diversity?
+### How has .weirdbrown[evolution] shaped genetic diversity?
 
 --
 
-### .pink[2)] What are some of the ***most diverse*** genetic systems known and ***how*** did they evolve?
+### What are some of the .weirdbrown[most diverse] genetic systems known and *.weirdbrown[how]* did they evolve?
 
 ???
 What evolutionary processes shape genetic diversity
 What examples do we have of extremely diverse systems and what do they tell us about selective pressures?
 --
 
-### .pink[3)] What are the ***consequences*** of genetic diversity] and their link to common diseases?
+### What are the .weirdbrown[consequences] of genetic diversity and their link to common diseases?
 ???
 Are these consequences to such diversity, i.e, the presence of 'common variants' that predispose us to disease? 
 --
 
-### .pink[4)] Can we ***predict complex phenotypes*** using genetics in an equitable way that encompasses all of human genetic diversity?
+### Can we .weirdbrown[predict complex phenotypes] using genetics in an equitable way that encompasses *.weirdbrown[all]* of human genetic diversity?
 
 ???
 And, finally, since it seems inevitable that we are headed towards personalized genomic medicine, can it be done in a fair way?
 ---
 class: middle, left
 
-## .pink[Introduction]
+# .pink[Introduction]
 
-## .lilac[Project 1]
+## .lilac[Project 1: Balancing selection in the human MHC]
 
-## .lilac[Project 2]
+## .lilac[Project 2: Balancing selection in humans]
 
-## .lilac[Project 3]
+## .lilac[Project 3: Polygenic scores in diverse populations]
 
 ## .lilac[Future Directions]
 
@@ -183,7 +183,7 @@ I will start off by giving an overview of some important concepts that are used 
 ---
 class: center, top
 # My research: an overview
-```{r, out.width = "970px",echo=FALSE, eval=T}
+```{r, out.width = "950px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.001.png")
 ```
 
@@ -192,19 +192,20 @@ I use computational and statistics to approach much of these questions. I am a b
 ---
 class: center, top
 # My research: zooming in
-```{r, out.width = "1200px",echo=FALSE, eval=T}
+```{r, out.width = "1300px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.002.png")
 ```
 
 ???
 Zooming in a little bit, the three research topics I will be focusing on today will cover first the topic of MHC diversity, the most genetically diverse locus in the genomes of all vertebrates and an extreme case of balancing selection, followed by a project focused on balancing selection more broadly, and finally a project focused on  the power of genetic prediction pf phenotypes. 
 ---
-class: center, top
-# A polymorphism is a ***variable site*** in the genome within a species
-```{r, out.width = "1000px",echo=FALSE, eval=T}
+class: left, top
+# A polymorphism is a .weirdbrown[variable site] in the genome of a species
+.pull-center[
+```{r, out.width = "1100px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.003.png")
 ```
-
+]
 
 ???
 Every human individual carries 3.2 Billion 'letters' in their genome, and these carry the instructions for all the proteins as well as regulation of our genomes. 
@@ -212,8 +213,8 @@ For many of those positions, we are all the same. For some of those, however, we
 ---
 class: center, top
 
-# Balancing selection ***maintains diversity*** in populations
-```{r, out.width = "1000px",echo=FALSE, eval=T}
+# Balancing selection .weirdbrown[maintains diversity] in populations
+```{r, out.width = "1200px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.004.png")
 ```
 
@@ -222,14 +223,15 @@ In addition to neutral process, natural selection can also shape genetic variati
 
 On the other hand, another type of natural selection, BALANCING SELECTION, will actually maintain both of these hypothetical variants segregating because there is an adaptive tradeoff in doing so.
 ---
-class: center, top
+class: left, top
 
-# Sometimes, it may be ***beneficial*** to have ***deleterious variants***
+# Sometimes, .weirdbrown[deleterious variants] may be .weirdbrown[beneficial...]
 
+.pull-center[
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.017.png")
 ```
-
+]
 ???
 What does this look like in practice? Let's take the classical example of sickle cell anemia. In the 1950s, it was documented that the regions of the world where malaria was endemic highly overlapped with those were sickle cell disease was prevalent. 
 Alison and others found out that a genotype at a specific locus in the genome was behind this. the 'normal variant' made it so that red blood cells had their usual shape, which is healthy but also very susceptible to malaria infection. A mutant variant, on the other hand, represented by S here, made it so that blood cells had the form of a sickle, which causes a severe form of anemia, but as a sice product makes it really hard to be infected by  malaria. The intermediate or heterozygote phenotype, finally, gives some protection to malarial infection while only causing mild anemia, and this genotype harbours strong signatures of balancing selection.
@@ -253,17 +255,8 @@ Ok, so Now that we've covered what a variant or a polymorphic site in the genome
 
 [8 minutes until here]
 ---
-class: center, middle
-
-### .pink[1)] How has evolution shaped genetic diversity?
-
-
-### .pink[2)] What are some of the most diverse genetic systems known and how did they evolve to be so diverse?
-???
-Let's start by focusing on the most diverse region of the vertebrate genome: the MHC
----
 class: center, top
-# The MHC is the ***most diverse*** genomic region
+# The MHC is the .weirdbrown[most diverse] region in the genome
 
 ```{r, out.width = "950px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.005.png")
@@ -274,8 +267,8 @@ The major histocompatibility was first detected as the factor behind transplant 
 There is a vast literature on how certain alleles in these genes confer higher resistance to certain types of infection.
 
 ---
-class: center, top
-# The MHC is an ***extreme example*** of ***balancing selection***
+class: left, top
+# The MHC is an .weirdbrown[extreme case] of .weirdbrown[balancing selection]
 
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.006.png")
@@ -287,25 +280,25 @@ This is fascinating, because on the one hand, our immune sustems are evolving to
 ---
 class: center, middle
 
-# Do ***all heterozygotes*** have the same fitness?
+# Do .weirdbrown[all heterozygotes] have the .weirdbrown[same fitness]?
 
-# Do genotypes with ***more diverse alleles*** have a greater advantage?
+# Do genotypes with .weirdbrown[more diverse alleles] have a .weirdbrown[greater advantage]?
 
 ???
 This makes complete sense. A question that motivated me was whether all heterozygotes are equally adaptive. 
 ---
 class:  middle, left
 
-## Do genotypes with more diverse alleles have a greater advantage?
+# Do genotypes with .weirdbrown[more diverse alleles] have a .weirdbrown[greater advantage]?
 
-#### .pink[Hypothesis:] closely related alleles overlap in their antigen repertoire; less related alleles would make more fit heterozygotes
+### .pink[Hypothesis:] closely related alleles overlap in their antigen repertoire; less related alleles would make more fit heterozygotes
 
-####.pink[Prediction:] stronger balancing selection for pairs of MHC alleles that match different antigens
+###.pink[Prediction:] stronger balancing selection for pairs of MHC alleles that match different antigens
 ???
 In other words, is there support for a model where heterozygotes composed of alleles that present a different antigen repertoire from each other more adaptive?
 ---
 class: center, top
-# ***Stronger*** evidence of balancing selection ***between*** allelic lineages
+# .weirdbrown[Stronger] evidence of balancing selection .weirdbrown[between] allelic lineages
 
 ```{r, out.width = "1200px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.007.png")
@@ -346,44 +339,44 @@ The MHC/HLA system is certainly very interesting and unique, but it led me to ot
 class: center, middle
 
 
-# ***How prevalent*** has balancing selection been throughout human evolution? 
+# .weirdbrown[How prevalent] is balancing selection in humans? 
 
-# What are the instances ***beyond the MHC*** loci?
+# What are the instances .weirdbrown[beyond the MHC]?
 
-# What are the ***common trends*** ?
+# What are the .weirdbrown[common trends], in any ?
 
 ???
 What were the other isnances of balancing selection in our evolution beyong the MHC and how prevalent has this evolutionary process been?
 ---
 class:top, left
 
-### Goal 1: detect balancing selection in the human genome
+### .weirdbrown[Goal 1:] detect balancing selection in the human genome
 
-#### .pink[Approach:] combine its two main signals into one statistic
+### .weirdbrown[Approach:] combine its two main signals into one statistic
 ???
 For starters this was hard to quantify because, unlike positive selection, balancing selection had not received a lot of attention in the literature, and most statistical tests used to detect it were not very specific
 
 --
 
-### Goal 2: quantify its occurrence  throughout human evolution?
+### .weirdbrown[Goal 2:] quantify its occurrence  throughout human evolution?
 
-#### .pink[Approach:] perform a genome-wide scan using our test 
+### .weirdbrown[Approach:] perform a genome-wide scan using our test 
 
 ???
 So we conjectured that by first designing a specific test for abalncing selection and then applying it to real data we would get a more complete picture
 
 --
 
-### Goal 3: describe the candidate genes/regions
+### .weirdbrown[Goal 3:] describe the candidate genes/regions
 
-#### .pink[Approach:] Verify whether they are coding, regulatory, functions of the genes, etc
+### .weirdbrown[Approach:] Verify whether they are coding, regulatory, functions of the genes, etc
 
 ???
 Having used this statistic to search the genome, what can we say about the candidate targets of balancing selection in humans?
 ---
-class:center, top
+class:left, top
 
-## Balancing selection increases ***proportions of polymorphic sites*** and ***intermediate frequency*** alleles
+## Balancing selection increases .weirdbrown[polymorphism level] and alleles at .weirdbrown[intermediate frequency] 
 
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.008.png")
@@ -392,7 +385,7 @@ knitr::include_graphics("meat/schemas/schemas.008.png")
 These two trees show alleles segregating under neutral evolution and under balancing selection, and the arrow goes from the past to the present. Due to drift, neutral alleles have an expected time span before they fixate or get lost, shown in gray. A locus under balancing selection, on the other hand, will actively keep two or more variants segregating in a locus for a longer time than expected under neutral evolution.|This fact results in two characteristic signatures: 1) a higher proportion of intermediate frquency alleles, which is shown by the blue and red alleles in the tree; and 2) a higher proportion of polymorphisms (controlled by the underlying mutation rate) than a typical neutrally evolving region of the genome. So my idea in this project was to combine both of these signatures into one statistics.
 ---
 class:left, top
-## NCD2 was more _powerful_, more _efficient_ and _faster_ than previous models
+# *NCD2* was .weirdbrown[faster], more .weirdbrown[powerful,] and .weirdbrown[efficient] than previous models
 ```{r, out.width = "1100px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.009.png")
 ```
@@ -401,12 +394,12 @@ knitr::include_graphics("meat/schemas/schemas.009.png")
 Once I did that, the first step was to assess if this statistically actually worked. To do that, I simulated DNA sequences evolving under no selective pressure (i.e neutrally) and sequences where a locus is under balancing selection with different strengths. Both of these sequences were simulated 1000s of times under a model of human drmographic history so that genetic drift, bottlenecks etc cna be taken into account.Step 2 then involved calculating our new statistic (NCD2) for both sets of sequences and asking if they were sufficiently different to allow discrimination into these two categories. And indeed they were. Moreovoer, they had more power to detect balancing selection and ran more efficiently in computers than prev know methods.
 ---
 
-## Balancing selection has been ***more common*** than previously thought
-
-```{r, out.width = "1000px",echo=FALSE, eval=T}
+# Balancing selection has been .weirdbrown[more common] than previously thought
+.pull-center[
+```{r, out.width = "900px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.010.png")
 ```
-
+]
 ???
 So we verified that we had a powerful new test. We then applied it to real population genetics data from the 1000G project. In particular, we focused on populations from Africa and Europe. We then ran a genome-wide scan, defining windows of fixed size along the genome and calculating the statistic for each window. That results ina  distribution, awe wnd cutoffs can be defined either based on simulations (how unexpected?) or empirical (how uncommon). We used a mix of these two approaches and found that we were able to recriate most previous candidate genes in the literature, plus a number of novel, prev underscribed genes/regions. Among the most extreme outlier windows, there was a significantly higher proportion of protein-altering variants (compared to controls), a significantly higher thane xpected proportion of genes expressed preferentially in testis, an excess of immune genes (1/3 of total) as well as an excess of genes in 'defense' categories more broadly, including immunity but also skin barriers, bitter taste receptors etc
 
@@ -431,7 +424,7 @@ As hinted by this last slide, genetics is more complicated than simply 'good var
 ---
 
 class: center, top
-# Genome-wide association studies detect **.pink[genetic associations]** to traits of interest
+# Genome-wide association studies detect **.weirdbrown[genetic associations]** to traits of interest
 
 ```{r, out.width = "980px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.014.png")
@@ -446,18 +439,18 @@ This results in the landscape of polygenic traits to look something like we see 
 Rare variants with small effect sizes are difficult to identify using GWAS, and common variants with large effects are unusual for common complex diseases
 
 ---
-class: inverse, middle, center
+class: middle, center
 
-# .lilac[Combined, these variants can explain a lot!]
+# .pink[Combined,] these variants can explain .pink[a lot!]
 
 ???
 
 So you might be thinking this is bad news in terms of predicting outcomes. So although most of these variants we detect in genome-wide association studies have very small effect, when you add them up, they explain quite a lot of the variation in a trait. How, you may ask. let's rewind a bit.
 
 ---
-class: center, top
+class: left, top
 
-# Polygenic risk scores combine _all variants_ with a phenotypic effect
+# Polygenic risk scores combine .weirdbrown[all] associated variants for a trait
 .pull-left[
 $$PRS=\sum {\hat\beta G}$$ 
 
@@ -465,13 +458,15 @@ $\hat\beta$ : effect size (from GWAS)
 
 $G$ : Effect allele dosage
 
+### 
+### .weirdbrown[E.g. cardiovascular disease]
 Khera et al. (2018) *Nat Genet*
+
 ]
 
-.pull-right[.full-width[
+.pull-center[.full-width[
 
-### .pink[Cardiovascular disease]
-```{r, out.width = "350px",echo=FALSE, eval=T}
+```{r, out.width = "400px",echo=FALSE, eval=T}
 knitr::include_graphics("cad.png")
 ```
 ]]
@@ -487,17 +482,17 @@ There are a few other examples like this sofar for breast cancer for instance.
 The main point I want to emphasize is...This is for individuals with European ancestry.
 
 ---
-class: middle, center, inverse
+class: middle, center
 
-# .lilac[What about ancestry?]
+# What about .pink[ancestry?]
 
 ???
 right. So what about ancestry?
 ---
 class: center, top
 .pull-left[.full-width[
-## European **ancestry** represent almost 80% of GWAS participants...
-```{r, out.width = "350px",echo=FALSE, eval=T}
+## .weirdbrown[European ancestry] represent almost .weirdbrown[80% of GWAS] participants...
+```{r, out.width = "580px",echo=FALSE, eval=T}
 knitr::include_graphics("Screen Shot 2020-09-16 at 4.28.04 PM.png")
 ```
 
@@ -505,7 +500,7 @@ Sirugo, Williams & Tishkoff (2019), *Cell*]]
 --
 .pull-left[.full-width[
 
-```{r, echo=FALSE, eval=T, out.width = "420px"}
+```{r, echo=FALSE, eval=T, out.width = "490px"}
 world<-fread('~/Downloads/csvData.csv')
 #library(plotly)
 blank_theme <- theme_minimal()+
@@ -528,9 +523,9 @@ print(bp)
 ```{r, out.width = "650px",echo=FALSE, eval=F}
 knitr::include_graphics("Screen Shot 2020-09-16 at 2.44.43 PM.png")
 ```
-[Data: https://worldpopulationreview.com/]
+Data: https://worldpopulationreview.com/
 
-## .. and <15% of the world's population
+## .. and .weirdbrown[<15%] of the world's population
 ]]
 
 ???
@@ -541,10 +536,10 @@ Anyway, now look at this pie chart on the right, which I made from data from wor
 class: middle, center
 
 
-## How do these _.pink[different factors]_ affect prediction accuracy?
+# What .weirdbrown[factors] affect prediction accuracy?
 
 
-## What can we _do_ about it?
+# What can we .weirdbrown[do] about it?
 
 
 ???
@@ -552,14 +547,13 @@ So the questions that motivated this work were: how
 ---
 class: middle, left
 
+## What .weirdbrown[factors] affect prediction accuracy?
 
-## How do these different factors affect prediction accuracy?
+### .pink[Approach:] verify how well we can predict a phenotype in different ancestry populations and investigate the causes for discordance
 
-#### .pink[Approach:] verify how well we can predict a phenotype in different ancestry populations and investigate the causes for discordance
+## What can we .weirdbrown[do] about it?
 
-## What can we do about it?
-
-#### .pink[Approach:] explore approaches to mathematically correct for discordances
+### .pink[Approach:] explore approaches to mathematically correct for discordances
 
 ???
 So the questions that motivated this work were:
@@ -571,7 +565,7 @@ class: middle, center
 We chose to look at height because it is ahighly heritable trait, that is, it has a large genetic component.
 ---
 class:center, top
-# Predicting a highly heritable trait in diverse populations
+# Predicting .weirdbrown[height] in individuals with .weirdbrown[admixed ancestry]
 
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.015.png")
@@ -591,7 +585,7 @@ In the end we looked at about 19,000 individuals with admied ancestry, and 10,00
 we modell height as a function of sex age and eur ancesty and compare that to a mdoel that also includes prs.
 ---
 class:center, top
-## Power to predict height increases with proportion of European ancestry
+# Predictive power *.weirdbrown[increases]* with genomic proportion of .weirdbrown[European ancestry]
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.016.png")
 ```
@@ -617,12 +611,20 @@ With that I will move on the final part of this talk, where I highlight some exc
 
 class: middle, left
 
+## Balancing selection
+### * .pink[Heterozygote advantage in the MHC favors] .weirdbrown[non-redundant alleles]
 
-# Recap
+###  * .pink[A new test,.weirdbrown[more powerful] and specific for balancing selection]
 
-```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.018.png")
-```
+### * .pink[Balancing selection may have affected] .weirdbrown[8% of protein coding genes]
+
+### * .weirdbrown[1/3 immune] .pink[related, many other functions]
+
+## Polygenic predictions
+
+### * .pink[PRS have little/no utility for ancestries] .weirdbrown[other than European]
+
+### * .pink[Many factors; need to .weirdbrown[diversify genetic studies] at all stages]
 
 ???
 And these were the answers
@@ -635,9 +637,9 @@ knitr::include_graphics("meat/schemas/schemas.011.png")
 Going back to this, now, I hope I have convinced you that there are many fascinating biological questions waiting to be answered, and that genomics provides powerful tools to answer many of them. My research path represented by these three projects helps contextualize my two main axis of fture research:
 ---
 class: center, top
-## Research Axis I: Balancing selection as a force that shapes diversity
+## .weirdbrown[Axis I:] Balancing selection as a force that shapes diversity
 
-```{r, out.width = "960px",echo=FALSE, eval=T}
+```{r, out.width = "990px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.013.png")
 ```
 
@@ -645,7 +647,7 @@ knitr::include_graphics("meat/schemas/schemas.013.png")
 Talk about this
 ---
 class: center, top
-## Research Axis II: Polygenic risk prediction in admixed populations
+# .weirdbrown[Axis II:] Polygenic risk prediction in admixed populations
 
 ```{r, out.width = "930px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.012.png")
@@ -658,11 +660,11 @@ class: top, center
 
 .pull-left[.full-width[
 
-**Iain Mathieson**
+### .weirdbrown[Iain Mathieson - Upenn]
 
-**Diogo Meyer**
+### .weirdbrown[Diogo Meyer - U. São Paulo]
 
-**Aida Andrés**
+### .weirdbrown[Aida Andrés - UCL]
 
 Joshua Schmidt
 
@@ -693,8 +695,6 @@ Health and Retirement Study
 knitr::include_graphics("fapesp-logo.jpg")
 ```
 
-
----
 
 
 
