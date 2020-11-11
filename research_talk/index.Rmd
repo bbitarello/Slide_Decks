@@ -279,16 +279,7 @@ class: center, top
 
 .pull-center[
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.040.png")
-```
----
-class: center, top
-
-# Sometimes, .weirdbrown[deleterious variants] may be .weirdbrown[beneficial...]
-
-.pull-center[
-```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.040.png")
+knitr::include_graphics("meat/schemas/schemas.041.png")
 ```
 ]
 ???
@@ -340,7 +331,7 @@ class: center, top
 knitr::include_graphics("meat/schemas/schemas.013.png")
 ```
 ---
-class: left, top
+class: center, top
 # The MHC is an .weirdbrown[extreme case] of .weirdbrown[balancing selection]
 
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
@@ -378,26 +369,19 @@ knitr::include_graphics("meat/schemas/schemas.015.png")
 ```
 ---
 class: center, top
-# .weirdbrown[Stronger] evidence of balancing selection .weirdbrown[between] allelic lineages
+# .weirdbrown[Allelic lineages] display strong evidence of balancing selection
+
 
 ```{r, out.width = "1200px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.016.png")
 ```
 ---
 class: center, top
-# .weirdbrown[Stronger] evidence of balancing selection .weirdbrown[between] allelic lineages
+# .weirdbrown[Allelic lineages] display strong evidence of balancing selection
 
 ```{r, out.width = "1200px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.017.png")
 ```
----
-class: center, top
-# .weirdbrown[Stronger] evidence of balancing selection .weirdbrown[between] allelic lineages
-
-```{r, out.width = "1200px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.018.png")
-```
-
 ???
 To answer this, I looked at the three class I classical genes: HLA-A, HLA-B, HLA-C. Each one of those have thousands of different alleles described in a heavily curated immunogenetics database, and that number keeps increasing. The first step consisted in gathering the data and splitting these genes into ARS - the portions in the genome where the antigen binding sites are located - and the non-ARS - the rest of the gene. The latter were used as controls.
 
@@ -602,12 +586,6 @@ knitr::include_graphics("meat/schemas/schemas.034.png")
 ```
 ---
 
-class: center, top
-# Genome-wide association studies detect **.weirdbrown[genetic associations]** to traits of interest
-
-```{r, out.width = "975px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.035.png")
-```
 
 ???
 Earlier I mentioned that there were genetic associations to autoimmune diseases in the MHC region. How are those associations detected?
@@ -774,15 +752,15 @@ class:center, top
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.037.png")
 ```
+???
+Here we have the main finding. Explain this figure.
+We then proceeded to investifate, one by one, the different methodological and statistical factors that could be driving this and concluded that there is no simply fix to this loss of prediction. That is, the fix would have to happen upstream, i.e, the discovery cohorts need to be more diverse. 
 ---
 class:center, top
 # Predictive power *.weirdbrown[increases]* with genomic proportion of .weirdbrown[European ancestry]
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.038.png")
 ```
-???
-Here we have the main finding. Explain this figure.
-We then proceeded to investifate, one by one, the different methodological and statistical factors that could be driving this and concluded that there is no simply fix to this loss of prediction. That is, the fix would have to happen upstream, i.e, the discovery cohorts need to be more diverse. 
 ---
 class:left, middle
 
@@ -824,7 +802,7 @@ And these were the answers
 ---
 class:center, middle
 ```{r, out.width = "1200px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.011.png")
+knitr::include_graphics("meat/schemas/schemas.028.png")
 ```
 ???
 Going back to this, now, I hope I have convinced you that there are many fascinating biological questions waiting to be answered, and that genomics provides powerful tools to answer many of them. My research path represented by these three projects helps contextualize my two main axis of fture research:
@@ -833,7 +811,7 @@ class: center, top
 # .weirdbrown[Axis I:] Balancing selection as a force that shapes diversity
 
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.013.png")
+knitr::include_graphics("meat/schemas/schemas.030.png")
 ```
 
 ???
@@ -843,7 +821,7 @@ class: center, top
 # .weirdbrown[Axis II:] Polygenic risk prediction in admixed populations
 
 ```{r, out.width = "990px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.012.png")
+knitr::include_graphics("meat/schemas/schemas.029.png")
 ```
 ???
 Talk about this
