@@ -393,7 +393,7 @@ knitr::include_graphics("meat/schemas/schemas.009.png")
 ???
 Once I did that, the first step was to assess if this statistically actually worked. To do that, I simulated DNA sequences evolving under no selective pressure (i.e neutrally) and sequences where a locus is under balancing selection with different strengths. Both of these sequences were simulated 1000s of times under a model of human drmographic history so that genetic drift, bottlenecks etc cna be taken into account.Step 2 then involved calculating our new statistic (NCD2) for both sets of sequences and asking if they were sufficiently different to allow discrimination into these two categories. And indeed they were. Moreovoer, they had more power to detect balancing selection and ran more efficiently in computers than prev know methods.
 ---
-
+class: top, left
 # Balancing selection has been .weirdbrown[more common] than previously thought
 .pull-center[
 ```{r, out.width = "900px",echo=FALSE, eval=T}
@@ -492,7 +492,7 @@ right. So what about ancestry?
 class: center, top
 .pull-left[.full-width[
 ## .weirdbrown[European ancestry] represent almost .weirdbrown[80% of GWAS] participants...
-```{r, out.width = "580px",echo=FALSE, eval=T}
+```{r, out.width = "480px",echo=FALSE, eval=T}
 knitr::include_graphics("Screen Shot 2020-09-16 at 4.28.04 PM.png")
 ```
 
@@ -500,7 +500,7 @@ Sirugo, Williams & Tishkoff (2019), *Cell*]]
 --
 .pull-left[.full-width[
 
-```{r, echo=FALSE, eval=T, out.width = "490px"}
+```{r, echo=FALSE, eval=T, out.width = "450px"}
 world<-fread('~/Downloads/csvData.csv')
 #library(plotly)
 blank_theme <- theme_minimal()+
