@@ -393,10 +393,10 @@ knitr::include_graphics("meat/schemas/schemas.009.png")
 ???
 Once I did that, the first step was to assess if this statistically actually worked. To do that, I simulated DNA sequences evolving under no selective pressure (i.e neutrally) and sequences where a locus is under balancing selection with different strengths. Both of these sequences were simulated 1000s of times under a model of human drmographic history so that genetic drift, bottlenecks etc cna be taken into account.Step 2 then involved calculating our new statistic (NCD2) for both sets of sequences and asking if they were sufficiently different to allow discrimination into these two categories. And indeed they were. Moreovoer, they had more power to detect balancing selection and ran more efficiently in computers than prev know methods.
 ---
-class: top, left
+class: top, center
 # Balancing selection has been .weirdbrown[more common] than previously thought
 .pull-center[
-```{r, out.width = "900px",echo=FALSE, eval=T}
+```{r, out.width = "950px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.010.png")
 ```
 ]
@@ -599,9 +599,12 @@ class:left, middle
 
 ## .lilac[Introduction]
 
-##  .lilac[Research Theme 1: Balancing selection in humans]
+## .lilac[Project 1: Balancing selection in the human MHC]
 
-## .lilac[Research Theme 2: Polygenic risk prediction for individuals with non-European ancestry] 
+## .lilac[Project 2: Balancing selection in humans]
+
+## .lilac[Project 3: Polygenic scores in diverse populations]
+
 
 ## .pink[Future Directions]
 
