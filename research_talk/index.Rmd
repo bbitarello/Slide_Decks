@@ -357,6 +357,7 @@ class:  middle, left
 
 ### .pink[Hypothesis:] closely related alleles recognize similar types of antgiens; less related alleles increase diversity of recognized antigens
 
+--
 ###.pink[Prediction:] stronger balancing selection for pairs of MHC alleles that match different antigens
 ???
 In other words, is there support for a model where heterozygotes composed of alleles that present a different antigen repertoire from each other more adaptive?
@@ -419,7 +420,11 @@ class: center, middle
 
 # .weirdbrown[How prevalent] is balancing selection?
 
+--
+
 # Are there more examples of balancing selection .weirdbrown[beyond the MHC]?
+
+--
 
 # Do targets of balancing selection display .weirdbrown[common features]?
 
@@ -453,7 +458,7 @@ Having used this statistic to search the genome, what can we say about the candi
 ---
 class:center, top
 
-# Balancing selection increases .weirdbrown[polymorphism level] and shifts alleles to .weirdbrown[intermediate frequency] 
+## Balancing selection increases .weirdbrown[polymorphism level] and shifts alleles to .weirdbrown[intermediate frequency] 
 
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.018.png")
@@ -461,7 +466,7 @@ knitr::include_graphics("meat/schemas/schemas.018.png")
 ---
 class:center, top
 
-# Balancing selection increases .weirdbrown[polymorphism level] and shitfs alleles to .weirdbrown[intermediate frequency] 
+## Balancing selection increases .weirdbrown[polymorphism level] and shifts alleles to .weirdbrown[intermediate frequency] 
 
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.019.png")
@@ -470,7 +475,7 @@ knitr::include_graphics("meat/schemas/schemas.019.png")
 ---
 class:center, top
 
-# Balancing selection increases .weirdbrown[polymorphism level] and shifts alleles to .weirdbrown[intermediate frequency] 
+## Balancing selection increases .weirdbrown[polymorphism level] and shifts alleles to .weirdbrown[intermediate frequency] 
 
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.020.png")
@@ -645,22 +650,29 @@ right. So what about ancestry?
 ---
 class: center, top
 .pull-left[.full-width[
-## .weirdbrown[European ancestry] represent almost .weirdbrown[80% of GWAS] participants...
+## .weirdbrown[European ancestry] represents almost .weirdbrown[80% of GWAS] participants...
 ```{r, out.width = "370px",echo=FALSE, eval=T}
 knitr::include_graphics("Screen Shot 2020-09-16 at 4.28.04 PM.png")
 ```
 ]]
---
-.pull-left[.full-width[
 
-```{r, out.width = "650px",echo=FALSE, eval=T}
+--
+
+.pull-right[.full-width[
+
+
+
+```{r, out.width = "1600px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.041.png")
 ```
-## .. and .weirdbrown[<15%] of the world's population
+
+https://worldpopulationreview.com/
+
+## ... and .weirdbrown[ less than 15%] of the world's population 
+
+
+Sirugo et al. (2019), *Cell*
 ]]
-
-.pull-center[Sirugo, Williams & Tishkoff (2019), *Cell*]
-
 
 ???
 Ok, so let's look at this pie chart from last year, with the proportion of individuals from Each of these groups of ancestry that appear in GWAS. Europeans make up almost 80%, Asians about 20% and Africans about 2%. Note that this is a big improvement since 2009. The same survey in 2009 showed that 96% of individuals were European!
