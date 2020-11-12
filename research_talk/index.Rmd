@@ -279,7 +279,7 @@ class: center, top
 
 .pull-center[
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/schemas/schemas.041.png")
+knitr::include_graphics("meat/schemas/schemas.040.png")
 ```
 ]
 ???
@@ -453,7 +453,7 @@ Having used this statistic to search the genome, what can we say about the candi
 ---
 class:center, top
 
-## Balancing selection increases .weirdbrown[polymorphism level] and alleles at .weirdbrown[intermediate frequency] 
+# Balancing selection increases .weirdbrown[polymorphism level] and shifts alleles to .weirdbrown[intermediate frequency] 
 
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.018.png")
@@ -461,7 +461,7 @@ knitr::include_graphics("meat/schemas/schemas.018.png")
 ---
 class:center, top
 
-## Balancing selection increases .weirdbrown[polymorphism level] and alleles at .weirdbrown[intermediate frequency] 
+# Balancing selection increases .weirdbrown[polymorphism level] and shitfs alleles to .weirdbrown[intermediate frequency] 
 
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.019.png")
@@ -470,7 +470,7 @@ knitr::include_graphics("meat/schemas/schemas.019.png")
 ---
 class:center, top
 
-## Balancing selection increases .weirdbrown[polymorphism level] and alleles at .weirdbrown[intermediate frequency] 
+# Balancing selection increases .weirdbrown[polymorphism level] and shifts alleles to .weirdbrown[intermediate frequency] 
 
 ```{r, out.width = "1000px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.020.png")
@@ -501,7 +501,7 @@ knitr::include_graphics("meat/schemas/schemas.023.png")
 Once I did that, the first step was to assess if this statistically actually worked. To do that, I simulated DNA sequences evolving under no selective pressure (i.e neutrally) and sequences where a locus is under balancing selection with different strengths. Both of these sequences were simulated 1000s of times under a model of human drmographic history so that genetic drift, bottlenecks etc cna be taken into account.Step 2 then involved calculating our new statistic (NCD2) for both sets of sequences and asking if they were sufficiently different to allow discrimination into these two categories. And indeed they were. Moreovoer, they had more power to detect balancing selection and ran more efficiently in computers than prev know methods.
 ---
 class: top, center
-# Balancing selection has been .weirdbrown[more common] than previously thought
+# Balancing selection has been .weirdbrown[more common] in human evolution than previously thought 
 .pull-center[
 ```{r, out.width = "950px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.024.png")
@@ -509,7 +509,7 @@ knitr::include_graphics("meat/schemas/schemas.024.png")
 ]
 ---
 class: top, center
-# Balancing selection has been .weirdbrown[more common] than previously thought
+# Balancing selection has been .weirdbrown[more common] in human evolution than previously thought 
 .pull-center[
 ```{r, out.width = "950px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.025.png")
@@ -517,7 +517,7 @@ knitr::include_graphics("meat/schemas/schemas.025.png")
 ]
 ---
 class: top, center
-# Balancing selection has been .weirdbrown[more common] than previously thought
+# Balancing selection has been .weirdbrown[more common] in human evolution than previously thought 
 .pull-center[
 ```{r, out.width = "950px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.026.png")
@@ -525,7 +525,7 @@ knitr::include_graphics("meat/schemas/schemas.026.png")
 ]
 ---
 class: top, center
-# Balancing selection has been .weirdbrown[more common] than previously thought
+# Balancing selection has been .weirdbrown[more common] in human evolution than previously thought 
 .pull-center[
 ```{r, out.width = "950px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.027.png")
@@ -584,9 +584,6 @@ class: center, top
 ```{r, out.width = "975px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.034.png")
 ```
----
-
-
 ???
 Earlier I mentioned that there were genetic associations to autoimmune diseases in the MHC region. How are those associations detected?
 GWAS are big scale studies. It works roughly like this: a trait of interest is chosen. Typically a binary trait such as presence or absence of disease status or a continuous trait, like height. A large cohort of individuals has their phenotype measured, and their genetic data analysed. Then, each variant is tested as shown in this plot on the right as to wehther it has an effect in the phenotype or not. In this fake example, depending on the genotype in this variant, the individual has remarkably different phenotypes. Next, each variant is represented in a plot such as this one, called a manhattan plot, where the peaks suggest the approx geneomic location of variants associated with the trait. Finally, the results from a gwas may be used in a so called polygenic score to asess the disease/phenotype status of a invidiaul outside the initial discovery cohort. 
@@ -598,7 +595,7 @@ Rare variants with small effect sizes are difficult to identify using GWAS, and 
 ---
 class: middle, center
 
-# .pink[Combined,] these variants can explain .pink[a lot!] of the phenotype variance
+# .pink[Combined,] these variants can explain .pink[a lot!] of the .pink[phenotypic variance]
 
 ???
 
@@ -607,7 +604,7 @@ So you might be thinking this is bad news in terms of predicting outcomes. So al
 ---
 class: center, top
 
-# Polygenic risk scores combine .weirdbrown[all] associated variants for a trait
+# Polygenic risk scores combine *.weirdbrown[all]* associated variants for a trait
 .pull-left[
 $$PRS=\sum {\hat\beta G}$$ 
 
@@ -655,28 +652,9 @@ knitr::include_graphics("Screen Shot 2020-09-16 at 4.28.04 PM.png")
 ]]
 --
 .pull-left[.full-width[
-```{r, echo=FALSE, eval=T, out.width = "430px"}
-world<-fread('~/Downloads/csvData.csv')
-#library(plotly)
-blank_theme <- theme_minimal()+
-  theme(
-  axis.title.x = element_blank(),
-  axis.title.y = element_blank(),
-  panel.border = element_blank(),
-  panel.grid=element_blank(),
-  axis.ticks = element_blank(),
-  plot.title=element_text(size=14, face="bold")
-  )
-bp<- ggplot(world, aes(x="", y=WorldPop, fill=Name))+
-geom_bar(width = 1, stat = "identity") + coord_polar("y", start=0)+ 
-  scale_fill_manual(values=c("red","#E6A0C4","#7294D4", "#999999","#899DA4","#A2A475")) + blank_theme +
-  theme(axis.text.x=element_blank()) + 
-  geom_text(aes(y=c(0.9,0.4,0.17, 0.10, 0.05, 0.025), label=paste0((c(0.1720, 0.5954, 0.0959, 0.0473,0.0055, 0.0553)*100), "%")), size=c(6,6,6,6,2,3))
- 
-print(bp)
-```
-```{r, out.width = "650px",echo=FALSE, eval=F}
-knitr::include_graphics("Screen Shot 2020-09-16 at 2.44.43 PM.png")
+
+```{r, out.width = "650px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/schemas/schemas.041.png")
 ```
 ## .. and .weirdbrown[<15%] of the world's population
 ]]
@@ -859,13 +837,10 @@ Jackson Heart Study
 Health and Retirement Study
 
 1000 Genomes Project
-]]
-
-
 ```{r, out.width = "300px",echo=FALSE, eval=T}
 knitr::include_graphics("fapesp-logo.jpg")
 ```
-
+]]
 
 
 
