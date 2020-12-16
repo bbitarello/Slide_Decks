@@ -481,7 +481,7 @@ $$\chi_{diff}^2=\left[\frac{\beta_{eur}-\beta_{afr}}{\sqrt{SE_{eur}^2+SE_{afr}^2
 Bitarello & Mathieson (2020), *G3: Genes, Genomes, Genetics*
 ---
 class: top, left
-# Allele frequencies explains up to .weirdbrown[20% of LOA]
+# Allele frequencies explains up to .weirdbrown[20% of oLOA]
 
 .pull-left[.full-width[
 ```{r, out.width = "370px",echo=FALSE, eval=T}
@@ -633,13 +633,7 @@ $$\chi_{diff}^2=\left[\frac{\beta_{eur}-\beta_{afr}}{\sqrt{SE_{eur}^2+SE_{afr}^2
 ###**Observation:** Difference in effect sizes **increase** with allele frequency differences across ancestries
 ---
 class: center
-###*Assuming* there **are** differences in **marginal** effect sizes
-
-
-
----
-class: center
-###*Assuming* there **are** differences in **marginal** effect sizes
+##Assuming there .weirdbrown[are differences] in .weirdbrown[marginal effect sizes
 
 $$PRS_1^{C}=\alpha PRS_{AFR}+(1-\alpha) PRS_{EUR}$$
 Marquez-Luna *et al.* (2018) *Genet Epidem*
@@ -729,11 +723,11 @@ knitr::include_graphics("figs/tpf_logo_rgb-Facebook.jpg")
 
 ]]
 ---
-class: icenter, middle
+class: center, middle
 
 # .pink[Thank you!]
 
-# .weirbrown[Questions?]
+# .weirdbrown[Questions?]
 
 
 
