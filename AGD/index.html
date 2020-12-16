@@ -204,7 +204,7 @@ class: top,center
 
 Wang &amp; Wisscher (2020) *Nat Comms*
 
-###.weirdbrown[LOA:] loss of accuracy
+###.weirdbrown[LOA:]oo loss of accuracy
 ???
 And wang &amp; wisscher recently showed through simulations tat this is expected. On the x axis here you have south asians, east asians and africans, and they axis shows the reltive accuracy, i.e, divided by Eur accuracy. It's expected to decline under a range of genetic architectures. I won't go into this but the different colors here represent different estimators they used. 
 For the remainder of this talk I will use LOA to refer to this loss of accuracy
@@ -322,36 +322,15 @@ class:center, top
 &lt;img src="figs/meat/schemas/schemas.038.png" width="1000px" /&gt;
 
 
-
 ---
+class: middle, center
 
-
-class: top, center
-
-###GWAS from UKBB (AFR) individuals
-
-.pull-left[.full-width[
-&lt;img src="figs/Fig3c.png" width="670px" /&gt;
-
-]]
-
-
-.pull-right[.full-width[
-
-`\(y=sex+age+age^2+10PCs\)`
-
-`\(N_{AFR}\sim8,800\)`
-
-`\(N_{EUR}\sim350,000\)`
-
-`$$\chi_{diff}^2=\left[\frac{\beta_{eur}-\beta_{afr}}{\sqrt{SE_{eur}^2+SE_{afr}^2}}\right]^2$$`
-]]
-
-Bitarello &amp; Mathieson (2020), *G3: Genes, Genomes, Genetics*
-
+# Why is PRS relative performance a function of genomic proportion of European ancestry?
+???
+We chose to look at height because it is ahighly heritable trait, that is, it has a large genetic component.
 ---
 class: top, left
-###Using only EUR chunks of each genome
+##  .weirdbrown[Surprisingly[], this relationship seems to be .weirdbrown[quadratic]
 .pull-left[.full-width[
 &lt;img src="figs/Fig1b.png" width="670px" /&gt;
 
@@ -371,17 +350,40 @@ all predictive power comes from European chunks
 
 predictive power is uniformly distributed 
 
-#### **Surprisingly**, this relationship seems to be more like **k=2**
 ]]
 
 Others found that the LOA can be fully recovered by including EUR chunks [Marnetto et al. (2020) *Nat Comms*]
 
 ???
+Using only EUR chunks of each genome
 In both scenarios, mroe Eur ancestry means more data, so of course prediction increases, but while kappa=1 entails that it is the EUr chunks themselves that contribute to this, kappa=2 entails that 
  On the other hand, if the predictive power were uniformly distributed across the genome, we would expect a quadratic relationship: the partial-R2 of the whole genome (which scales linearly with ancestry) would be multiplied by the proportion of the genome in European ancestry segments (i.e., ancestry). Our observations are intermediate to these extremes (Figure 1B). We conclude that the predictive power of the PRS is enriched in, but does not entirely come from, the European ancestry segments of the admixed genomes, suggesting that the ancestry-specific interactions might play a role.
 ---
+class: top, center
+
+## Are effect sizes .weirdbrown[not transferable] to other ancestries?
+
+.pull-left[.full-width[
+&lt;img src="figs/Fig3c.png" width="670px" /&gt;
+
+]]
+
+
+.pull-right[.full-width[
+
+`\(y=sex+age+age^2+10PCs\)`
+
+`\(N_{AFR}\sim8,800\)`
+
+`\(N_{EUR}\sim350,000\)`
+
+`$$\chi_{diff}^2=\left[\frac{\beta_{eur}-\beta_{afr}}{\sqrt{SE_{eur}^2+SE_{afr}^2}}\right]^2$$`
+]]
+
+Bitarello &amp; Mathieson (2020), *G3: Genes, Genomes, Genetics*
+---
 class: top, left
-### Allele frequency differences explain up to **20%** of **LOA**
+## Additive genetic variance explains up to **20%** of **LOA**
 
 .pull-left[.full-width[
 &lt;img src="figs/Fig4c.png" width="370px" /&gt;
