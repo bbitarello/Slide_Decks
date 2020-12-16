@@ -290,7 +290,7 @@ knitr::include_graphics("figs/fig1.png")
 
 Wang & Wisscher (2020) *Nat Comms*
 
-###.weirdbrown[LOA:]oo loss of accuracy
+###.weirdbrown[LOA:] loss of accuracy
 ???
 And wang & wisscher recently showed through simulations tat this is expected. On the x axis here you have south asians, east asians and africans, and they axis shows the reltive accuracy, i.e, divided by Eur accuracy. It's expected to decline under a range of genetic architectures. I won't go into this but the different colors here represent different estimators they used. 
 For the remainder of this talk I will use LOA to refer to this loss of accuracy
@@ -419,12 +419,12 @@ knitr::include_graphics("figs/meat/schemas/schemas.038.png")
 ---
 class: middle, center
 
-# Why is PRS relative performance a function of genomic proportion of European ancestry?
+# .weirdbrown[Why] is PRS accuracy a function of genomic proportion of .weirdbrown[European ancestry]?
 ???
 We chose to look at height because it is ahighly heritable trait, that is, it has a large genetic component.
 ---
 class: top, left
-##  .weirdbrown[Surprisingly[], this relationship seems to be .weirdbrown[quadratic]
+##  .weirdbrown[Surprisingly, this relationship seems to be .weirdbrown[quadratic]
 .pull-left[.full-width[
 ```{r, out.width = "670px",echo=FALSE, eval=T}
 knitr::include_graphics("figs/Fig1b.png")
@@ -448,7 +448,7 @@ predictive power is uniformly distributed
 
 ]]
 
-Others found that the LOA can be fully recovered by including EUR chunks [Marnetto et al. (2020) *Nat Comms*]
+But see Marnetto et al. (2020) *Nat Comms* for conflicting findings.
 
 ???
 Using only EUR chunks of each genome
@@ -481,7 +481,7 @@ $$\chi_{diff}^2=\left[\frac{\beta_{eur}-\beta_{afr}}{\sqrt{SE_{eur}^2+SE_{afr}^2
 Bitarello & Mathieson (2020), *G3: Genes, Genomes, Genetics*
 ---
 class: top, left
-## Additive genetic variance explains up to **20%** of **LOA**
+# Allele frequencies explains up to .weirdbrown[20% of LOA]
 
 .pull-left[.full-width[
 ```{r, out.width = "370px",echo=FALSE, eval=T}
@@ -490,7 +490,7 @@ knitr::include_graphics("figs/Fig4c.png")
 ]]
 
 .pull-right[.full-width[
-**Additive genetic variance**
+### .pink[Additive genetic variance]
 
 $$G_{PRS}=\frac{\sum2f_{i_afr}(1-f_{i, afr})\beta_{i,eur}^2}{\sum2f_{i,eur}(1-f_{i,eur})\beta_{i,eur}^2}$$
 
@@ -500,6 +500,7 @@ Bitarello & Mathieson (2020), *G3: Genes, Genomes, Genetics*
 
 ---
 class: top, center
+# No significant differences in .weirbrown[phenotypic variance]
 
 ###**Prediction:** variance in phenotype lower in EUR
 
@@ -521,7 +522,7 @@ $$y=\mu+\beta p_{j, eur}+\epsilon; \epsilon_{j}\sim N(0,\delta ^2  + \gamma p_{j
 
 
 .pull-right[.full-width[
-```{r, out.width = "390px",echo=FALSE, eval=T}
+```{r, out.width = "330px",echo=FALSE, eval=T}
 knitr::include_graphics("figs/FigureS13.png")
 ```
 
@@ -534,7 +535,7 @@ Bitarello & Mathieson (2020), *G3: Genes, Genomes, Genetics*
 Gray lines show mean height, and dashed lines show ∓1 sd. In orange, we show the expected sd if it were negatively dependent on European ancestry. In green, we show the fitted model with variable variance, which is not significantly different from the constant variance model (gray). We reject the model (orange line) whereby the phenotypic variance in people with 100% European ancestry is 76% that of people with 0% European ancestry.
 ---
 class: top, center
-### Differences in linkage disequilibrium
+## Differences in linkage disequilibrium
 
 ```{r, out.width = "670px",echo=FALSE, eval=T}
 knitr::include_graphics("figs/LD_SCHEMA.png")
@@ -543,7 +544,7 @@ knitr::include_graphics("figs/LD_SCHEMA.png")
 
 ---
 class: top, center
-### **Prediction:** better tagging of causal variants decreases **LOA**
+## **Prediction 1:** better tagging of causal variants decreases .weirdbrown[LOA]
 --
 
 ```{r, out.width = "570px",echo=FALSE, eval=T}
@@ -552,10 +553,10 @@ knitr::include_graphics("figs/Fig4a.png")
 
 [Bitarello & Mathieson (2020), *G3: Genes, Genomes, Genetics*]
 
-### **Observation:** Imputation doesn't influence **LOA**
+### **Observation:** Imputation doesn't influence .weirdbrown[LOA]
 ---
 class: top, left
-### **Prediction 1:** LOA is **independent** of LD differences
+## **Prediction 2:** LOA is .weirdbrown[independent] of LD differences
 
 $$Rel_{R2}=\frac{R^2_{bin}}{R^2_{total}}$$
 
@@ -573,7 +574,7 @@ knitr::include_graphics("figs/LD_cartoon.002.jpeg")
 
 ---
 class: top, left
-### **Prediction 2:** LOA is **dependent** of LD differences
+## **Prediction 3:** LOA is .weirdbrown[dependent] of LD differences
 
 $$Rel_{R2}=\frac{R^2_{bin}}{R^2_{total}}$$
 
@@ -653,17 +654,16 @@ $$PRS_3^{C}= \alpha\left[\sum_{i\in AFR}\beta_{i, afr} G_{i}\right]+(1-\alpha)\l
 Bitarello & Mathieson (2020), *G3: Genes, Genomes, Genetics*
 ---
 class:left
-##**Prediction:** Including ancestry-specific effect sizes improves accuracy for admixed individuals
+###**Prediction:** ancestry-specific effect sizes improve accuracy for admixed individuals
 
 .center[
-```{r, out.width = "630px",echo=FALSE, eval=T}
+```{r, out.width = "590px",echo=FALSE, eval=T}
 knitr::include_graphics("figs/Fig2.png")
 ```
 
 Bitarello & Mathieson (2020), *G3: Genes, Genomes, Genetics*
-
-
 ]
+
 ###**Observation:** Modest improvement 
 ---
 class:left, top
@@ -729,11 +729,11 @@ knitr::include_graphics("figs/tpf_logo_rgb-Facebook.jpg")
 
 ]]
 ---
-class: inverse,center, middle
+class: icenter, middle
 
-# .lilac[Thank you!]
+# .pink[Thank you!]
 
-# .lilac[Questions?]
+# .weirbrown[Questions?]
 
 
 
