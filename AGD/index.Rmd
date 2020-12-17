@@ -126,6 +126,20 @@ extra_css <- list(
 ???
 Good afternoon everyone, my name is Bárbara and I am a postdoctoral scholar in the genetics department of the school of medicine at Upenn. I am excited to present my research to all of you today.
 ---
+class: middle, center
+
+## Similar, but .weirdbrown[different]
+```{r, out.width = "780px",echo=FALSE, eval=T}
+knitr::include_graphics("figs/intro/tarsila.png")
+```
+
+.large[.gray[*"Operários"*, Tarsila do Amaral (1933) [Source: www.wikiart.org]]]
+
+???
+A quick look around on the street, or at work, can make it clear that we, as a species, carry a lot of diversity. We differ in height, some diseases run in our families, some of us have asthama and can't see well, and so on.
+
+Part of that diversity is rooted in genetics, while another part is due to the environment. Teasing those apart and understanding where diversity comes from is the central goal of population genetics. 
+---
 class: center, top
 # Genome-wide association studies detect **.weirdbrown[genetic associations]** to traits of interest
 
@@ -208,6 +222,15 @@ knitr::include_graphics("figs/cad.png")
 ```
 
 ]]
+
+???
+So you did a GWAS for height. Then, for each variant in the genome you have something like this: the genotype in that locus has an effect on height, and can be modelled as a linear relationship. So you have an effect size for one allele in that locus, which is a correlation between the phenotype and the genotype.
+
+Then you make some assumptions about independence of these loci and that an additive model is appropriate and you have this polygenic score, which is a weighted sum of the genotypes in an individuals. Weighted by the effect sizes.
+
+So as you can see from this, PRS are very appealing...They are easy and simple to implement, all you need are some summary statistics from a GWAS, and no further complicated modeling.
+
+Here is one promising example. The x axis shows the percentile of polygenic score. And the y axis shows the pravalence of CAD. IF we look at the highest bins of PRS, prevalance of CAD is 10%. These individuals have a 8-fold increase of CAD compared to the rest of the population. This makes the PRS able to find 20-fold mroe people at risk for CAD than if you were simply testing for large effect mutations, which have large effect but are rare.
 ---
 class: middle, center
 # Some examples
@@ -220,18 +243,10 @@ knitr::kable(dt2)
 ### PS: In **Europeans...**
 
 ???
-
+ There are a few other examples like this sofar for breast cancer for instance. The main point I want to emphasize is...This is for individuals with European ancestry.
+ 
 To mention a few examples, height is one of the most well-studied and most polygenic traits we know of. So far more than 3,000 independently associated variants have been uncovered through GWAS and together they explain about 25% of variation in height as show by linear regression models. For schizophrenia and ADHD, those values are between 5.5-7%. That might seem low, but actually it isn't if you think about this...
-???
 
-So you did a GWAS for height. Then, for each variant in the genome you have something like this: the genotype in that locus has an effect on height, and can be modelled as a linear relationship. So you have an effect size for one allele in that locus, which is a correlation between the phenotype and the genotype. 
-
-Then you make some assumptions about independence of these loci and that an additive model is appropriate and you have this polygenic score, which is a weighted sum of the genotypes in an individuals. Weighted by the effect sizes.
-
-As a mentioned a few slides ago, a somehwat new approach is to combine the significant restuls from a GWAS into one single value, the polygenic score. The advantage is that althoguh each variatn has a small effect, overall they add up to substantial amounts of information.
-So as you can see from this, PRS are very appealing...They are easy and simple to implement, all you need are some summary statistics from a GWAS, and no further complicated modeling.
-Here is one promising example. The x axis shows the percentile of polygenic score. And the y axis shows the pravalence of CAD. IF we look at the highest bins of PRS, prevalance of CAD is 10%. These individuals have a 8-fold increase of CAD compared to the rest of the population. This makes the PRS able to find 20-fold mroe people at risk for CAD than if you were simply testing for large effect mutations, which have large effect but are rare.
-There are a few other examples like this sofar for breast cancer for instance.
 The main point I want to emphasize is...This is for individuals with European ancestry.
 ---
 
@@ -241,20 +256,7 @@ class: middle, center
 
 ???
 right. So what about ancestry?
----
-class: middle, center
 
-## Similar, but .weirdbrown[different]
-```{r, out.width = "780px",echo=FALSE, eval=T}
-knitr::include_graphics("figs/intro/tarsila.png")
-```
-
-.large[.gray[*"Operários"*, Tarsila do Amaral (1933) [Source: www.wikiart.org]]]
-
-???
-A quick look around on the street, or at work, can make it clear that we, as a species, carry a lot of diversity. We differ in height, some diseases run in our families, some of us have asthama and can't see well, and so on.
-
-Part of that diversity is rooted in genetics, while another part is due to the environment. Teasing those apart and understanding where diversity comes from is the central goal of population genetics. 
 ---
 
 class: center, top
@@ -285,6 +287,7 @@ Ok, so let's look at this pie chart from last year, with the proportion of indiv
 
 Anyway, now look at this pie chart on the right, which I made from data from worldpopulationreview for 2020. Now, the colors are not a true match, but I did my best. BEar in mind that the plot on the left is about ancestry, and the one on the right is about continents, regardless of ancestry. Nevertheless, it's a reasonable approximation for this purpose. Europeans in Blue represent a disproportionate amount of GWAS participants especially if you consider their share of the world's population. Asian POPULATION represent 60% of the world and ASIAN ANCESTRY only 10% of GWAS, and African POPULATION 17 and AND AFRICAN ANCESTRY 2%. Not to mention the other ancestries which are virtually non-existent.
 
+A natural question then is: how does this affect polygenic risk scores?
 ---
 class: center, top
 ## PRS accuracy .weirdbrown[decreases] with genetic distance from Europeans
@@ -296,6 +299,8 @@ knitr::include_graphics("figs/Screen Shot 2020-09-16 at 10.26.28 PM.png")
 Martin et al. (2019) *Nat Genet*
 
 ???
+this is obviously not ideal and reflects many biases which I don't have time to go into to, but considering the hype i showed about PRS before, how does this affect popygenic risk score predictions?
+
 Over the past two years or so a few papers have come out showing that prediction accuracy from PRS decreases with genetic distance from Europeans.
 This figure from Martin et al showes average prediction accuracies for 17 traits, using GWAS summary statisticas derived from 100% European cohorts. I am not sure what american means?
 ---
@@ -324,21 +329,10 @@ class: middle, center
 
 ???
 So the questions that motivated this work were: how 
+
+What about empirically? What does this look like? Ideally, we would have diverse GWAS, so that phenotypic prediction would be informed by ancestry background. But as I showed, that's far from being the case. So what can we do.
 ---
 
-class: middle, left
-
-## What .weirdbrown[factors] affect prediction accuracy?
-
-### .pink[Approach:] verify how well we can predict a phenotype in different ancestry populations and investigate the causes for discordance
-
-## What can we .weirdbrown[do] about it?
-
-### .pink[Approach:] explore approaches to mathematically correct for discordances
-
-???
-So the questions that motivated this work were:
----
 class: top, center
 
 
@@ -384,6 +378,20 @@ Many factors can affect PRS prediction accuracy. Causal variants might actually 
 
 Also, marginal effect sizes might differ for a number of reasons, and we know that LD patters and SFS patterns differ across ancestries and can impact this RA. Finally, phenotypic variance might actually differ. So in my work taht I am about to show you, I explored these factors highlighted here.
 
+---
+
+class: middle, left
+
+## What .weirdbrown[factors] affect prediction accuracy?
+
+### .pink[Approach:] verify how well we can predict a phenotype in different ancestry populations and investigate the .weirdbrown[causes for discordance]
+
+## What can we .weirdbrown[do] about it?
+
+### .pink[Approach:] explore approaches to .weirdbrown[account for ancestry] 
+
+???
+So the questions that motivated this work were:
 ---
 class: middle, center
 
@@ -442,13 +450,13 @@ class: middle, center
 We chose to look at height because it is ahighly heritable trait, that is, it has a large genetic component.
 ---
 class: top, left
-##  .weirdbrown[Surprisingly, this relationship seems to be .weirdbrown[quadratic]
+##  .weirdbrown[Surprisingly], this relationship seems to be .weirdbrown[quadratic]
 .pull-left[.full-width[
 ```{r, out.width = "670px",echo=FALSE, eval=T}
 knitr::include_graphics("figs/Fig1b.png")
 ```
 
-Bitarello & Mathieson (2020), *G3: Genes, Genomes, Genetics*
+
 ]]
 
 .pull-right[.full-width[
@@ -471,32 +479,28 @@ But see Marnetto et al. (2020) *Nat Comms* for conflicting findings.
 ???
 Using only EUR chunks of each genome
 In both scenarios, mroe Eur ancestry means more data, so of course prediction increases, but while kappa=1 entails that it is the EUr chunks themselves that contribute to this, kappa=2 entails that 
- On the other hand, if the predictive power were uniformly distributed across the genome, we would expect a quadratic relationship: the partial-R2 of the whole genome (which scales linearly with ancestry) would be multiplied by the proportion of the genome in European ancestry segments (i.e., ancestry). Our observations are intermediate to these extremes (Figure 1B). We conclude that the predictive power of the PRS is enriched in, but does not entirely come from, the European ancestry segments of the admixed genomes, suggesting that the ancestry-specific interactions might play a role.
----
-class: top, center
+ On the other hand, if the predictive power were uniformly distributed across the EUR and AFR chunks of the genome, we would expect a quadratic relationship: the partial-R2 of the whole genome (which scales linearly with ancestry) would be multiplied by the proportion of the genome in European ancestry segments (i.e., ancestry). Our observations are intermediate to these extremes (Figure 1B). We conclude that the predictive power of the PRS is enriched in, but does not entirely come from, the European ancestry segments of the admixed genomes, suggesting that the ancestry-specific interactions might play a role.
+ 
+ : Using only European ancestry segments.
+The orange lines represent the equation y ¼ 0:15pk
+eur, for k={1,1.5,2}. k
+= 1 and k = 2 represent the extreme cases where the predictive power
+in admixed individuals comes entirely from European ancestry segments of the genomes (k = 1) or is uniformly distributed across the
+whole genome (k = 2).
 
-## Are effect sizes .weirdbrown[not transferable] to other ancestries?
-
-.pull-left[.full-width[
-```{r, out.width = "670px",echo=FALSE, eval=T}
-knitr::include_graphics("figs/Fig3c.png")
-```
-
-]]
-
-
-.pull-right[.full-width[
-
-$y=sex+age+age^2+10PCs$
-
-$N_{AFR}\sim8,800$
-
-$N_{EUR}\sim350,000$
-
-$$\chi_{diff}^2=\left[\frac{\beta_{eur}-\beta_{afr}}{\sqrt{SE_{eur}^2+SE_{afr}^2}}\right]^2$$
-]]
-
-Bitarello & Mathieson (2020), *G3: Genes, Genomes, Genetics*
+We next restricted the PRS SNPs to those found in segments of the
+genome inferred to have European ancestry (Figure 1B). If the
+predictive power of the PRS came entirely from these segments, then
+we would expect the relationship between ancestry and partial-R2 to
+be the same as when we used the whole genome (i.e., linear as in
+Figure 1A). On the other hand, if the predictive power were uniformly
+distributed across the genome, we would expect a quadratic relationship: the partial-R2 of the whole genome (which scales linearly with
+ancestry) would be multiplied by the proportion of the genome in
+European ancestry segments (i.e., ancestry). Our observations are
+intermediate to these extremes (Figure 1B). We conclude that the
+predictive power of the PRS is enriched in, but does not entirely come
+from, the European ancestry segments of the admixed genomes,
+suggesting that the ancestry-specific interactions might play a role.
 ---
 class: top, left
 ## Allele frequencies explains up to .weirdbrown[20% of LOA]
@@ -518,37 +522,43 @@ Bitarello & Mathieson (2020), *G3: Genes, Genomes, Genetics*
 
 ---
 class: top, center
-## No significant differences in .weirdbrown[phenotypic variance]
+##Phenotypic variance .weirdbrown[does not] change with ancestry
 
-####**Prediction:** variance in phenotype lower in EUR
-
---
 .pull-left[.full-width[
+
 genome-wide genetic variance in EUR is $\sim 76\%$ of that in AFR
 
 $$height\sim Sex+Age+ Age^2+p_{eur}$$
-
-Variable variance model:
-$$y=\mu+\beta p_{j, eur}+\epsilon; \epsilon_{j}\sim N(0,\delta ^2  + \gamma p_{j, eur})$$
-
 ####.gray[Mean+1 1sd, constant variance]
+
+####.orange[Phenotypic variance is 100% in AFR and 76% in EUR]
+
+$$y=\mu+\beta p_{j, eur}+\epsilon; \epsilon_{j}\sim N(0,\delta ^2  + \gamma p_{j, eur})$$
 
 ####.green[fitted, variable variance]
 
-####.orange[model, variance in phenotypic variance is 100% in AFR and 76% in EUR]
+Bitarello & Mathieson (2020),*G3: Genes,Genomes,Genetics*
+
 ]]
 
 .pull-right[.full-width[
-```{r, out.width = "330px",echo=FALSE, eval=T}
+```{r, out.width = "460px",echo=FALSE, eval=T}
 knitr::include_graphics("figs/FigureS13.png")
 ```
 
-Bitarello & Mathieson (2020),*G3: Genes,Genomes,Genetics*
 ]]
 
---
-###**Observation:** Phenotypic variance does not change with ancestry
+
 ???
+We combined all 29,746 individuals (Table 1, UKB_eur excluded)
+and computed the residuals yi of the regression of height on sex,
+dataset, age, age2
+, sexdataset, sexage, sexage2
+, datasetage, datasetage2
+. We then fitted a linear model for residual height as a
+function of the ancestry of individual j  and allowed the
+variance to vary linearly with ancestry.
+
 Gray lines show mean height, and dashed lines show ∓1 sd. In orange, we show the expected sd if it were negatively dependent on European ancestry. In green, we show the fitted model with variable variance, which is not significantly different from the constant variance model (gray). We reject the model (orange line) whereby the phenotypic variance in people with 100% European ancestry is 76% that of people with 0% European ancestry.
 ---
 class: top, center
@@ -570,7 +580,7 @@ knitr::include_graphics("figs/Fig4a.png")
 
 [Bitarello & Mathieson (2020), *G3: Genes, Genomes, Genetics*]
 
-### **Observation:** Imputation doesn't influence .weirdbrown[LOA]
+### **Observation:** Imputation .weirdbrown[doesn not] influence .weirdbrown[LOA]
 ---
 class: top, left
 ## **Prediction 2:** LOA is .weirdbrown[independent] of LD differences
@@ -606,13 +616,23 @@ knitr::include_graphics("figs/LD_cartoon2.002.jpeg")
 ```
 ]]
 ###**Different** slopes
-
+???
+If LD differences between African and European haplotypes drive
+the pattern seen in Figure 1, then a PRS constructed from SNPs in low
+recombination regions should be more transferable than a PRS
+constructed from SNPs in high recombination regions of the genome
 ---
 class: top, center
+
+###**Observation:** LOA is **somewhat** dependent on recombination rate
 
 .pull-left[
 
 $$Rel_{R2}=\frac{R^2_{bin}}{R^2_{total}}$$
+
+```{r, out.width = "100px",echo=FALSE, eval=T}
+knitr::include_graphics("figs/legend.png")
+```
 ]
 
 .pull-right[.fix-width[
@@ -625,32 +645,68 @@ knitr::include_graphics("figs/Fig3b.png")
 Bitarello & Mathieson (2020), *G3: Genes, Genomes, Genetics*
 ]]
 
-###**Observation:** LOA is **somewhat** dependent on recombination rate
-
+???
+s. On the
+other hand, we note that, even for the quartile of lowest recombination, the reduction in partial-R2 for admixed individuals is substantial – 76% on average across datasets – compared to 84% for the
+fourth quantile (Figure 3A). Thus, even if all PRS variants were from
+low recombination regions, we would still observe a substantial
+reduction in predictive power.
 ---
-class: top, left
-###**Prediction:** Differences in effect sizes depend on allele frequency differences
- 
+class: top, center
+### Differences in effect sizes .weirdbrown[increase] with .weirdbrown[allele frequency differences]
+
 .pull-left[.full-width[
-```{r, out.width = "570px",echo=FALSE, eval=T}
-knitr::include_graphics("figs/Fig5b.png")
+
+$y=sex+age+age^2+10PCs$
+
+$N_{AFR}\sim8,800; N_{EUR}\sim350,000$
+
+```{r, out.width = "480px",echo=FALSE, eval=T}
+knitr::include_graphics("figs/Fig3c.png")
 ```
 
-Bitarello & Mathieson (2020), *G3: Genes, Genomes, Genetics*
-
 ]]
-.pull-right[.full-width[
 
-$N_{AFR}\sim8,800$
 
-$N_{EUR}\sim350,000$
+.pull-left[.full-width[
 
 $$\chi_{diff}^2=\left[\frac{\beta_{eur}-\beta_{afr}}{\sqrt{SE_{eur}^2+SE_{afr}^2}}\right]^2$$
 
-
-
-###**Observation:** Differences in effect sizes .weirdbrown[increase] with .weirdbrown[allele frequency differences] across ancestries
+```{r, out.width = "480px",echo=FALSE, eval=T}
+knitr::include_graphics("figs/Fig5b.png")
+```
 ]]
+
+.pull-center[
+Bitarello & Mathieson (2020), *G3: Genes, Genomes, Genetics*
+]
+
+
+???
+We calculated allele frequencies for all variants in the HRS_afr and
+HRS_eur subsets separately. We defined 10 Kb windows around each
+PRS SNP and calculated the mean squared frequency difference
+between subsets for all the SNPs contained in the window. We
+explore the effect size difference for AFR and EUR (Equation 1)
+for each PRS SNP as a function of the mean squared frequency
+difference in the window surrounding each SNP.
+
+Differences in marginal effect size
+The marginal effect size at a PRS SNP depends on the cumulative effects
+of the causal variants that it tags. Therefore, marginal effect sizes at PRS
+variants across ancestries might differ for several reasons, including
+local epistasis or allelic heterogeneity. When we ignore effect sizes and
+calculate the unweighted PRS, we see a similar pattern to Figure 1A
+(Figure 5A), suggesting that not only marginal effect sizes but even
+directions differ between ancestries. That we can improve the predictive
+power of PRS by including effect sizes re-estimated in African ancestry
+populations (Figure 2) also indirectly supports the role of effect size
+differences. Finally, we find that allele frequencies differ more between
+African and European populations around SNPs with larger effect size
+differences, although the effect is rather small (r = 0.0005; P = 0.0327;
+Figure 5B, Figure S13). These results suggest that marginal effect sizes
+differ across ancestries and that this is one of the factors underlying the
+reduction in predictive power.
 
 ---
 ##.weirdbrown[Assuming] there .weirdbrown[are differences] in marginal effect sizes
@@ -681,12 +737,12 @@ Bitarello & Mathieson (2020), *G3: Genes, Genomes, Genetics*
 ###**Observation:** Modest improvement 
 ---
 class:left, top
-##Take Home Messages & Ongoing work
+## .pink[Take Home Messages & Ongoing work]
 
 
-### * .pink[PRS have little/no utility for ancestries] .weirdbrown[other than European]
+### * PRS have little/no utility for ancestries .weirdbrown[other than European]
 
-### * .pink[Many factors; need to .weirdbrown[diversify genetic studies] at all stages]
+### * .Many factors; need to .weirdbrown[diversify genetic studies] at all stages
 
 --
 
