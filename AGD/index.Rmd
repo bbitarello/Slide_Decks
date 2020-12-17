@@ -742,15 +742,15 @@ class:left, top
 
 ### * PRS have little/no utility for ancestries .weirdbrown[other than European]
 
-### * .Many factors; need to .weirdbrown[diversify genetic studies] at all stages
+### * Many factors; need to .weirdbrown[diversify genetic studies] at all stages
 
 --
 
-### * .pink[optimizing] .weirdbrown[ancestry-sensitive] .pink[approaches]
+### * optimizing .weirdbrown[ancestry-sensitive] approaches
 
-### * .pink[make .weirdbrown[LD reference panels] available for diverse ancestries]
+### * make .weirdbrown[LD reference panels] available for diverse ancestries
 
-### * .pink[explore ancestry-dependent gene-gene interactions]
+### * explore ancestry-dependent gene-gene interactions
 
 
 ???
