@@ -844,10 +844,6 @@ class: top, center, inverse
 knitr::include_graphics("meat/rmarkdown.jpeg")
 ```
 
-```{r, out.width = "160px",echo=FALSE, eval=T}
-knitr::include_graphics("meat/xaringan.png")
-```
-
 ```{r, out.width = "190px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/frame.png")
 ```
