@@ -112,7 +112,7 @@ extra_css <- list(
   ), 
   "nonfull-width" = list(
     display = "flex",
-    width = "70%",
+    width = "130%",
     flex    = "1 1 auto"
  )
 )
@@ -130,17 +130,23 @@ extra_css <- list(
 **.weirdbrown[Assistant Professor] | .weirdbrown[Bryn Mawr College]**
 
 ---
-class: middle, center, inverse
+class: left, inverse
 
 # Similar, but **different**
 
-```{r, out.width = "780px",echo=FALSE, eval=T}
+.right-column[
+.
+```{r, out.width = "720px",echo=FALSE, eval=T}
 knitr::include_graphics("intro/tarsila.png")
 ```
+]
+.left-column[
+*"Operários"* 
 
-*"Operários"*, Tarsila do Amaral (1933) [Source: www.wikiart.org]
+Tarsila do Amaral (1933)
 
-???
+.footnote[wikiart.org]
+]
 ---
 
 class: center, top
@@ -150,10 +156,6 @@ class: center, top
 ```{r, out.width = "950px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.001.png")
 ```
-
-
-???
-I use computational and statistics to approach much of these questions. I am a biologist with a PhD in evolutionary genetics, and, as such, a lot of my research involves a mix of comparative and population genomics. More recently, I have also embarked on a journey focused on biomedical applications and implications of findings from population genomics.
 ---
 class: left, top
 
@@ -177,12 +179,12 @@ class: left, top
 class: left, top
 # My research trajectory
 
+--
 ```{r, out.width = "1500px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.002.png")
 ```
 
-???
-Zooming in a little bit, the three research topics I will be focusing on today will cover first the topic of MHC diversity, the most genetically diverse locus in the genomes of all vertebrates and an extreme case of balancing selection, followed by a project focused on balancing selection more broadly, and finally a project focused on  the power of genetic prediction pf phenotypes. 
+
 ---
 class: left, top
 # GWAS detect **genetic associations** to traits of interest
@@ -212,22 +214,14 @@ class: left, top
 ```{r, out.width = "975px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/schemas/schemas.034.png")
 ```
-???
-Earlier I mentioned that there were genetic associations to autoimmune diseases in the MHC region. How are those associations detected?
-GWAS are big scale studies. It works roughly like this: a trait of interest is chosen. Typically a binary trait such as presence or absence of disease status or a continuous trait, like height. A large cohort of individuals has their phenotype measured, and their genetic data analysed. Then, each variant is tested as shown in this plot on the right as to wehther it has an effect in the phenotype or not. In this fake example, depending on the genotype in this variant, the individual has remarkably different phenotypes. Next, each variant is represented in a plot such as this one, called a manhattan plot, where the peaks suggest the approx geneomic location of variants associated with the trait. Finally, the results from a gwas may be used in a so called polygenic score to asess the disease/phenotype status of a invidiaul outside the initial discovery cohort. 
-A picture that has emerged from human genetics from a biomedical standpoint is that most genomic variants (or polymorphisms) that have a statistically significant association with a disease or trait are somewhat common (appreciable frequencies) and have a realtively small 'effect size'. On the other hand, what you may have learned as monogenic diseases/traits, such as muscualr distrofia
 
-This results in the landscape of polygenic traits to look something like we see on the right: GWAS are mostly successful at capturing variants between these two diagonal lines: common, with moderate or small effect variants, and some rare but highly penetrant mutations, that is, that have a considerable effect size.
-Rare variants with small effect sizes are difficult to identify using GWAS, and common variants with large effects are unusual for common complex diseases
 
 ---
 class: middle, center, inverse
 
 # .weirdbrown[Combined], these variants can explain .weirdbrown[a lot] of the phenotypic variance!
 
-???
 
-So you might be thinking this is bad news in terms of predicting outcomes. So although most of these variants we detect in genome-wide association studies have very small effect, when you add them up, they explain quite a lot of the variation in a trait. How, you may ask. let's rewind a bit.
 
 ---
 class: center, top
@@ -254,16 +248,7 @@ Khera et al. (2018) *Nat Genet*
 knitr::include_graphics("intro/cad.png")
 ```
 ]]
-???
-So you did a GWAS for height. Then, for each variant in the genome you have something like this: the genotype in that locus has an effect on height, and can be modelled as a linear relationship. So you have an effect size for one allele in that locus, which is a correlation between the phenotype and the genotype. 
 
-Then you make some assumptions about independence of these loci and that an additive model is appropriate and you have this polygenic score, which is a weighted sum of the genotypes in an individuals. Weighted by the effect sizes.
-
-As a mentioned a few slides ago, a somehwat new approach is to combine the significant restuls from a GWAS into one single value, the polygenic score. The advantage is that althoguh each variatn has a small effect, overall they add up to substantial amounts of information.
-So as you can see from this, PRS are very appealing...They are easy and simple to implement, all you need are some summary statistics from a GWAS, and no further complicated modeling.
-Here is one promising example. The x axis shows the percentile of polygenic score. And the y axis shows the pravalence of CAD. IF we look at the highest bins of PRS, prevalance of CAD is 10%. These individuals have a 8-fold increase of CAD compared to the rest of the population. This makes the PRS able to find 20-fold mroe people at risk for CAD than if you were simply testing for large effect mutations, which have large effect but are rare.
-There are a few other examples like this sofar for breast cancer for instance.
-The main point I want to emphasize is...This is for individuals with European ancestry.
 
 ---
 class: middle, center, inverse
@@ -384,12 +369,40 @@ class: middle, center, inverse
 
 # What factors **actually** affect prediction accuracy?
 
+--
 
 # What can be done to **improve it**?
 
 
 ???
 So the questions that motivated this work were: how 
+---
+class: middle, left
+
+.pull-left[
+## What factors **actually** affect prediction accuracy?
+
+--
+**Approach:** verify how well we can predict a phenotype in different ancestry populations and investigate the causes for discordance
+
+]
+
+--
+
+.pull-right[## What can be done to **improve it**?
+
+--
+
+**Approach:** explore approaches to mathematically correct for discordances
+]
+???
+So the questions that motivated this work were:
+---
+class: middle, center, inverse
+
+# Let's look at **height**
+???
+We chose to look at height because it is ahighly heritable trait, that is, it has a large genetic component.
 ---
 class: top, center
 
@@ -421,44 +434,7 @@ class: top, center
 ]]
 
 
-.LARGE[**not** mutually exclusive!]
-
----
-class: middle, center, inverse
-
-
-# What factors **actually** affect prediction accuracy?
-
-
-# What can be done to **improve it**?
-
-
-???
-So the questions that motivated this work were: how 
----
-class: middle, left
-
-.pull-left[
-## What factors **actually** affect prediction accuracy?
-
-**Approach:** verify how well we can predict a phenotype in different ancestry populations and investigate the causes for discordance
-
-]
-
---
-
-.pull-right[## What can be done to **improve it**?
-
-**Approach:** explore approaches to mathematically correct for discordances
-]
-???
-So the questions that motivated this work were:
----
-class: middle, center, inverse
-
-# Let's look at **height**
-???
-We chose to look at height because it is ahighly heritable trait, that is, it has a large genetic component.
+### **not** mutually exclusive!
 ---
 class:center, top
 # Predicting .lilac[height] in individuals with .lilac[admixed ancestry]
@@ -686,7 +662,7 @@ class: top, center
 
 ### **Observation:** LOA is *somewhat* dependent on recombination rate
 
-.pull-left[
+.left-column[
 
 $$Rel_{R2}=\frac{R^2_{bin}}{R^2_{total}}$$
 
@@ -695,15 +671,15 @@ knitr::include_graphics("intro/legend.png")
 ```
 ]
 
-.pull-right[.fukk-width[
+.pright-column[.fukk-width[
 
 ```{r, out.width = "500px",echo=FALSE, eval=T}
 knitr::include_graphics("intro/Fig3b.png")
 ```
 ### Recombination Rate
 
-Bitarello & Mathieson (2020), *G3*
-]]
+.footnote[Bitarello & Mathieson (2020), *G3*]
+]
 
 ???
 s. On the
@@ -721,7 +697,7 @@ $y=sex+age+age^2+10PCs$
 
 $N_{AFR}\sim8,800; N_{EUR}\sim350,000$
 
-```{r, out.width = "480px",echo=FALSE, eval=T}
+```{r, out.width = "450px",echo=FALSE, eval=T}
 knitr::include_graphics("intro/Fig3c.png")
 ```
 
@@ -732,7 +708,7 @@ knitr::include_graphics("intro/Fig3c.png")
 
 $$\chi_{diff}^2=\left[\frac{\beta_{eur}-\beta_{afr}}{\sqrt{SE_{eur}^2+SE_{afr}^2}}\right]^2$$
 
-```{r, out.width = "480px",echo=FALSE, eval=T}
+```{r, out.width = "440px",echo=FALSE, eval=T}
 knitr::include_graphics("intro/Fig5b.png")
 ```
 ]]
@@ -812,8 +788,6 @@ Bitarello & Mathieson (2020), *G3*
 
 * explore population-specific **gene-environment** interactions
 
-???
-Marginal effect size results suggest there might be something worth looking into there. Perhaps local epistasis or other population-specific phenomena.
 
 ---
 class: top, center
@@ -855,8 +829,9 @@ Upenn Biobank
 class: top, center, inverse
 # Perguntas?
 
-.pull-left[.full-width[
-## **Onde me encontrar**
+.pull-left[
+.left[
+### Onde me encontrar
 
 <a href="mailto:bbitarello@brynmawr.edu"><i class="fa fa-paper-plane fa-fw"></i>&nbsp; bbitarello@brynmawr.edu</a><br>
 <a href="https://bbitarello.github.io"><i class="fa fa-link fa-fw"></i>&nbsp; bbitarello.github.io</a><br>
@@ -864,10 +839,18 @@ class: top, center, inverse
 <a href="http://github.com/bbitarello"><i class="fa fa-github fa-fw"></i>&nbsp; @bbitarello</a><br>
 ]]
 
-.pull-right[.full-width[
-## **Slides!**
+.pull-right[
+```{r, out.width = "160px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/rmarkdown.jpeg")
+```
+
+```{r, out.width = "160px",echo=FALSE, eval=T}
+knitr::include_graphics("meat/xaringan.png")
+```
+
 ```{r, out.width = "190px",echo=FALSE, eval=T}
 knitr::include_graphics("meat/frame.png")
 ```
-]]
+]
+
 
