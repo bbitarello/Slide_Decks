@@ -160,8 +160,7 @@ class: middle, center, inverse
 
 # What about **.weirdbrown[ancestry]**?
 
-???
-right. So what about ancestry?
+
 ---
 class: center, top
 .pull-left[.full-width[
@@ -184,10 +183,7 @@ Sirugo et al. (2019), *Cell*]
 
 ### ... and  **less than 15%** of the world's population]]
 
-???
-Ok, so let's look at this pie chart from last year, with the proportion of individuals from Each of these groups of ancestry that appear in GWAS. Europeans make up almost 80%, Asians about 20% and Africans about 2%. Note that this is a big improvement since 2009. The same survey in 2009 showed that 96% of individuals were European!
 
-Anyway, now look at this pie chart on the right, which I made from data from worldpopulationreview for 2020. Now, the colors are not a true match, but I did my best. BEar in mind that the plot on the left is about ancestry, and the one on the right is about continents, regardless of ancestry. Nevertheless, it's a reasonable approximation for this purpose. Europeans in Blue represent a disproportionate amount of GWAS participants especially if you consider their share of the world's population. Asian POPULATION represent 60% of the world and ASIAN ANCESTRY only 10% of GWAS, and African POPULATION 17 and AND AFRICAN ANCESTRY 2%. Not to mention the other ancestries which are virtually non-existent.
 ---
 class: middle, center, inverse
 
@@ -213,11 +209,7 @@ class: left, top
 - waht drives this?
 
 ]
-???
-this is obviously not ideal and reflects many biases which I don't have time to go into to, but considering the hype i showed about PRS before, how does this affect popygenic risk score predictions?
 
-Over the past two years or so a few papers have come out showing that prediction accuracy from PRS decreases with genetic distance from Europeans.
-This figure from Martin et al showes average prediction accuracies for 17 traits, using GWAS summary statisticas derived from 100% European cohorts. I am not sure what american means?
 ---
 class:middle, inverse, center
 
@@ -272,9 +264,6 @@ class: middle, center, inverse
 
 # What can be done to **improve it**?
 
-
-???
-So the questions that motivated this work were: how 
 ---
 class: middle, left
 
@@ -294,14 +283,12 @@ class: middle, left
 
 **Approach:** explore approaches to mathematically correct for discordances
 ]
-???
-So the questions that motivated this work were:
+
 ---
 class: middle, center, inverse
 
 # Let's look at **height**
-???
-We chose to look at height because it is ahighly heritable trait, that is, it has a large genetic component.
+
 ---
 class: top, center
 
@@ -345,17 +332,7 @@ class:center, top
 # Predicting .lilac[height] in individuals with .lilac[admixed ancestry]
 
 &lt;img src="meat/schemas/schemas.036.png" width="1000px" /&gt;
-???
-why height? It's a somehwat well-udnerstood trait. it's hgihly popygenic and easy to measure. It is highly heritable (80% based ont twin studies, about 50% based on SNP heritability)
 
-Also, it is rather easy to measure and is measured in most biomedical studies, so that increases the amount of available data. We used GWAS results for height that were performed in more than 3000K inds from the UK Biobank. That includes exclusively individuals whose main ancestry component is European.
-Then, we selected almost 30,000 indds from independent cohorts ranging from about 0-100% african ancestry. For those individuals, we had genetic and phenotypic data, that is, their height, as well as their age and biolofical sex, important covariates for height.
-We then calculated polygenic scores for height for each individual, using effect sizes from the Eurpean ancestry cohort.
-Importantly, unlike most studies, we consdierted ancestry as a continuous variable going from 0-100% european ancestry. So each individuals we analysed had a "proportion of Eur ancestry" inferred by local ancestry inference and averaged across the genome.
-
-In the end we looked at about 19,000 individuals with admied ancestry, and 10,000 with eur ancestry from different cohorts.
-
-we modell height as a function of sex age and eur ancesty and compare that to a mdoel that also includes prs.
 ---
 class:center, top
 ## Predictive power **increases** with genomic proportion of .lilac[European ancestry]
@@ -540,18 +517,17 @@ class: top, center
 `$$Rel_{R2}=\frac{R^2_{bin}}{R^2_{total}}$$`
 
 &lt;img src="intro/legend.png" width="100px" /&gt;
-]
-
-.pright-column[.fukk-width[
-
-&lt;img src="intro/Fig3b.png" width="500px" /&gt;
-### Recombination Rate
-
 .footnote[Bitarello &amp; Mathieson (2020), *G3*]
 ]
 
+.right-column[
+
+&lt;img src="intro/Fig3b.png" width="500px" /&gt;
+### Recombination Rate
+]
+
 ???
-s. On the
+On the
 other hand, we note that, even for the quartile of lowest recombination, the reduction in partial-R2 for admixed individuals is substantial – 76% on average across datasets – compared to 84% for the
 fourth quantile (Figure 3A). Thus, even if all PRS variants were from
 low recombination regions, we would still observe a substantial
