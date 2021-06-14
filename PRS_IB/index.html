@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Investigando a falta de transferibilidade de scores de risco poligênico em coortes com ancestralidade não-Europeia e miscigenada</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Bárbara Domingues Bitarello" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <script src="libs/js-cookie/js.cookie.js"></script>
+    <script src="libs/peerjs/peerjs.min.js"></script>
+    <script src="libs/tiny.toast/toast.min.js"></script>
+    <link href="libs/xaringanExtra-broadcast/broadcast.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-broadcast/broadcast.js"></script>
+    <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-progressBar/progress-bar.js"></script>
+    <script src="https://use.fontawesome.com/5235085b15.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, inverse
+
+<style>.xe__progress-bar__container {
+  bottom:0;
+  opacity: 1;
+  position:absolute;
+  right:0;
+  left: 0;
+}
+.xe__progress-bar {
+  height: 0.25em;
+  background-color: #D9D0D3;
+  width: calc(var(--slide-current) / var(--slide-total) * 100%);
+}
+.remark-visible .xe__progress-bar {
+  animation: xe__progress-bar__wipe 200ms forwards;
+  animation-timing-function: cubic-bezier(.86,0,.07,1);
+}
+@keyframes xe__progress-bar__wipe {
+  0% { width: calc(var(--slide-previous) / var(--slide-total) * 100%); }
+  100% { width: calc(var(--slide-current) / var(--slide-total) * 100%); }
+}</style>
+
+
+# Investigating the lack of transferability of polygenic risk scores in cohorts with admixed ancestry
+
+**.darkbrown[Bárbara Domingues Bitarello]**
+
+**.weirdbrown[Assistant Professor] | .weirdbrown[Bryn Mawr College]**
+
+---
+class: middle, center, inverse
+
+# Similar, but **different**
+
+&lt;img src="intro/tarsila.png" width="780px" /&gt;
+
+*"Operários"*, Tarsila do Amaral (1933) [Source: www.wikiart.org]
+
+???
+---
+
+class: center, top
+
+# My research: an overview
+
+&lt;img src="meat/schemas/schemas.001.png" width="950px" /&gt;
+
+
+???
+I use computational and statistics to approach much of these questions. I am a biologist with a PhD in evolutionary genetics, and, as such, a lot of my research involves a mix of comparative and population genomics. More recently, I have also embarked on a journey focused on biomedical applications and implications of findings from population genomics.
+---
+class: left, top
+
+# Big questions
+
+
+- What **evolutionary processes** shape genetic diversity?
+
+--
+
+- What are some of the **most diverse** genetic systems known and **how** did they evolve?
+
+--
+
+- What are the **consequences** of genetic diversity and their link to common diseases?
+
+--
+- Can we **predict complex phenotypes** using genetics in an equitable way that encompasses **all** of human genetic diversity?
+
+---
+class: left, top
+# My research trajectory
+
+&lt;img src="meat/schemas/schemas.002.png" width="1500px" /&gt;
+
+???
+Zooming in a little bit, the three research topics I will be focusing on today will cover first the topic of MHC diversity, the most genetically diverse locus in the genomes of all vertebrates and an extreme case of balancing selection, followed by a project focused on balancing selection more broadly, and finally a project focused on  the power of genetic prediction pf phenotypes. 
+---
+class: left, top
+# GWAS detect **genetic associations** to traits of interest
+
+&lt;img src="meat/schemas/schemas.031.png" width="975px" /&gt;
+---
+class: left, top
+# GWAS detect **genetic associations** to traits of interest
+
+&lt;img src="meat/schemas/schemas.032.png" width="975px" /&gt;
+---
+class: left, top
+# GWAS detect **genetic associations** to traits of interest
+
+&lt;img src="meat/schemas/schemas.033.png" width="975px" /&gt;
+---
+class: left, top
+# GWAS detect **genetic associations** to traits of interest
+
+
+&lt;img src="meat/schemas/schemas.034.png" width="975px" /&gt;
+???
+Earlier I mentioned that there were genetic associations to autoimmune diseases in the MHC region. How are those associations detected?
+GWAS are big scale studies. It works roughly like this: a trait of interest is chosen. Typically a binary trait such as presence or absence of disease status or a continuous trait, like height. A large cohort of individuals has their phenotype measured, and their genetic data analysed. Then, each variant is tested as shown in this plot on the right as to wehther it has an effect in the phenotype or not. In this fake example, depending on the genotype in this variant, the individual has remarkably different phenotypes. Next, each variant is represented in a plot such as this one, called a manhattan plot, where the peaks suggest the approx geneomic location of variants associated with the trait. Finally, the results from a gwas may be used in a so called polygenic score to asess the disease/phenotype status of a invidiaul outside the initial discovery cohort. 
+A picture that has emerged from human genetics from a biomedical standpoint is that most genomic variants (or polymorphisms) that have a statistically significant association with a disease or trait are somewhat common (appreciable frequencies) and have a realtively small 'effect size'. On the other hand, what you may have learned as monogenic diseases/traits, such as muscualr distrofia
+
+This results in the landscape of polygenic traits to look something like we see on the right: GWAS are mostly successful at capturing variants between these two diagonal lines: common, with moderate or small effect variants, and some rare but highly penetrant mutations, that is, that have a considerable effect size.
+Rare variants with small effect sizes are difficult to identify using GWAS, and common variants with large effects are unusual for common complex diseases
+
+---
+class: middle, center, inverse
+
+# .weirdbrown[Combined], these variants can explain .weirdbrown[a lot] of the phenotypic variance!
+
+???
+
+So you might be thinking this is bad news in terms of predicting outcomes. So although most of these variants we detect in genome-wide association studies have very small effect, when you add them up, they explain quite a lot of the variation in a trait. How, you may ask. let's rewind a bit.
+
+---
+class: center, top
+
+# Polygenic risk scores **combine all** associated variants for a trait
+
+.pull-left[
+
+.Large[$$PRS=\sum {\hat\beta G}$$]
+
+`\(\hat\beta\)` : effect size (from GWAS)
+
+`\(G\)` : Effect allele dosage
+
+
+E.g. cardiovascular disease
+
+Khera et al. (2018) *Nat Genet*
+]
+
+.pull-right[.full-width[
+
+&lt;img src="intro/cad.png" width="425px" /&gt;
+]]
+???
+So you did a GWAS for height. Then, for each variant in the genome you have something like this: the genotype in that locus has an effect on height, and can be modelled as a linear relationship. So you have an effect size for one allele in that locus, which is a correlation between the phenotype and the genotype. 
+
+Then you make some assumptions about independence of these loci and that an additive model is appropriate and you have this polygenic score, which is a weighted sum of the genotypes in an individuals. Weighted by the effect sizes.
+
+As a mentioned a few slides ago, a somehwat new approach is to combine the significant restuls from a GWAS into one single value, the polygenic score. The advantage is that althoguh each variatn has a small effect, overall they add up to substantial amounts of information.
+So as you can see from this, PRS are very appealing...They are easy and simple to implement, all you need are some summary statistics from a GWAS, and no further complicated modeling.
+Here is one promising example. The x axis shows the percentile of polygenic score. And the y axis shows the pravalence of CAD. IF we look at the highest bins of PRS, prevalance of CAD is 10%. These individuals have a 8-fold increase of CAD compared to the rest of the population. This makes the PRS able to find 20-fold mroe people at risk for CAD than if you were simply testing for large effect mutations, which have large effect but are rare.
+There are a few other examples like this sofar for breast cancer for instance.
+The main point I want to emphasize is...This is for individuals with European ancestry.
+
+---
+class: middle, center, inverse
+
+# What about **.weirdbrown[ancestry]**?
+
+???
+right. So what about ancestry?
+---
+class: center, top
+.pull-left[.full-width[
+### **European ancestry** represents almost **80% of GWAS** participants
+
+Sirugo et al. (2019), *Cell*]
+
+&lt;img src="intro/gwas_anc.png" width="380px" /&gt;
+]
+
+--
+
+.pull-right[.full-width[
+
+
+
+&lt;img src="meat/schemas/schemas.041.png" width="1700px" /&gt;
+
+.small[https://worldpopulationreview.com/]
+
+### ... and  **less than 15%** of the world's population]]
+
+???
+Ok, so let's look at this pie chart from last year, with the proportion of individuals from Each of these groups of ancestry that appear in GWAS. Europeans make up almost 80%, Asians about 20% and Africans about 2%. Note that this is a big improvement since 2009. The same survey in 2009 showed that 96% of individuals were European!
+
+Anyway, now look at this pie chart on the right, which I made from data from worldpopulationreview for 2020. Now, the colors are not a true match, but I did my best. BEar in mind that the plot on the left is about ancestry, and the one on the right is about continents, regardless of ancestry. Nevertheless, it's a reasonable approximation for this purpose. Europeans in Blue represent a disproportionate amount of GWAS participants especially if you consider their share of the world's population. Asian POPULATION represent 60% of the world and ASIAN ANCESTRY only 10% of GWAS, and African POPULATION 17 and AND AFRICAN ANCESTRY 2%. Not to mention the other ancestries which are virtually non-existent.
+---
+class: middle, center, inverse
+
+# How does this affect .weirdbrown[phenotypic prediction]?
+
+---
+class: left, top
+## **LOA** increases with genetic distance from Europeans
+
+.pull-left[.full-width[
+&lt;img src="intro/Screen Shot 2020-09-16 at 10.26.28 PM.png" width="690px" /&gt;
+
+.gray[Martin et al. (2019) *Nat Genet*]
+]]
+.pull-right[
+
+**LOA:** loss-of-accuracy
+
+- did not look at admixture
+
+- average of 17 traits
+
+- waht drives this?
+
+]
+???
+this is obviously not ideal and reflects many biases which I don't have time to go into to, but considering the hype i showed about PRS before, how does this affect popygenic risk score predictions?
+
+Over the past two years or so a few papers have come out showing that prediction accuracy from PRS decreases with genetic distance from Europeans.
+This figure from Martin et al showes average prediction accuracies for 17 traits, using GWAS summary statisticas derived from 100% European cohorts. I am not sure what american means?
+---
+class:middle, inverse, center
+
+# Why?
+
+---
+class: top, center
+
+# **Many factors** may influence  PRS .lilac[LOA]
+
+--
+
+.pull-left[.full-width[
+
+causal variants
+ 
+ 
+
+local selection
+
+
+gene-gene interactions
+
+
+gene-environment interactions
+]]
+
+--
+.pull-right[.full-width[
+
+effect sizes
+
+
+genomic LD patterns
+
+
+allele frequencies
+
+
+phenotypic variance
+]]
+
+--
+### **not** mutually exclusive!
+
+---
+class: middle, center, inverse
+
+# What factors **actually** affect prediction accuracy?
+
+
+# What can be done to **improve it**?
+
+
+???
+So the questions that motivated this work were: how 
+---
+class: top, center
+
+# **Many factors** may influence  PRS .lilac[LOA]
+
+
+
+.pull-left[.full-width[
+
+.gray[causal variants]
+
+.gray[local selection]
+
+.gray[gene-gene interactions]
+
+.gray[gene-environment interactions]
+]]
+
+
+.pull-right[.full-width[
+
+.Large[marginal effect sizes]
+
+.Large[genomic LD patterns]
+
+.Large[allele frequencies]
+
+.Large[phenotypic variance]
+]]
+
+
+.LARGE[**not** mutually exclusive!]
+
+---
+class: middle, center, inverse
+
+
+# What factors **actually** affect prediction accuracy?
+
+
+# What can be done to **improve it**?
+
+
+???
+So the questions that motivated this work were: how 
+---
+class: middle, left
+
+.pull-left[
+## What factors **actually** affect prediction accuracy?
+
+**Approach:** verify how well we can predict a phenotype in different ancestry populations and investigate the causes for discordance
+
+]
+
+--
+
+.pull-right[## What can be done to **improve it**?
+
+**Approach:** explore approaches to mathematically correct for discordances
+]
+???
+So the questions that motivated this work were:
+---
+class: middle, center, inverse
+
+# Let's look at **height**
+???
+We chose to look at height because it is ahighly heritable trait, that is, it has a large genetic component.
+---
+class:center, top
+# Predicting .lilac[height] in individuals with .lilac[admixed ancestry]
+
+&lt;img src="meat/schemas/schemas.035.png" width="1000px" /&gt;
+
+---
+class:center, top
+# Predicting .lilac[height] in individuals with .lilac[admixed ancestry]
+
+&lt;img src="meat/schemas/schemas.036.png" width="1000px" /&gt;
+???
+why height? It's a somehwat well-udnerstood trait. it's hgihly popygenic and easy to measure. It is highly heritable (80% based ont twin studies, about 50% based on SNP heritability)
+
+Also, it is rather easy to measure and is measured in most biomedical studies, so that increases the amount of available data. We used GWAS results for height that were performed in more than 3000K inds from the UK Biobank. That includes exclusively individuals whose main ancestry component is European.
+Then, we selected almost 30,000 indds from independent cohorts ranging from about 0-100% african ancestry. For those individuals, we had genetic and phenotypic data, that is, their height, as well as their age and biolofical sex, important covariates for height.
+We then calculated polygenic scores for height for each individual, using effect sizes from the Eurpean ancestry cohort.
+Importantly, unlike most studies, we consdierted ancestry as a continuous variable going from 0-100% european ancestry. So each individuals we analysed had a "proportion of Eur ancestry" inferred by local ancestry inference and averaged across the genome.
+
+In the end we looked at about 19,000 individuals with admied ancestry, and 10,000 with eur ancestry from different cohorts.
+
+we modell height as a function of sex age and eur ancesty and compare that to a mdoel that also includes prs.
+---
+class:center, top
+## Predictive power **increases** with genomic proportion of .lilac[European ancestry]
+&lt;img src="meat/schemas/schemas.037.png" width="1000px" /&gt;
+???
+Here we have the main finding. Explain this figure.
+We then proceeded to investifate, one by one, the different methodological and statistical factors that could be driving this and concluded that there is no simply fix to this loss of prediction. That is, the fix would have to happen upstream, i.e, the discovery cohorts need to be more diverse. 
+---
+class:center, top
+## Predictive power **increases** with genomic proportion of .lilac[European ancestry]
+
+&lt;img src="meat/schemas/schemas.038.png" width="1000px" /&gt;
+
+class: middle, center, inverse
+
+ **Why** is PRS accuracy a function of genomic proportion of .weirdbrown[European ancestry]?
+???
+We chose to look at height because it is ahighly heritable trait, that is, it has a large genetic component.
+
+---
+class: top, left
+##  .lilac[Surprisingly], this relationship seems to be .lilac[quadratic]
+
+.pull-left[.full-width[
+&lt;img src="intro/Fig1b.png" width="670px" /&gt;
+
+]]
+
+.pull-right[.full-width[
+
+`$$y=0.15p_{eur}^k$$`
+
+`\(k=1\)` 
+
+all predictive power comes from European chunks
+
+
+`\(k=2\)`
+
+predictive power is uniformly distributed 
+
+]]
+
+But see Marnetto et al. (2020) *Nat Comms* for conflicting findings.
+
+???
+Using only EUR chunks of each genome
+In both scenarios, mroe Eur ancestry means more data, so of course prediction increases, but while kappa=1 entails that it is the EUr chunks themselves that contribute to this, kappa=2 entails that 
+ On the other hand, if the predictive power were uniformly distributed across the EUR and AFR chunks of the genome, we would expect a quadratic relationship: the partial-R2 of the whole genome (which scales linearly with ancestry) would be multiplied by the proportion of the genome in European ancestry segments (i.e., ancestry). Our observations are intermediate to these extremes (Figure 1B). We conclude that the predictive power of the PRS is enriched in, but does not entirely come from, the European ancestry segments of the admixed genomes, suggesting that the ancestry-specific interactions might play a role.
+ 
+ : Using only European ancestry segments.
+The orange lines represent the equation y ¼ 0:15pk
+eur, for k={1,1.5,2}. k
+= 1 and k = 2 represent the extreme cases where the predictive power
+in admixed individuals comes entirely from European ancestry segments of the genomes (k = 1) or is uniformly distributed across the
+whole genome (k = 2).
+
+We next restricted the PRS SNPs to those found in segments of the
+genome inferred to have European ancestry (Figure 1B). If the
+predictive power of the PRS came entirely from these segments, then
+we would expect the relationship between ancestry and partial-R2 to
+be the same as when we used the whole genome (i.e., linear as in
+Figure 1A). On the other hand, if the predictive power were uniformly
+distributed across the genome, we would expect a quadratic relationship: the partial-R2 of the whole genome (which scales linearly with
+ancestry) would be multiplied by the proportion of the genome in
+European ancestry segments (i.e., ancestry). Our observations are
+intermediate to these extremes (Figure 1B). We conclude that the
+predictive power of the PRS is enriched in, but does not entirely come
+from, the European ancestry segments of the admixed genomes,
+suggesting that the ancestry-specific interactions might play a role.
+---
+class: top, left
+## **Allele frequencies** explain up to **20%** of LOA
+
+.pull-left[.full-width[
+&lt;img src="intro/Fig4c.png" width="370px" /&gt;
+]]
+
+.pull-right[.full-width[
+
+**.green[Additive genetic variance]**
+
+
+`$$G_{PRS}=\frac{\sum2f_{i_afr}(1-f_{i, afr})\beta_{i,eur}^2}{\sum2f_{i,eur}(1-f_{i,eur})\beta_{i,eur}^2}$$`
+
+Bitarello &amp; Mathieson (2020), *G3: Genes, Genomes, Genetics*
+]]
+
+---
+class: top, center
+## Phenotypic variance **does not** change with ancestry
+
+.pull-left[.full-width[
+
+genome-wide genetic variance in EUR is `\(\sim 76\%\)` of that in AFR
+
+`$$height\sim Sex+Age+ Age^2+p_{eur}$$`
+.gray[Mean+1 1sd, constant variance]
+
+.orange[Phenotypic variance is 100% in AFR and 76% in EUR]
+
+`$$y=\mu+\beta p_{j, eur}+\epsilon; \epsilon_{j}\sim N(0,\delta ^2  + \gamma p_{j, eur})$$`
+
+.green[fitted, variable variance]
+]]
+
+.pull-right[.full-width[
+&lt;img src="intro/FigureS13.png" width="390px" /&gt;
+
+Bitarello &amp; Mathieson (2020),*G3*
+]]
+
+
+???
+We combined all 29,746 individuals (Table 1, UKB_eur excluded)
+and computed the residuals yi of the regression of height on sex,
+dataset, age, age2
+, sexdataset, sexage, sexage2
+, datasetage, datasetage2
+. We then fitted a linear model for residual height as a
+function of the ancestry of individual j  and allowed the
+variance to vary linearly with ancestry.
+
+Gray lines show mean height, and dashed lines show ∓1 sd. In orange, we show the expected sd if it were negatively dependent on European ancestry. In green, we show the fitted model with variable variance, which is not significantly different from the constant variance model (gray). We reject the model (orange line) whereby the phenotypic variance in people with 100% European ancestry is 76% that of people with 0% European ancestry.
+---
+class: top, center
+# Differences in linkage disequilibrium
+
+&lt;img src="intro/LD_SCHEMA.png" width="670px" /&gt;
+
+
+---
+class: top, left
+## **Prediction 1:** better tagging of causal variants decreases .lilac[LOA]
+--
+
+&lt;img src="intro/Fig4a.png" width="570px" /&gt;
+
+[Bitarello &amp; Mathieson (2020), *G3*]
+
+.pull-right[**Observation:** Imputation .weirdbrown[does not] influence .weirdbrown[LOA]
+]
+---
+class: top, left
+### **Prediction 2:** LOA is .weirdbrown[independent] of LD differences
+
+`$$Rel_{R2}=\frac{R^2_{bin}}{R^2_{total}}$$`
+
+.pull-left[.full-width[
+&lt;img src="intro/LD_cartoon.001.jpeg" width="700px" /&gt;
+]]
+.pull-right[.full-width[
+&lt;img src="intro/LD_cartoon.002.jpeg" width="700px" /&gt;
+]]
+###**Similar** slopes
+
+---
+class: top, left
+### **Prediction 3:** LOA is .weirdbrown[dependent] of LD differences
+
+`$$Rel_{R2}=\frac{R^2_{bin}}{R^2_{total}}$$`
+
+.pull-left[.full-width[
+&lt;img src="intro/LD_cartoon2.001.jpeg" width="600px" /&gt;
+]]
+.pull-right[.full-width[
+&lt;img src="intro/LD_cartoon2.002.jpeg" width="600px" /&gt;
+]]
+###**Different** slopes
+???
+If LD differences between African and European haplotypes drive
+the pattern seen in Figure 1, then a PRS constructed from SNPs in low
+recombination regions should be more transferable than a PRS
+constructed from SNPs in high recombination regions of the genome
+---
+class: top, center
+
+### **Observation:** LOA is *somewhat* dependent on recombination rate
+
+.pull-left[
+
+`$$Rel_{R2}=\frac{R^2_{bin}}{R^2_{total}}$$`
+
+&lt;img src="intro/legend.png" width="100px" /&gt;
+]
+
+.pull-right[.fukk-width[
+
+&lt;img src="intro/Fig3b.png" width="500px" /&gt;
+### Recombination Rate
+
+Bitarello &amp; Mathieson (2020), *G3*
+]]
+
+???
+s. On the
+other hand, we note that, even for the quartile of lowest recombination, the reduction in partial-R2 for admixed individuals is substantial – 76% on average across datasets – compared to 84% for the
+fourth quantile (Figure 3A). Thus, even if all PRS variants were from
+low recombination regions, we would still observe a substantial
+reduction in predictive power.
+---
+class: top, center
+### Differences in effect sizes .weirdbrown[increase] with .weirdbrown[allele frequency differences]
+
+.pull-left[.full-width[
+
+`\(y=sex+age+age^2+10PCs\)`
+
+`\(N_{AFR}\sim8,800; N_{EUR}\sim350,000\)`
+
+&lt;img src="intro/Fig3c.png" width="480px" /&gt;
+
+]]
+
+
+.pull-left[.full-width[
+
+`$$\chi_{diff}^2=\left[\frac{\beta_{eur}-\beta_{afr}}{\sqrt{SE_{eur}^2+SE_{afr}^2}}\right]^2$$`
+
+&lt;img src="intro/Fig5b.png" width="480px" /&gt;
+]]
+
+.pull-center[
+Bitarello &amp; Mathieson (2020), *G3: Genes, Genomes, Genetics*
+]
+
+
+???
+We calculated allele frequencies for all variants in the HRS_afr and
+HRS_eur subsets separately. We defined 10 Kb windows around each
+PRS SNP and calculated the mean squared frequency difference
+between subsets for all the SNPs contained in the window. We
+explore the effect size difference for AFR and EUR (Equation 1)
+for each PRS SNP as a function of the mean squared frequency
+difference in the window surrounding each SNP.
+
+Differences in marginal effect size
+The marginal effect size at a PRS SNP depends on the cumulative effects
+of the causal variants that it tags. Therefore, marginal effect sizes at PRS
+variants across ancestries might differ for several reasons, including
+local epistasis or allelic heterogeneity. When we ignore effect sizes and
+calculate the unweighted PRS, we see a similar pattern to Figure 1A
+(Figure 5A), suggesting that not only marginal effect sizes but even
+directions differ between ancestries. That we can improve the predictive
+power of PRS by including effect sizes re-estimated in African ancestry
+populations (Figure 2) also indirectly supports the role of effect size
+differences. Finally, we find that allele frequencies differ more between
+African and European populations around SNPs with larger effect size
+differences, although the effect is rather small (r = 0.0005; P = 0.0327;
+Figure 5B, Figure S13). These results suggest that marginal effect sizes
+differ across ancestries and that this is one of the factors underlying the
+reduction in predictive power.
+
+---
+## **Assuming** there are differences in marginal effect sizes
+
+`$$PRS_1^{C}=\alpha PRS_{AFR}+(1-\alpha) PRS_{EUR}$$`
+Marquez-Luna *et al.* (2018) *Genet Epidem*
+
+--
+
+`$$PRS_2^{C}=\alpha(1-p_{eur,j}) PRS_{afr,j}+(1-\alpha+\alpha p_{eur,j}) PRS_{EUR}$$`
+Bitarello &amp; Mathieson (2020), *G3: Genes, Genomes, Genetics*
+--
+
+`$$PRS_3^{C}= \alpha\left[\sum_{i\in AFR}\beta_{i, afr} G_{i}\right]+(1-\alpha)\left[\sum_{i\in AFR}\beta_{i, eur} G_{i}\right]+\left[\sum_{i\in EUR}\beta_{i, eur} G_{i}\right]$$`
+Bitarello &amp; Mathieson (2020), *G3: Genes, Genomes, Genetics*
+---
+class:left
+###**Prediction:** ancestry-specific effect sizes improve accuracy for admixed individuals
+
+.center[
+&lt;img src="intro/Fig2.png" width="590px" /&gt;
+
+Bitarello &amp; Mathieson (2020), *G3*
+]
+
+**Observation:** Modest improvement 
+
+---
+
+# In summary
+
+* PRS have little/no utility for ancestries **other than European**
+
+* Many factors; need to **diversify genetic studies** at all stages
+
+* optimizing **ancestry-sensitive** approaches
+
+* make **LD reference panels** available for diverse ancestries
+
+* explore ancestry-dependent **gene-gene** interactions
+
+* explore population-specific **gene-environment** interactions
+
+???
+Marginal effect size results suggest there might be something worth looking into there. Perhaps local epistasis or other population-specific phenomena.
+
+---
+class: top, center
+# Acknowledgements
+
+.pull-left[.full-width[
+
+### .weirdbrown[Iain Mathieson - UPenn]
+
+Arslan Zaidi
+
+Dan Ju
+
+Samantha Cox
+
+Laura Colbran
+
+Shweta Ramdas
+
+]]
+
+.pull-right[.full-width[
+Neale Lab
+
+UK Biobank
+
+Women's Health Initiative
+
+Jackson Heart Study
+
+Health and Retirement Study
+
+Upenn Biobank
+
+1000 Genomes Project
+]]
+
+---
+class: top, center, inverse
+# Perguntas?
+
+.pull-left[.full-width[
+## **Onde me encontrar**
+
+&lt;a href="mailto:bbitarello@brynmawr.edu"&gt;&lt;i class="fa fa-paper-plane fa-fw"&gt;&lt;/i&gt;&amp;nbsp; bbitarello@brynmawr.edu&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://bbitarello.github.io"&gt;&lt;i class="fa fa-link fa-fw"&gt;&lt;/i&gt;&amp;nbsp; bbitarello.github.io&lt;/a&gt;&lt;br&gt;
+&lt;a href="http://twitter.com/dudutchy"&gt;&lt;i class="fa fa-twitter fa-fw"&gt;&lt;/i&gt;&amp;nbsp; @dudutchy&lt;/a&gt;&lt;br&gt;
+&lt;a href="http://github.com/bbitarello"&gt;&lt;i class="fa fa-github fa-fw"&gt;&lt;/i&gt;&amp;nbsp; @bbitarello&lt;/a&gt;&lt;br&gt;
+]]
+
+.pull-right[.full-width[
+## **Slides!**
+&lt;img src="meat/frame.png" width="190px" /&gt;
+]]
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"incremental": true,
+"ratio": "16:9",
+"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>\n  \n"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
