@@ -1,11 +1,4 @@
----
-title: "This Page contains Links to many of my slide decks"
-output:
-  html_document:
-    toc: true
-    toc_depth: 2
----
-
+# "This Page contains Links to many of my slide decks"
 
 ### AGD Meeting (2020)
 
